@@ -2,42 +2,44 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Mono:wght@400&display=swap">
 <style>
 /* Layout: an affordability brief. Findings first, one filter row, then panels that answer: how far prices rose, against rents and wages, how Portugal compares, who carries the cost. */
 :root {
-  --paper: #f5f6f4;
+  --paper: #f7f8f9;
   --sheet: #ffffff;
-  --ink: #16202a;
-  --muted: #5a6670;
-  --rule: #d6dbd9;
-  --grid: #e6e9e8;
-  --signal: #b45309;
-  --signal-soft: #fbefe0;
+  --ink: #1b2430;
+  --muted: #5d6876;
+  --rule: #dce0e5;
+  --grid: #eceff2;
+  --signal: #1f5a85;
+  --signal-soft: #e6eef5;
+  --pt: #b45309;
   --s1: #2a78d6;
   --s2: #eb6834;
   --s3: #1baf7a;
   --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #6da7ec; --seq-4: #3987e5; --seq-5: #256abf;
   --good: #1f7a35;
   --warn: #9a6c00;
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --body: "Source Serif 4", Georgia, serif;
-  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --display: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif: "IBM Plex Serif", Georgia, serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #12181d; --sheet: #182128; --ink: #e6eaec; --muted: #9aa7b0; --rule: #2c3943; --grid: #233039;
-    --signal: #f0a04b; --signal-soft: #2d2216;
-    --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+    --paper: #121519; --sheet: #181c21; --ink: #e3e7eb; --muted: #97a2ad; --rule: #2a3038; --grid: #20252c;
+    --signal: #86b6da; --signal-soft: #1a2633;
+    --pt: #f0a04b; --s1: #3987e5; --s2: #d95926; --s3: #199e70;
     --seq-1: #1a2c40; --seq-2: #184f95; --seq-3: #1c5cab; --seq-4: #2a78d6; --seq-5: #5598e7;
     --good: #5cb873; --warn: #d9a63a;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #12181d; --sheet: #182128; --ink: #e6eaec; --muted: #9aa7b0; --rule: #2c3943; --grid: #233039;
-  --signal: #f0a04b; --signal-soft: #2d2216;
-  --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+  --paper: #121519; --sheet: #181c21; --ink: #e3e7eb; --muted: #97a2ad; --rule: #2a3038; --grid: #20252c;
+  --signal: #86b6da; --signal-soft: #1a2633;
+  --pt: #f0a04b; --s1: #3987e5; --s2: #d95926; --s3: #199e70;
   --seq-1: #1a2c40; --seq-2: #184f95; --seq-3: #1c5cab; --seq-4: #2a78d6; --seq-5: #5598e7;
   --good: #5cb873; --warn: #d9a63a;
   color-scheme: dark;
@@ -45,61 +47,60 @@
 body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1rem; line-height: 1.55; }
 .wrap { max-width: 72rem; margin: 0 auto; padding-block: 2.5rem 4rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 2rem; }
 h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.15; text-wrap: balance; }
-h1 { font-size: clamp(1.9rem, 4.6vw, 2.9rem); font-weight: 800; font-stretch: 108%; }
-h2 { font-size: 1.2rem; font-weight: 700; }
+h1 { font-family: var(--serif); font-size: clamp(1.8rem, 4.2vw, 2.5rem); font-weight: 600; }
+h2 { font-size: 1.05rem; font-weight: 600; }
 p { margin: 0; max-width: 68ch; }
-.label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.label { font-size: 0.88rem; color: var(--muted); }
+.crumb { font-size: 0.9rem; }
 a { color: var(--signal); text-underline-offset: 3px; }
 header { display: grid; gap: 0.75rem; }
-.meta { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; font-size: 0.9rem; color: var(--muted); }
 
 .findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; counter-reset: f; }
-.finding { border-top: 2px solid var(--ink); padding-top: 0.75rem; display: grid; gap: 0.35rem; min-width: 0; }
-.finding b { font-family: var(--display); font-size: 1.05rem; }
+.finding { border-top: 1px solid var(--ink); padding-top: 0.75rem; display: grid; gap: 0.35rem; min-width: 0; }
+.finding b { font-weight: 600; font-size: 1rem; }
 
 .filters { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; padding: 0.75rem 0; border-block: 1px solid var(--rule); position: sticky; top: env(safe-area-inset-top, 0px); background: var(--paper); z-index: 5; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
-.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
-.seg button { font-family: var(--mono); font-size: 0.8rem; padding: 0.35rem 0.7rem; background: var(--sheet); color: var(--ink); border: 0; border-right: 1px solid var(--rule); cursor: pointer; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 2px; overflow: hidden; }
+.seg button { font-family: var(--body); font-size: 0.88rem; padding: 0.35rem 0.7rem; background: var(--sheet); color: var(--ink); border: 0; border-right: 1px solid var(--rule); cursor: pointer; }
 .seg button:last-child { border-right: 0; }
 .seg button[aria-pressed="true"] { background: var(--signal-soft); color: var(--ink); box-shadow: inset 0 -2px 0 var(--signal); }
-select { font-family: var(--mono); font-size: 0.8rem; padding: 0.35rem 0.5rem; background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; }
+select { font-family: var(--body); font-size: 0.88rem; padding: 0.35rem 0.5rem; background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 2px; }
 button:focus-visible, select:focus-visible, a:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
-.reset { font-family: var(--mono); font-size: 0.75rem; background: none; border: 0; color: var(--signal); cursor: pointer; text-decoration: underline; }
+.reset { font-family: var(--body); font-size: 0.85rem; background: none; border: 0; color: var(--signal); cursor: pointer; text-decoration: underline; }
 
 .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; }
-.kpi { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; padding: 1rem; display: grid; gap: 0.25rem; min-width: 0; }
-.kpi .v { font-family: var(--display); font-size: 1.9rem; font-weight: 700; font-stretch: 92%; font-variant-numeric: tabular-nums; }
-.kpi .d { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+.kpi { background: var(--sheet); border: 1px solid var(--rule); border-radius: 2px; padding: 1rem; display: grid; gap: 0.25rem; min-width: 0; }
+.kpi .v { font-family: var(--serif); font-size: 1.7rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+.kpi .d { font-size: 0.85rem; color: var(--muted); }
 .up { color: var(--good); } .down { color: var(--warn); }
 
 .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: 1.25rem; }
-.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; padding: 1.1rem; display: grid; gap: 0.75rem; align-content: start; min-width: 0; }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 2px; padding: 1.1rem; display: grid; gap: 0.75rem; align-content: start; min-width: 0; }
 .panel .sub { font-size: 0.9rem; color: var(--muted); }
 .chart { position: relative; width: 100%; }
 .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
-.chart text { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
+.chart text { font-family: var(--body); font-size: 11px; fill: var(--muted); }
 .chart .lbl { fill: var(--ink); font-weight: 600; }
-.legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; font-family: var(--mono); font-size: 0.78rem; color: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; font-size: 0.85rem; color: var(--ink); }
 .legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 0.35rem; }
 .legend i.dash { background: repeating-linear-gradient(90deg, var(--s2) 0 5px, transparent 5px 8px) !important; }
 
-.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 0.75rem; padding: 0.45rem 0.6rem; border-radius: 4px; white-space: nowrap; transform: translate(-50%, calc(-100% - 10px)); z-index: 3; line-height: 1.45; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font-family: var(--body); font-size: 0.8rem; padding: 0.45rem 0.6rem; border-radius: 3px; white-space: nowrap; transform: translate(-50%, calc(-100% - 10px)); z-index: 3; line-height: 1.45; }
 .tip[hidden] { display: none; }
 
 .tbl-wrap { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; font-size: 0.85rem; }
 th, td { padding: 0.4rem 0.55rem; text-align: right; border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums; white-space: nowrap; }
-th { font-family: var(--mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+th { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
 th:first-child, td:first-child { text-align: left; }
-td.cell { font-family: var(--mono); }
+td.cell { font-variant-numeric: tabular-nums; }
 .heat-1 { background: var(--seq-1); } .heat-2 { background: var(--seq-2); } .heat-3 { background: var(--seq-3); color: #fff; } .heat-4 { background: var(--seq-4); color: #fff; } .heat-5 { background: var(--seq-5); color: #fff; }
 .method { display: grid; gap: 0.5rem; font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 1rem; }
 .method ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; max-width: 80ch; }
 .note { font-size: 0.8rem; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-.legend i.thin { height: 2px; }
-.bar-pt { fill: var(--signal); }
 td.hl, th.hl { background: var(--signal-soft); }
 .empty { font-size: 0.9rem; color: var(--muted); }
 </style>
@@ -107,7 +108,8 @@ td.hl, th.hl { background: var(--signal-soft); }
 
 <main class="wrap">
   <header>
-    <span class="label">Housing BI · Eurostat data · Portugal and 6 peers · 2005–2026</span>
+    <p class="crumb"><a href="/">Guilherme Rigonato</a> <span class="label">/ Projects</span></p>
+    <span class="label">Eurostat data · Portugal and 6 peers · 2005–2026</span>
     <h1>How far has housing in Portugal outrun incomes?</h1>
     <p>Official house price, rent, consumer price and income statistics for Portugal, six peer countries and the EU average, modelled in SQL with dbt and checked by automated tests.</p>
     <div class="meta">
@@ -151,7 +153,7 @@ td.hl, th.hl { background: var(--signal-soft); }
     </section>
     <section class="panel" aria-labelledby="t-rent">
       <div><h2 id="t-rent">Prices, rents and the cost of living in Portugal</h2><p class="sub">Nominal indices, 2015 = 100, quarterly</p></div>
-      <div class="legend"><span><i style="background:var(--signal)"></i>House prices</span><span><i style="background:var(--s1)"></i>Rents (HICP)</span><span><i style="background:var(--muted)"></i>All consumer prices</span></div>
+      <div class="legend"><span><i style="background:var(--pt)"></i>House prices</span><span><i style="background:var(--s1)"></i>Rents (HICP)</span><span><i style="background:var(--muted)"></i>All consumer prices</span></div>
       <div class="chart" id="rent-chart"></div>
     </section>
   </div>
@@ -163,7 +165,7 @@ td.hl, th.hl { background: var(--signal-soft); }
     </section>
     <section class="panel" aria-labelledby="t-type">
       <div><h2 id="t-type">New and existing homes in Portugal</h2><p class="sub">Nominal house price index by type of dwelling, 2015 = 100</p></div>
-      <div class="legend"><span><i style="background:var(--signal)"></i>Existing dwellings</span><span><i style="background:var(--s1)"></i>New dwellings</span></div>
+      <div class="legend"><span><i style="background:var(--pt)"></i>Existing dwellings</span><span><i style="background:var(--s1)"></i>New dwellings</span></div>
       <div class="chart" id="type-chart"></div>
     </section>
   </div>
@@ -270,7 +272,7 @@ td.hl, th.hl { background: var(--signal-soft); }
 
   function renderHpi() {
     var qs = quarters(), col = state.mode === 'real' ? 3 : 2;
-    var series = [{ name: 'Portugal', color: '--signal', values: seriesFor('PT', col, qs), width: 2.5 }];
+    var series = [{ name: 'Portugal', color: '--pt', values: seriesFor('PT', col, qs), width: 2.5 }];
     if (state.cmp !== 'PT') series.push({ name: name(state.cmp), color: '--s1', values: seriesFor(state.cmp, col, qs) });
     document.getElementById('hpi-sub').textContent = (state.mode === 'real' ? 'Real index, deflated by consumer prices' : 'Nominal index') + ', 2015 = 100, quarterly from ' + state.from;
     document.getElementById('hpi-legend').innerHTML = series.map(function (s) { return '<span><i style="background:var(' + s.color + ')"></i>' + s.name + '</span>'; }).join('');
@@ -280,7 +282,7 @@ td.hl, th.hl { background: var(--signal-soft); }
   function renderRent() {
     var qs = quarters();
     lineChart(document.getElementById('rent-chart'), qs, [
-      { name: 'House prices', color: '--signal', values: seriesFor('PT', 2, qs), width: 2.5 },
+      { name: 'House prices', color: '--pt', values: seriesFor('PT', 2, qs), width: 2.5 },
       { name: 'Rents', color: '--s1', values: seriesFor('PT', 4, qs) },
       { name: 'Consumer prices', color: '--muted', values: seriesFor('PT', 5, qs), dash: '5 4' }
     ], { aria: 'Portugal: house prices, rents and consumer prices' });
@@ -290,7 +292,7 @@ td.hl, th.hl { background: var(--signal-soft); }
     var qs = quarters(), ex = {}, nw = {};
     D.byType.forEach(function (r) { if (r[1] !== 'PT') return; if (r[2] === 'DW_EXST') ex[r[0]] = r[3]; else nw[r[0]] = r[3]; });
     lineChart(document.getElementById('type-chart'), qs, [
-      { name: 'Existing', color: '--signal', values: qs.map(function (q) { return ex[q] == null ? null : ex[q]; }), width: 2.5 },
+      { name: 'Existing', color: '--pt', values: qs.map(function (q) { return ex[q] == null ? null : ex[q]; }), width: 2.5 },
       { name: 'New', color: '--s1', values: qs.map(function (q) { return nw[q] == null ? null : nw[q]; }) }
     ], { aria: 'Portugal: new and existing dwellings price index' });
   }
@@ -307,7 +309,7 @@ td.hl, th.hl { background: var(--signal-soft); }
     rows.forEach(function (r, i) {
       var y = m.t + i * rowH, isPt = r[0] === 'PT', isCmp = r[0] === state.cmp;
       txt(svg, m.l - 8, y + rowH / 2 + 4, name(r[0]), { 'text-anchor': 'end', class: isPt || isCmp ? 'lbl' : '' });
-      el('rect', { x: m.l, y: y + 6, width: Math.max(2, Xv(r[1]) - m.l), height: rowH - 12, rx: 4, fill: css(isPt ? '--signal' : '--s1'), opacity: isPt || isCmp ? 1 : 0.45 }, svg);
+      el('rect', { x: m.l, y: y + 6, width: Math.max(2, Xv(r[1]) - m.l), height: rowH - 12, rx: 4, fill: css(isPt ? '--pt' : '--s1'), opacity: isPt || isCmp ? 1 : 0.45 }, svg);
       txt(svg, Xv(r[1]) + 6, y + rowH / 2 + 4, r[1].toFixed(0), { class: 'lbl' });
     });
     el('line', { x1: Xv(100), x2: Xv(100), y1: 0, y2: H, stroke: css('--ink'), 'stroke-width': 1, 'stroke-dasharray': '2 3' }, svg);
@@ -336,7 +338,7 @@ td.hl, th.hl { background: var(--signal-soft); }
     var tip = document.createElement('div'); tip.className = 'tip'; tip.hidden = true; host.appendChild(tip);
     rows.forEach(function (r, i) {
       var x = m.l + i * bw, last = i === rows.length - 1;
-      el('rect', { x: x + bw * 0.15, y: Y(r[2]), width: Math.max(1, bw * 0.7), height: Y(0) - Y(r[2]), rx: Math.min(3, bw * 0.2), fill: css(last ? '--signal' : '--s1') }, svg);
+      el('rect', { x: x + bw * 0.15, y: Y(r[2]), width: Math.max(1, bw * 0.7), height: Y(0) - Y(r[2]), rx: Math.min(3, bw * 0.2), fill: css(last ? '--pt' : '--s1') }, svg);
       if (r[0] % 5 === 0 || last) txt(svg, x + bw / 2, H - 6, r[0], { 'text-anchor': 'middle' });
       if (last) txt(svg, x + bw / 2, Y(r[2]) - 6, (r[2] / 1000).toFixed(1) + 'k', { 'text-anchor': 'middle', class: 'lbl' });
       var hit = el('rect', { x: x, y: m.t, width: bw, height: H - m.t - m.b, fill: 'transparent' }, svg);
