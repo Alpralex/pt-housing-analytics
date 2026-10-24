@@ -2,7 +2,7 @@
 
 A housing affordability BI project on official statistics: Eurostat house prices, rents, consumer prices and household income for Portugal, six peer countries and the EU-27, modelled in SQL with dbt on DuckDB, tested, and published as a web dashboard and as Parquet files for Power BI.
 
-**Live dashboard:** https://claude.ai/artifact/GpNUo5QukBeux5UxpvmN3J (moves to guilhermerigonato.com/pt-housing-analytics/ once the repo is published)
+**Live dashboard:** https://guilhermerigonato.com/pt-housing-analytics/
 
 ## Findings
 
