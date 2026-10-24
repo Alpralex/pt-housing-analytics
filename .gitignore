@@ -1,5 +1,6 @@
-data/
-target/
-logs/
+/data/
+/target/
+/logs/
+/exports/
 dbt_packages/
 .user.yml
