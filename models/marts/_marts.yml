@@ -1,0 +1,75 @@
+version: 2
+
+models:
+  - name: dim_country
+    description: Portugal, six peer countries and the EU-27 benchmark.
+    columns:
+      - name: geo
+        tests: [unique, not_null]
+
+  - name: dim_quarter
+    description: Calendar quarters from 2005.
+    columns:
+      - name: quarter_start
+        tests: [unique, not_null]
+
+  - name: fct_house_prices
+    description: Eurostat house price index by country, quarter and purchase type (all, new, existing dwellings).
+    tests:
+      - unique_combination: {columns: [geo, quarter_start, purchase_type]}
+      - base_year_averages_100: {value_column: hpi_2015, date_column: quarter_start, group_by: "geo, purchase_type"}
+    columns:
+      - name: geo
+        tests:
+          - relationships: {to: ref('dim_country'), field: geo}
+      - name: quarter_start
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_quarter'), field: quarter_start}
+      - name: purchase_type
+        tests:
+          - accepted_values: {values: ['TOTAL', 'DW_NEW', 'DW_EXST']}
+      - name: hpi_2015
+        tests: [not_null]
+
+  - name: fct_consumer_prices
+    description: HICP quarterly averages (all items and actual rentals).
+    tests:
+      - unique_combination: {columns: [geo, quarter_start, coicop]}
+      - base_year_averages_100: {value_column: hicp_2015, date_column: quarter_start, group_by: "geo, coicop"}
+    columns:
+      - name: coicop
+        tests:
+          - accepted_values: {values: ['CP00', 'CP041']}
+
+  - name: fct_living_conditions
+    description: EU-SILC housing cost overburden rate and median equivalised net income.
+    tests:
+      - unique_combination: {columns: [geo, survey_year, indicator, income_group]}
+    columns:
+      - name: indicator
+        tests:
+          - accepted_values: {values: ['overburden_rate', 'median_income_eur']}
+      - name: value
+        tests: [not_null]
+
+  - name: mart_house_prices_real
+    description: Nominal and real house prices, rents and the price-to-rent index, quarterly.
+    tests:
+      - unique_combination: {columns: [geo, quarter_start]}
+    columns:
+      - name: real_hpi
+        tests: [not_null]
+
+  - name: mart_affordability
+    description: Annual price-to-income index (2015 = 100) and housing cost overburden.
+    tests:
+      - unique_combination: {columns: [geo, year]}
+
+  - name: fct_building_permits
+    description: Dwellings permitted per year in residential buildings (Portugal, Spain, Ireland, EU-27).
+    tests:
+      - unique_combination: {columns: [geo, year]}
+    columns:
+      - name: dwellings_permitted
+        tests: [not_null]

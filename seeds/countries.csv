@@ -1,0 +1,9 @@
+geo,country_name,country_group,sort_order
+PT,Portugal,focus,1
+ES,Spain,peer,2
+IE,Ireland,peer,3
+IT,Italy,peer,4
+FR,France,peer,5
+DE,Germany,peer,6
+NL,Netherlands,peer,7
+EU27_2020,EU-27,benchmark,8

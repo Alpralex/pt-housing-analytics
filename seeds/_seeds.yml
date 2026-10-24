@@ -1,0 +1,10 @@
+version: 2
+seeds:
+  - name: countries
+    description: Countries in scope. Portugal is the focus, the EU-27 average is the benchmark.
+    columns:
+      - name: geo
+        tests: [unique, not_null]
+      - name: country_group
+        tests:
+          - accepted_values: {values: ['focus', 'peer', 'benchmark']}

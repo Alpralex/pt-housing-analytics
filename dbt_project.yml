@@ -1,0 +1,19 @@
+name: pt_housing
+version: "1.0.0"
+config-version: 2
+profile: pt_housing
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+vars:
+  raw_path: "{{ env_var('HOUSING_RAW_PATH', 'data/raw') }}"
+  focus_geo: PT
+
+models:
+  pt_housing:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

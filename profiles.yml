@@ -1,0 +1,7 @@
+pt_housing:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('HOUSING_DB_PATH', 'data/housing.duckdb') }}"
+      threads: 4

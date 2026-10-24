@@ -1,0 +1,3 @@
+version: 2
+# Raw Eurostat tables are read straight from CSV by the staging models (see stg_*.sql).
+# They are produced by scripts/get_data.py from the Eurostat statistics API.

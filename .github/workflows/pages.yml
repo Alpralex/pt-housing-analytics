@@ -1,0 +1,29 @@
+# Publica web/ no GitHub Pages (branch gh-pages), servido em guilhermerigonato.com/pt-housing-analytics/
+name: pages
+on:
+  push:
+    branches: [main]
+    paths: ["web/**", "scripts/wrap_html.sh", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build site
+        run: |
+          mkdir -p _site
+          cp -r web/. _site/
+          bash scripts/wrap_html.sh web/index.html _site/index.html
+          touch _site/.nojekyll
+      - name: Push to gh-pages
+        run: |
+          cd _site
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "Deploy ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
