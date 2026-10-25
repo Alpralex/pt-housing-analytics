@@ -1,0 +1,62 @@
+table fct_building_permits
+
+	/// Dwellings in residential buildings authorised by building permits.
+	measure 'Permitted Dwellings' = SUM ( fct_building_permits[dwellings_permitted] )
+		formatString: #,0
+		displayFolder: Supply
+
+	/// Last year with permit data in context.
+	measure 'Permits Year' = CALCULATE ( MAX ( fct_building_permits[year] ), NOT ISBLANK ( fct_building_permits[dwellings_permitted] ) )
+		formatString: 0
+		displayFolder: Supply
+
+	/// Dwellings permitted in the last year of the context.
+	measure 'Permitted Dwellings (Latest)' =
+			VAR LastYear = [Permits Year]
+			RETURN
+				CALCULATE ( [Permitted Dwellings], fct_building_permits[year] = LastYear )
+		formatString: #,0
+		displayFolder: Supply
+
+	/// Latest year against 2005, the start of the series and the pre-crisis level.
+	measure 'Permits vs 2005 %' =
+			VAR Latest = [Permitted Dwellings (Latest)]
+			VAR Base2005 = CALCULATE ( [Permitted Dwellings], REMOVEFILTERS ( dim_year ), fct_building_permits[year] = 2005 )
+			RETURN
+				IF ( NOT ISBLANK ( Latest ) && NOT ISBLANK ( Base2005 ), Latest / Base2005 - 1 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Supply
+
+	/// Latest year divided by the lowest year of the series (2014 for Portugal).
+	measure 'Permits Multiple of Low' =
+			VAR Latest = [Permitted Dwellings (Latest)]
+			VAR Low = MINX ( ALL ( dim_year[year] ), CALCULATE ( [Permitted Dwellings] ) )
+			RETURN
+				DIVIDE ( Latest, Low )
+		formatString: 0.0
+		displayFolder: Supply
+
+	column geo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: geo
+
+	column year
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: year
+
+	column dwellings_permitted
+		dataType: double
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: dwellings_permitted
+
+	partition fct_building_permits = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document ( File.Contents ( DataFolder & "fct_building_permits.parquet" ) )
+				in
+					Source

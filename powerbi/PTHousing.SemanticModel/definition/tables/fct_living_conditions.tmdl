@@ -1,0 +1,51 @@
+table fct_living_conditions
+
+	/// Overburden rate by income group (use income_group_name as legend), by survey year.
+	measure 'Overburden Rate by Group %' =
+			CALCULATE (
+				DIVIDE ( AVERAGE ( fct_living_conditions[value] ), 100 ),
+				fct_living_conditions[indicator] = "overburden_rate"
+			)
+		formatString: 0.0%
+		displayFolder: Affordability
+
+	column geo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: geo
+
+	column survey_year
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: survey_year
+
+	column indicator
+		dataType: string
+		summarizeBy: none
+		sourceColumn: indicator
+
+	column income_group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: income_group
+
+	column income_group_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: income_group_name
+
+	column value
+		dataType: double
+		formatString: #,0.0
+		summarizeBy: none
+		sourceColumn: value
+
+	partition fct_living_conditions = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document ( File.Contents ( DataFolder & "fct_living_conditions.parquet" ) ),
+					Labelled = Table.AddColumn ( Source, "income_group_name", each if [income_group] = "B_60" then "Below 60% of median income" else if [income_group] = "A_60" then "Above 60% of median income" else "All people", type text )
+				in
+					Labelled

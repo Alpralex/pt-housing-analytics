@@ -1,0 +1,48 @@
+table fct_house_prices
+
+	/// House price index, 2015 = 100, by dwelling type (use dwelling_type as legend).
+	measure 'House Price Index by Type' = AVERAGE ( fct_house_prices[hpi_2015] )
+		formatString: 0.0
+		displayFolder: Prices
+
+	column geo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: geo
+
+	column quarter_start
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: quarter_start
+
+	column purchase_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: purchase_type
+
+	column dwelling_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: dwelling_type
+
+	column hpi_2015
+		dataType: double
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: hpi_2015
+
+	column yoy_change
+		dataType: double
+		formatString: +0.0%;-0.0%;0.0%
+		summarizeBy: none
+		sourceColumn: yoy_change
+
+	partition fct_house_prices = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document ( File.Contents ( DataFolder & "fct_house_prices.parquet" ) ),
+					Labelled = Table.AddColumn ( Source, "dwelling_type", each if [purchase_type] = "DW_NEW" then "New dwellings" else if [purchase_type] = "DW_EXST" then "Existing dwellings" else "All dwellings", type text )
+				in
+					Labelled

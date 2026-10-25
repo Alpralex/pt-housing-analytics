@@ -1,0 +1,42 @@
+table fct_consumer_prices
+
+	/// Harmonised consumer price index, 2015 = 100, by series (use hicp_series as legend). Runs one quarter past house prices.
+	measure 'HICP Index' = AVERAGE ( fct_consumer_prices[hicp_2015] )
+		formatString: 0.0
+		displayFolder: Prices
+
+	column geo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: geo
+
+	column quarter_start
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: quarter_start
+
+	column coicop
+		dataType: string
+		summarizeBy: none
+		sourceColumn: coicop
+
+	column hicp_series
+		dataType: string
+		summarizeBy: none
+		sourceColumn: hicp_series
+
+	column hicp_2015
+		dataType: double
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: hicp_2015
+
+	partition fct_consumer_prices = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document ( File.Contents ( DataFolder & "fct_consumer_prices.parquet" ) ),
+					Labelled = Table.AddColumn ( Source, "hicp_series", each if [coicop] = "CP041" then "Actual rentals" else "All items", type text )
+				in
+					Labelled

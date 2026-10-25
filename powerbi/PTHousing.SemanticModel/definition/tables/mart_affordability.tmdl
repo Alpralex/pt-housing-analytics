@@ -1,0 +1,148 @@
+table mart_affordability
+
+	/// Average of the four quarterly nominal indices of the year, 2015 = 100.
+	measure 'Annual House Price Index' = AVERAGE ( mart_affordability[hpi_2015] )
+		formatString: 0.0
+		displayFolder: Affordability
+
+	/// Median equivalised net income, aligned to the income year (EU-SILC survey year minus one).
+	measure 'Median Income (EUR)' = AVERAGE ( mart_affordability[median_income_eur] )
+		formatString: #,0
+		displayFolder: Affordability
+
+	/// Median income, 2015 = 100.
+	measure 'Income Index' = AVERAGE ( mart_affordability[income_2015] )
+		formatString: 0.0
+		displayFolder: Affordability
+
+	/// Annual house price index divided by the income index, 2015 = 100. Above 100: prices grew faster than incomes.
+	measure 'Price-to-Income Index' = AVERAGE ( mart_affordability[price_to_income_index] )
+		formatString: 0.0
+		displayFolder: Affordability
+
+	/// Last year with a price-to-income index in context (2024 in the current data).
+	measure 'Price-to-Income Year' = CALCULATE ( MAX ( mart_affordability[year] ), NOT ISBLANK ( mart_affordability[price_to_income_index] ) )
+		formatString: 0
+		displayFolder: Affordability
+
+	/// Price-to-income index in its last available year.
+	measure 'Price-to-Income Index (Latest)' =
+			VAR LastYear = [Price-to-Income Year]
+			RETURN
+				CALCULATE ( [Price-to-Income Index], mart_affordability[year] = LastYear )
+		formatString: 0.0
+		displayFolder: Affordability
+
+	/// Annual house price change since 2015, in the last year that also has income.
+	measure 'Price Growth Since 2015 % (Income Year)' =
+			VAR LastYear = [Price-to-Income Year]
+			VAR IndexValue = CALCULATE ( [Annual House Price Index], mart_affordability[year] = LastYear )
+			RETURN
+				IF ( NOT ISBLANK ( IndexValue ), IndexValue / 100 - 1 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Affordability
+
+	/// Median income change since 2015, in the last year with income.
+	measure 'Income Growth Since 2015 %' =
+			VAR LastYear = [Price-to-Income Year]
+			VAR IndexValue = CALCULATE ( [Income Index], mart_affordability[year] = LastYear )
+			RETURN
+				IF ( NOT ISBLANK ( IndexValue ), IndexValue / 100 - 1 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Affordability
+
+	/// Share of people in households spending over 40% of disposable income on housing, by survey year.
+	measure 'Overburden Rate %' = DIVIDE ( AVERAGE ( mart_affordability[overburden_total] ), 100 )
+		formatString: 0.0%
+		displayFolder: Affordability
+
+	/// Overburden rate for people below 60% of the national median income.
+	measure 'Low-Income Overburden Rate %' = DIVIDE ( AVERAGE ( mart_affordability[overburden_poor] ), 100 )
+		formatString: 0.0%
+		displayFolder: Affordability
+
+	/// Last EU-SILC survey year with an overburden rate in context (2025 in the current data).
+	measure 'Overburden Year' = CALCULATE ( MAX ( mart_affordability[year] ), NOT ISBLANK ( mart_affordability[overburden_total] ) )
+		formatString: 0
+		displayFolder: Affordability
+
+	/// Overburden rate in its last available survey year.
+	measure 'Overburden Rate % (Latest)' =
+			VAR LastYear = [Overburden Year]
+			RETURN
+				CALCULATE ( [Overburden Rate %], mart_affordability[year] = LastYear )
+		formatString: 0.0%
+		displayFolder: Affordability
+
+	/// Portugal minus EU-27, price-to-income index points, last available year.
+	measure 'Portugal vs EU Price-to-Income Gap' =
+			VAR Portugal = CALCULATE ( [Price-to-Income Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "PT" )
+			VAR EU = CALCULATE ( [Price-to-Income Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "EU27_2020" )
+			RETURN
+				IF ( NOT ISBLANK ( Portugal ) && NOT ISBLANK ( EU ), ( Portugal - EU ) )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Portugal vs EU
+
+	/// Portugal minus EU-27, percentage points, last available survey year.
+	measure 'Portugal vs EU Overburden Gap (pp)' =
+			VAR Portugal = CALCULATE ( [Overburden Rate % (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "PT" )
+			VAR EU = CALCULATE ( [Overburden Rate % (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "EU27_2020" )
+			RETURN
+				IF ( NOT ISBLANK ( Portugal ) && NOT ISBLANK ( EU ), ( Portugal - EU ) * 100 )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Portugal vs EU
+
+	column geo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: geo
+
+	column year
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: year
+
+	column hpi_2015
+		dataType: double
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: hpi_2015
+
+	column median_income_eur
+		dataType: double
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: median_income_eur
+
+	column income_2015
+		dataType: double
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: income_2015
+
+	column price_to_income_index
+		dataType: double
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: price_to_income_index
+
+	column overburden_total
+		dataType: double
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: overburden_total
+
+	column overburden_poor
+		dataType: double
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: overburden_poor
+
+	partition mart_affordability = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document ( File.Contents ( DataFolder & "mart_affordability.parquet" ) )
+				in
+					Source

@@ -1,0 +1,151 @@
+///$tab Main
+// Portugal housing affordability: Eurostat house prices, rents, consumer prices, income, overburden
+// and building permits for Portugal, six peers and the EU-27 (see ../README.md).
+// Qlik Sense / Qlik Cloud. The inputs are the Parquet files that scripts/export.py writes to ../exports.
+// Upload them to the space's DataFiles connection, or change vPath to a folder connection on
+// Qlik Sense Desktop/Enterprise. Parquet needs Qlik Cloud or Qlik Sense Enterprise May 2023 or later.
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET DateFormat='YYYY-MM-DD';
+
+LET vPath = 'lib://DataFiles/';
+
+// Parquet DATE columns load as dates. The fallback parses text in case a connector returns strings.
+SET vToDate = Date(Alt(Num($1), Num(Date#($1, 'YYYY-MM-DD'))), 'YYYY-MM-DD');
+
+///$tab Dimensions
+// Country is a dual (name, sort order) so every chart lists Portugal first and the EU-27 last.
+Countries:
+LOAD
+    geo                                     AS Geo,
+    Dual(country_name, sort_order)          AS Country,
+    country_group                           AS [Country Group]
+FROM [$(vPath)dim_country.parquet] (parquet);
+
+// Quarter calendar, one row per quarter from 2005. Year is not here: it lives in Facts, where the
+// annual rows need it too. Keeping it in one table avoids a synthetic key on %Quarter + Year.
+Quarters:
+LOAD
+    %Quarter,
+    Dual(quarter_label, Num(%Quarter))      AS [Quarter Label],
+    'Q' & quarter                           AS Quarter,
+    If(Year(%Quarter) >= 2015, 1, 0)        AS _From2015;
+LOAD
+    $(vToDate(quarter_start))               AS %Quarter,
+    quarter_label,
+    quarter
+FROM [$(vPath)dim_quarter.parquet] (parquet);
+
+///$tab Facts
+// One concatenated fact table. Quarterly rows carry Geo, %Quarter and Year; annual rows carry
+// Geo and Year only. Every table shares a single field with Facts (Geo or %Quarter), so there
+// are no synthetic keys and no loops. Measures pick their rows with FactType.
+
+// Quarterly: nominal and real house prices, rents, consumer prices (mart_house_prices_real).
+Facts:
+LOAD *, Year(%Quarter)                      AS Year;
+LOAD
+    'House prices'                          AS FactType,
+    geo                                     AS Geo,
+    $(vToDate(quarter_start))               AS %Quarter,
+    nominal_hpi                             AS [Nominal HPI],
+    real_hpi                                AS [Real HPI],
+    rent_index                              AS [Rent Index],
+    cpi_index                               AS [CPI Index],
+    price_to_rent_index                     AS [Price To Rent],
+    nominal_yoy                             AS [Nominal YoY],
+    real_yoy                                AS [Real YoY]
+FROM [$(vPath)mart_house_prices_real.parquet] (parquet);
+
+// Quarterly: house price index by dwelling type (all, new, existing).
+Concatenate (Facts)
+LOAD *, Year(%Quarter)                      AS Year;
+LOAD
+    'HPI by type'                           AS FactType,
+    geo                                     AS Geo,
+    $(vToDate(quarter_start))               AS %Quarter,
+    purchase_type                           AS [Purchase Type],
+    Pick(Match(purchase_type, 'TOTAL', 'DW_NEW', 'DW_EXST'),
+        'All dwellings', 'New dwellings', 'Existing dwellings') AS [Dwelling Type],
+    hpi_2015                                AS [HPI by Type],
+    yoy_change                              AS [HPI by Type YoY]
+FROM [$(vPath)fct_house_prices.parquet] (parquet);
+
+// Quarterly: HICP all items and actual rentals. Runs one quarter past house prices.
+Concatenate (Facts)
+LOAD *, Year(%Quarter)                      AS Year;
+LOAD
+    'HICP'                                  AS FactType,
+    geo                                     AS Geo,
+    $(vToDate(quarter_start))               AS %Quarter,
+    coicop                                  AS COICOP,
+    If(coicop = 'CP041', 'Actual rentals', 'All items') AS [HICP Series],
+    hicp_2015                               AS [HICP Index]
+FROM [$(vPath)fct_consumer_prices.parquet] (parquet);
+
+// Annual: price-to-income index and overburden (mart_affordability). Income is on its income
+// year (EU-SILC survey year minus one); overburden stays on the survey year, as in dbt.
+Concatenate (Facts)
+LOAD
+    'Affordability'                         AS FactType,
+    geo                                     AS Geo,
+    year                                    AS Year,
+    hpi_2015                                AS [Annual HPI],
+    median_income_eur                       AS [Median Income],
+    income_2015                             AS [Income Index],
+    price_to_income_index                   AS [Price To Income],
+    overburden_total                        AS [Overburden Total],
+    overburden_poor                         AS [Overburden Low Income]
+FROM [$(vPath)mart_affordability.parquet] (parquet);
+
+// Annual: EU-SILC values by income group, on the survey year.
+Concatenate (Facts)
+LOAD
+    'Living conditions'                     AS FactType,
+    geo                                     AS Geo,
+    survey_year                             AS Year,
+    indicator                               AS Indicator,
+    income_group                            AS [Income Group Code],
+    Pick(Match(income_group, 'TOTAL', 'A_60', 'B_60'),
+        'All people', 'Above 60% of median income', 'Below 60% of median income') AS [Income Group],
+    value                                   AS [LC Value]
+FROM [$(vPath)fct_living_conditions.parquet] (parquet);
+
+// Annual: dwellings permitted (PT, ES, IE, EU-27).
+Concatenate (Facts)
+LOAD
+    'Permits'                               AS FactType,
+    geo                                     AS Geo,
+    year                                    AS Year,
+    dwellings_permitted                     AS [Dwellings Permitted]
+FROM [$(vPath)fct_building_permits.parquet] (parquet);
+
+///$tab Variables
+// Last quarter with house prices and last years with each annual series, for sheet subtitles.
+Periods:
+LOAD
+    Max(If(FactType = 'House prices', %Quarter))                              AS MaxQ,
+    Max(If(FactType = 'Affordability' And Len([Price To Income]) > 0, Year))  AS MaxPTI,
+    Max(If(FactType = 'Affordability' And Len([Overburden Total]) > 0, Year)) AS MaxOB,
+    Max(If(FactType = 'Permits', Year))                                       AS MaxPermits
+RESIDENT Facts;
+
+LET vLastQuarter   = Year(Peek('MaxQ', 0, 'Periods')) & '-Q' & Ceil(Month(Peek('MaxQ', 0, 'Periods')) / 3);
+LET vLastPTIYear   = Peek('MaxPTI', 0, 'Periods');
+LET vLastOBYear    = Peek('MaxOB', 0, 'Periods');
+LET vLastPermitYear = Peek('MaxPermits', 0, 'Periods');
+DROP TABLE Periods;
+
+TRACE Last quarter $(vLastQuarter), price-to-income $(vLastPTIYear), overburden $(vLastOBYear), permits $(vLastPermitYear);
+
+// Expressions kept in one place, the same as the master measures in master_items.md.
+// "Latest" measures take the last period in the current selection, per country; select one
+// country (or use them in a chart by Country) so that FirstSortedValue has no ties.
+SET vHPI            = Avg({<FactType={'House prices'}>} [Nominal HPI]);
+SET vRealHPI        = Avg({<FactType={'House prices'}>} [Real HPI]);
+SET vHPILatest      = FirstSortedValue({<FactType={'House prices'}>} [Nominal HPI], -%Quarter);
+SET vRealHPILatest  = FirstSortedValue({<FactType={'House prices'}>} [Real HPI], -%Quarter);
+SET vHPIYoY         = FirstSortedValue({<FactType={'House prices'}>} [Nominal YoY], -%Quarter);
+SET vPTILatest      = FirstSortedValue({<FactType={'Affordability'}, [Price To Income]={"*"}>} [Price To Income], -Year);
+SET vOBLatest       = FirstSortedValue({<FactType={'Affordability'}, [Overburden Total]={"*"}>} [Overburden Total], -Year) / 100;
+SET vPermitsLatest  = FirstSortedValue({<FactType={'Permits'}>} [Dwellings Permitted], -Year);

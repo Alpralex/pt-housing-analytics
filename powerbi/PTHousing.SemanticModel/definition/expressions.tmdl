@@ -1,0 +1,4 @@
+/// Folder that holds the Parquet files, with a trailing backslash. Change it in Transform data > Manage parameters.
+expression DataFolder = "C:\\pt-housing-analytics\\exports\\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+	annotation PBI_ResultType = Text

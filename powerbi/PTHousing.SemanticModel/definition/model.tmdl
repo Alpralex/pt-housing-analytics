@@ -1,0 +1,19 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+	annotation PBI_QueryOrder = ["DataFolder","dim_country","dim_quarter","dim_year","fct_house_prices","fct_consumer_prices","mart_house_prices_real","fct_living_conditions","mart_affordability","fct_building_permits"]
+
+ref table dim_country
+ref table dim_quarter
+ref table dim_year
+ref table fct_house_prices
+ref table fct_consumer_prices
+ref table mart_house_prices_real
+ref table fct_living_conditions
+ref table mart_affordability
+ref table fct_building_permits

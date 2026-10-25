@@ -1,0 +1,34 @@
+table dim_quarter
+
+	column quarter_start
+		dataType: dateTime
+		isKey
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: quarter_start
+
+	column year
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: year
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: quarter
+
+	column quarter_label
+		dataType: string
+		summarizeBy: none
+		sourceColumn: quarter_label
+		sortByColumn: quarter_start
+
+	partition dim_quarter = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document ( File.Contents ( DataFolder & "dim_quarter.parquet" ) )
+				in
+					Source

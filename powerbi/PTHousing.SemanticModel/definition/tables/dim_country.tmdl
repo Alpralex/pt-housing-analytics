@@ -1,0 +1,32 @@
+table dim_country
+
+	column geo
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: geo
+
+	column country_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: country_name
+		sortByColumn: sort_order
+
+	column country_group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: country_group
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: sort_order
+
+	partition dim_country = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document ( File.Contents ( DataFolder & "dim_country.parquet" ) )
+				in
+					Source
