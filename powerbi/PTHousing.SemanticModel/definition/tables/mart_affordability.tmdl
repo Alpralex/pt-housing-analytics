@@ -1,29 +1,35 @@
 table mart_affordability
+	lineageTag: c59fd075-6b5d-41af-b354-fc93d76c6084
 
 	/// Average of the four quarterly nominal indices of the year, 2015 = 100.
 	measure 'Annual House Price Index' = AVERAGE ( mart_affordability[hpi_2015] )
 		formatString: 0.0
 		displayFolder: Affordability
+		lineageTag: 82e3054f-f117-4e2a-85c1-3a66d750801b
 
 	/// Median equivalised net income, aligned to the income year (EU-SILC survey year minus one).
 	measure 'Median Income (EUR)' = AVERAGE ( mart_affordability[median_income_eur] )
 		formatString: #,0
 		displayFolder: Affordability
+		lineageTag: 0589697d-aeae-490a-b394-596ccc846def
 
 	/// Median income, 2015 = 100.
 	measure 'Income Index' = AVERAGE ( mart_affordability[income_2015] )
 		formatString: 0.0
 		displayFolder: Affordability
+		lineageTag: ab76caf0-54aa-4c7b-ba0b-b972f10c24f2
 
 	/// Annual house price index divided by the income index, 2015 = 100. Above 100: prices grew faster than incomes.
 	measure 'Price-to-Income Index' = AVERAGE ( mart_affordability[price_to_income_index] )
 		formatString: 0.0
 		displayFolder: Affordability
+		lineageTag: 1b863173-ac95-4bd4-82d4-e85bfea93120
 
 	/// Last year with a price-to-income index in context (2024 in the current data).
 	measure 'Price-to-Income Year' = CALCULATE ( MAX ( mart_affordability[year] ), NOT ISBLANK ( mart_affordability[price_to_income_index] ) )
 		formatString: 0
 		displayFolder: Affordability
+		lineageTag: 0b15ad0d-75b4-4f82-9138-61fd814389d8
 
 	/// Price-to-income index in its last available year.
 	measure 'Price-to-Income Index (Latest)' =
@@ -32,6 +38,7 @@ table mart_affordability
 				CALCULATE ( [Price-to-Income Index], mart_affordability[year] = LastYear )
 		formatString: 0.0
 		displayFolder: Affordability
+		lineageTag: 53873e4b-f9de-482d-9d49-608d407b811e
 
 	/// Annual house price change since 2015, in the last year that also has income.
 	measure 'Price Growth Since 2015 % (Income Year)' =
@@ -41,6 +48,7 @@ table mart_affordability
 				IF ( NOT ISBLANK ( IndexValue ), IndexValue / 100 - 1 )
 		formatString: +0.0%;-0.0%;0.0%
 		displayFolder: Affordability
+		lineageTag: 5c8bbd85-a8e1-4261-b9ab-13b6dc3d854e
 
 	/// Median income change since 2015, in the last year with income.
 	measure 'Income Growth Since 2015 %' =
@@ -50,21 +58,25 @@ table mart_affordability
 				IF ( NOT ISBLANK ( IndexValue ), IndexValue / 100 - 1 )
 		formatString: +0.0%;-0.0%;0.0%
 		displayFolder: Affordability
+		lineageTag: afc36c55-bcf6-4dc1-b2c9-b2f980b8dc3c
 
 	/// Share of people in households spending over 40% of disposable income on housing, by survey year.
 	measure 'Overburden Rate %' = DIVIDE ( AVERAGE ( mart_affordability[overburden_total] ), 100 )
 		formatString: 0.0%
 		displayFolder: Affordability
+		lineageTag: 37340e10-6ae1-4bd4-b65f-6f26cdc50c65
 
 	/// Overburden rate for people below 60% of the national median income.
 	measure 'Low-Income Overburden Rate %' = DIVIDE ( AVERAGE ( mart_affordability[overburden_poor] ), 100 )
 		formatString: 0.0%
 		displayFolder: Affordability
+		lineageTag: 2ca28b0f-ac77-4fd8-b24a-31eef924daf9
 
 	/// Last EU-SILC survey year with an overburden rate in context (2025 in the current data).
 	measure 'Overburden Year' = CALCULATE ( MAX ( mart_affordability[year] ), NOT ISBLANK ( mart_affordability[overburden_total] ) )
 		formatString: 0
 		displayFolder: Affordability
+		lineageTag: de505fcb-f058-4021-b13b-da53455ce6b9
 
 	/// Overburden rate in its last available survey year.
 	measure 'Overburden Rate % (Latest)' =
@@ -73,6 +85,7 @@ table mart_affordability
 				CALCULATE ( [Overburden Rate %], mart_affordability[year] = LastYear )
 		formatString: 0.0%
 		displayFolder: Affordability
+		lineageTag: 592a4a43-872d-4589-a019-0dca3b68b5fb
 
 	/// Portugal minus EU-27, price-to-income index points, last available year.
 	measure 'Portugal vs EU Price-to-Income Gap' =
@@ -82,6 +95,7 @@ table mart_affordability
 				IF ( NOT ISBLANK ( Portugal ) && NOT ISBLANK ( EU ), ( Portugal - EU ) )
 		formatString: +0.0;-0.0;0.0
 		displayFolder: Portugal vs EU
+		lineageTag: d5e78d73-d876-45d1-bd43-d42cc8ed14ec
 
 	/// Portugal minus EU-27, percentage points, last available survey year.
 	measure 'Portugal vs EU Overburden Gap (pp)' =
@@ -91,51 +105,60 @@ table mart_affordability
 				IF ( NOT ISBLANK ( Portugal ) && NOT ISBLANK ( EU ), ( Portugal - EU ) * 100 )
 		formatString: +0.0;-0.0;0.0
 		displayFolder: Portugal vs EU
+		lineageTag: e5a3e196-5c4f-4d86-91f5-afc545d4f4b8
 
 	column geo
 		dataType: string
+		lineageTag: 03a10c26-a2f4-4dc3-b4fd-58c88704a4e6
 		summarizeBy: none
 		sourceColumn: geo
 
 	column year
 		dataType: int64
 		formatString: 0
+		lineageTag: 241f26db-2dc7-41ad-b816-a1b633d397d1
 		summarizeBy: none
 		sourceColumn: year
 
 	column hpi_2015
 		dataType: double
 		formatString: 0.0
+		lineageTag: 217cc1ef-9e64-4d73-b6ea-e6f8df5fb144
 		summarizeBy: none
 		sourceColumn: hpi_2015
 
 	column median_income_eur
 		dataType: double
 		formatString: #,0
+		lineageTag: a6ae3766-bbbe-49fb-a5f7-b99232ab8cd2
 		summarizeBy: none
 		sourceColumn: median_income_eur
 
 	column income_2015
 		dataType: double
 		formatString: 0.0
+		lineageTag: ddf7fb91-ae42-4a27-94b7-8cb0798a6f88
 		summarizeBy: none
 		sourceColumn: income_2015
 
 	column price_to_income_index
 		dataType: double
 		formatString: 0.0
+		lineageTag: f9d70464-ad29-4505-99ec-c51bfc4bc73c
 		summarizeBy: none
 		sourceColumn: price_to_income_index
 
 	column overburden_total
 		dataType: double
 		formatString: 0.0
+		lineageTag: 196d1da9-269b-4ebf-96a0-4b7fd8031eac
 		summarizeBy: none
 		sourceColumn: overburden_total
 
 	column overburden_poor
 		dataType: double
 		formatString: 0.0
+		lineageTag: 0e95fcae-6d06-4a5f-8a30-81810037b588
 		summarizeBy: none
 		sourceColumn: overburden_poor
 
@@ -146,3 +169,4 @@ table mart_affordability
 					Source = Parquet.Document ( File.Contents ( DataFolder & "mart_affordability.parquet" ) )
 				in
 					Source
+

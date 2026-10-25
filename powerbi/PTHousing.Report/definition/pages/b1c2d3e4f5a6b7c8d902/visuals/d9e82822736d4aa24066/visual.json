@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "d9e82822736d4aa24066",
   "position": {
     "x": 16,
@@ -28,26 +28,8 @@
               },
               "queryRef": "dim_quarter.quarter_start",
               "nativeQueryRef": "quarter_start",
+              "active": true,
               "displayName": "Quarter"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "fct_house_prices"
-                    }
-                  },
-                  "Property": "House Price Index by Type"
-                }
-              },
-              "queryRef": "fct_house_prices.House Price Index by Type",
-              "nativeQueryRef": "House Price Index by Type",
-              "displayName": "House price index"
             }
           ]
         },
@@ -67,6 +49,25 @@
               "queryRef": "fct_house_prices.dwelling_type",
               "nativeQueryRef": "dwelling_type",
               "displayName": "Dwelling type"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fct_house_prices"
+                    }
+                  },
+                  "Property": "House Price Index by Type"
+                }
+              },
+              "queryRef": "fct_house_prices.House Price Index by Type",
+              "nativeQueryRef": "House Price Index by Type",
+              "displayName": "House price index"
             }
           ]
         }

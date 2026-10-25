@@ -1,4 +1,5 @@
 table fct_living_conditions
+	lineageTag: 9d58254f-1cbf-4e86-9748-ed9e91d9c8d0
 
 	/// Overburden rate by income group (use income_group_name as legend), by survey year.
 	measure 'Overburden Rate by Group %' =
@@ -8,36 +9,43 @@ table fct_living_conditions
 			)
 		formatString: 0.0%
 		displayFolder: Affordability
+		lineageTag: f3f75187-d347-47a1-900e-bdf9de80ce82
 
 	column geo
 		dataType: string
+		lineageTag: d15aa0fa-4994-4c0c-bc69-c520776cbb44
 		summarizeBy: none
 		sourceColumn: geo
 
 	column survey_year
 		dataType: int64
 		formatString: 0
+		lineageTag: 6ead58ce-95d1-42df-a164-0b1a90cc2a51
 		summarizeBy: none
 		sourceColumn: survey_year
 
 	column indicator
 		dataType: string
+		lineageTag: 1e1e2e5f-9fea-438c-9407-a13a32656641
 		summarizeBy: none
 		sourceColumn: indicator
 
 	column income_group
 		dataType: string
+		lineageTag: bdea9795-7699-4bdb-9f37-11ed819495b7
 		summarizeBy: none
 		sourceColumn: income_group
 
 	column income_group_name
 		dataType: string
+		lineageTag: 688f245d-6dd3-416f-baae-5c3434782fe0
 		summarizeBy: none
 		sourceColumn: income_group_name
 
 	column value
 		dataType: double
 		formatString: #,0.0
+		lineageTag: f0061146-26e6-4390-939b-407d1d5acf5a
 		summarizeBy: none
 		sourceColumn: value
 
@@ -49,3 +57,4 @@ table fct_living_conditions
 					Labelled = Table.AddColumn ( Source, "income_group_name", each if [income_group] = "B_60" then "Below 60% of median income" else if [income_group] = "A_60" then "Above 60% of median income" else "All people", type text )
 				in
 					Labelled
+

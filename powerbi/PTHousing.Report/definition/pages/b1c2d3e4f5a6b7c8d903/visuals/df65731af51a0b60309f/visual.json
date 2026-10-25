@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "df65731af51a0b60309f",
   "position": {
     "x": 16,
@@ -28,26 +28,8 @@
               },
               "queryRef": "dim_year.year",
               "nativeQueryRef": "year",
+              "active": true,
               "displayName": "Year"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "fct_living_conditions"
-                    }
-                  },
-                  "Property": "Overburden Rate by Group %"
-                }
-              },
-              "queryRef": "fct_living_conditions.Overburden Rate by Group %",
-              "nativeQueryRef": "Overburden Rate by Group %",
-              "displayName": "Overburden rate"
             }
           ]
         },
@@ -67,6 +49,25 @@
               "queryRef": "fct_living_conditions.income_group_name",
               "nativeQueryRef": "income_group_name",
               "displayName": "Income group"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fct_living_conditions"
+                    }
+                  },
+                  "Property": "Overburden Rate by Group %"
+                }
+              },
+              "queryRef": "fct_living_conditions.Overburden Rate by Group %",
+              "nativeQueryRef": "Overburden Rate by Group %",
+              "displayName": "Overburden rate"
             }
           ]
         }

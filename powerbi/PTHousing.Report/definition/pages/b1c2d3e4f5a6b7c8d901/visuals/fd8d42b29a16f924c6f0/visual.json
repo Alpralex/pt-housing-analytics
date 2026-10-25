@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "fd8d42b29a16f924c6f0",
   "position": {
     "x": 16,
@@ -28,26 +28,8 @@
               },
               "queryRef": "dim_quarter.quarter_start",
               "nativeQueryRef": "quarter_start",
+              "active": true,
               "displayName": "Quarter"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "mart_house_prices_real"
-                    }
-                  },
-                  "Property": "Real House Price Index"
-                }
-              },
-              "queryRef": "mart_house_prices_real.Real House Price Index",
-              "nativeQueryRef": "Real House Price Index",
-              "displayName": "Real House Price Index"
             }
           ]
         },
@@ -67,6 +49,25 @@
               "queryRef": "dim_country.country_name",
               "nativeQueryRef": "country_name",
               "displayName": "Country"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mart_house_prices_real"
+                    }
+                  },
+                  "Property": "Real House Price Index"
+                }
+              },
+              "queryRef": "mart_house_prices_real.Real House Price Index",
+              "nativeQueryRef": "Real House Price Index",
+              "displayName": "Real House Price Index"
             }
           ]
         }

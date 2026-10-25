@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "aee6b333cfd21d7ddda7",
   "position": {
     "x": 648,
@@ -28,6 +28,7 @@
               },
               "queryRef": "dim_country.country_name",
               "nativeQueryRef": "country_name",
+              "active": true,
               "displayName": "Country"
             }
           ]

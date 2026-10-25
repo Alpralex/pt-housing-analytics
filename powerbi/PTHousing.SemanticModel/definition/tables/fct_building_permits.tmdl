@@ -1,14 +1,17 @@
 table fct_building_permits
+	lineageTag: d330f037-d9d3-48a0-bd1c-199ed76de98f
 
 	/// Dwellings in residential buildings authorised by building permits.
 	measure 'Permitted Dwellings' = SUM ( fct_building_permits[dwellings_permitted] )
 		formatString: #,0
 		displayFolder: Supply
+		lineageTag: 2d449574-47e7-425c-a096-be4d7da6de13
 
 	/// Last year with permit data in context.
 	measure 'Permits Year' = CALCULATE ( MAX ( fct_building_permits[year] ), NOT ISBLANK ( fct_building_permits[dwellings_permitted] ) )
 		formatString: 0
 		displayFolder: Supply
+		lineageTag: 95d4fbf3-8b83-4a29-95d6-4dd3f6f3fa4f
 
 	/// Dwellings permitted in the last year of the context.
 	measure 'Permitted Dwellings (Latest)' =
@@ -17,6 +20,7 @@ table fct_building_permits
 				CALCULATE ( [Permitted Dwellings], fct_building_permits[year] = LastYear )
 		formatString: #,0
 		displayFolder: Supply
+		lineageTag: 2490adaf-3232-4ec9-9173-1dd62f62feba
 
 	/// Latest year against 2005, the start of the series and the pre-crisis level.
 	measure 'Permits vs 2005 %' =
@@ -26,6 +30,7 @@ table fct_building_permits
 				IF ( NOT ISBLANK ( Latest ) && NOT ISBLANK ( Base2005 ), Latest / Base2005 - 1 )
 		formatString: +0.0%;-0.0%;0.0%
 		displayFolder: Supply
+		lineageTag: 58422e6a-bf6d-4f8e-bca4-9a29916bbf64
 
 	/// Latest year divided by the lowest year of the series (2014 for Portugal).
 	measure 'Permits Multiple of Low' =
@@ -35,21 +40,25 @@ table fct_building_permits
 				DIVIDE ( Latest, Low )
 		formatString: 0.0
 		displayFolder: Supply
+		lineageTag: 0306f95a-656e-49bf-bf05-399313e0c73d
 
 	column geo
 		dataType: string
+		lineageTag: 7844f24f-5d28-468f-97de-c9d087bd1244
 		summarizeBy: none
 		sourceColumn: geo
 
 	column year
 		dataType: int64
 		formatString: 0
+		lineageTag: 9dbe377f-0bd4-4769-ae92-e27845dc5859
 		summarizeBy: none
 		sourceColumn: year
 
 	column dwellings_permitted
 		dataType: double
 		formatString: #,0
+		lineageTag: 3400a7c6-88a5-4ff8-834b-29f62ae84cb5
 		summarizeBy: none
 		sourceColumn: dwellings_permitted
 
@@ -60,3 +69,4 @@ table fct_building_permits
 					Source = Parquet.Document ( File.Contents ( DataFolder & "fct_building_permits.parquet" ) )
 				in
 					Source
+

@@ -1,34 +1,43 @@
 table fct_consumer_prices
+	lineageTag: f65b0181-6a5a-4f91-b427-8e87a59bf2e0
 
 	/// Harmonised consumer price index, 2015 = 100, by series (use hicp_series as legend). Runs one quarter past house prices.
 	measure 'HICP Index' = AVERAGE ( fct_consumer_prices[hicp_2015] )
 		formatString: 0.0
 		displayFolder: Prices
+		lineageTag: 67358b30-559b-4993-986b-14047f7bb10a
 
 	column geo
 		dataType: string
+		lineageTag: c28fa614-61f1-4e7d-924b-0fbd2472090f
 		summarizeBy: none
 		sourceColumn: geo
 
 	column quarter_start
 		dataType: dateTime
 		formatString: yyyy-mm-dd
+		lineageTag: 76fd2ae3-067e-41fd-82bd-5f1eaedb7825
 		summarizeBy: none
 		sourceColumn: quarter_start
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column coicop
 		dataType: string
+		lineageTag: 838cb379-8388-4576-8511-2a2df9f18025
 		summarizeBy: none
 		sourceColumn: coicop
 
 	column hicp_series
 		dataType: string
+		lineageTag: 8d6a5fb8-cec3-4cf6-bd1e-54f4a9c2ca9b
 		summarizeBy: none
 		sourceColumn: hicp_series
 
 	column hicp_2015
 		dataType: double
 		formatString: 0.0
+		lineageTag: 53f0757e-074f-4888-bea0-904f969570b2
 		summarizeBy: none
 		sourceColumn: hicp_2015
 
@@ -40,3 +49,4 @@ table fct_consumer_prices
 					Labelled = Table.AddColumn ( Source, "hicp_series", each if [coicop] = "CP041" then "Actual rentals" else "All items", type text )
 				in
 					Labelled
+

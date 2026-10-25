@@ -49,3 +49,9 @@ relationship fct_building_permits_country
 relationship fct_building_permits_year
 	fromColumn: fct_building_permits.year
 	toColumn: dim_year.year
+
+relationship 90676ef4-bfb3-44b8-9511-d47ffc973d7d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_quarter.quarter_start
+	toColumn: LocalDateTable_3d4d67ed-1280-4068-bdfd-db2fb89cb396.Date
+

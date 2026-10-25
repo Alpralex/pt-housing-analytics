@@ -1,40 +1,50 @@
 table fct_house_prices
+	lineageTag: a2ddf23f-27b6-4e31-acb1-a9b6c568a4fd
 
 	/// House price index, 2015 = 100, by dwelling type (use dwelling_type as legend).
 	measure 'House Price Index by Type' = AVERAGE ( fct_house_prices[hpi_2015] )
 		formatString: 0.0
 		displayFolder: Prices
+		lineageTag: d46a1f1b-512a-4cf3-910c-9161b7dbb22a
 
 	column geo
 		dataType: string
+		lineageTag: e69cbf69-8149-481b-935e-ea106f9c0ebf
 		summarizeBy: none
 		sourceColumn: geo
 
 	column quarter_start
 		dataType: dateTime
 		formatString: yyyy-mm-dd
+		lineageTag: dc12264c-ae45-4270-a7f6-a4edcf5d6f46
 		summarizeBy: none
 		sourceColumn: quarter_start
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column purchase_type
 		dataType: string
+		lineageTag: 77848ff4-b837-42c8-bb10-10e49d489a66
 		summarizeBy: none
 		sourceColumn: purchase_type
 
 	column dwelling_type
 		dataType: string
+		lineageTag: 4127e52b-3224-4e0a-a702-63a536829dad
 		summarizeBy: none
 		sourceColumn: dwelling_type
 
 	column hpi_2015
 		dataType: double
 		formatString: 0.0
+		lineageTag: 711122b5-5b37-4fe0-b7a0-ca69594e7423
 		summarizeBy: none
 		sourceColumn: hpi_2015
 
 	column yoy_change
 		dataType: double
 		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 0d41df58-4d31-4bd9-b26f-1487c3a5f59b
 		summarizeBy: none
 		sourceColumn: yoy_change
 
@@ -46,3 +56,4 @@ table fct_house_prices
 					Labelled = Table.AddColumn ( Source, "dwelling_type", each if [purchase_type] = "DW_NEW" then "New dwellings" else if [purchase_type] = "DW_EXST" then "Existing dwellings" else "All dwellings", type text )
 				in
 					Labelled
+

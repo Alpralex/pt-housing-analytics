@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "4d52c523ca263c7eb933",
   "position": {
     "x": 16,
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "dim_quarter.quarter_start",
-              "nativeQueryRef": "quarter_start"
+              "nativeQueryRef": "quarter_start",
+              "active": true
             }
           ]
         },
