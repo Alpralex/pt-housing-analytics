@@ -1,5 +1,7 @@
 # Portugal housing affordability in Power BI
 
+**Live report (Publish to web):** https://app.powerbi.com/view?r=eyJrIjoiN2Q5OTgwNDgtMTE0YS00MTIwLTkyZTAtZDE0MWZjYmIwYjAwIiwidCI6IjY2MDMwOWU1LWI1YWEtNDQzNS1iMDU2LTJhYmViOGZmNDZjNyJ9
+
 The same model as the web dashboard, as a Power BI project (PBIP). The semantic model is written in TMDL, so every table, relationship and DAX measure is readable in Git. It loads the Parquet files that `scripts/export.py` writes to `exports/`.
 
 ## Open it
