@@ -122,7 +122,6 @@ function slicers(page) {
       padding: [vcoPadding(8)],
     },
   });
-  const yearCol = (src) => ({ Column: { Expression: { SourceRef: { Source: src } }, Property: "year" } });
   const year = container(page, "slicer_year", { x: 1016, y: 16, w: 248, h: 80 }, {
     visualType: "slicer",
     syncGroup: { groupName: "YearSync", fieldChanges: true, filterChanges: true },
@@ -130,28 +129,9 @@ function slicers(page) {
     objects: {
       data: [{ properties: { mode: str("Between") } }],
       header: [{ properties: { show: bool(true), text: str("Years") } }],
-      general: [{
-        properties: {
-          filter: {
-            filter: {
-              Version: 2,
-              From: [{ Name: "y", Entity: "dim_year", Type: 0 }],
-              Where: [{
-                Condition: {
-                  Between: {
-                    Expression: yearCol("y"),
-                    LowerBound: { Literal: { Value: "2015L" } },
-                    UpperBound: { Literal: { Value: "2026L" } },
-                  },
-                },
-              }],
-            },
-          },
-        },
-      }],
     },
     visualContainerObjects: {
-      general: [{ properties: { altText: str("Year range slider, set to 2015 to 2026. Applies to every page.") } }],
+      general: [{ properties: { altText: str("Year range slider. The report opens on 2015 to 2026; change it in the filter pane. Applies to every page.") } }],
       padding: [vcoPadding(8)],
     },
   });
@@ -659,6 +639,28 @@ report.resourcePackages.push({
   type: "RegisteredResources",
   items: [{ name: themeName, path: themeName, type: "CustomTheme" }],
 });
+// The report opens on 2015 to 2026 (README). Desktop ignores a saved range on a Between slicer, so the range is a report filter.
+const yr = { Column: { Expression: { SourceRef: { Source: "y" } }, Property: "year" } };
+report.filterConfig = {
+  filters: [{
+    name: filterId("report", "years_2015_2026"),
+    field: F.year,
+    type: "Advanced",
+    filter: {
+      Version: 2,
+      From: [{ Name: "y", Entity: "dim_year", Type: 0 }],
+      Where: [{
+        Condition: {
+          And: {
+            Left: { Comparison: { ComparisonKind: 2, Left: yr, Right: { Literal: { Value: "2015L" } } } },
+            Right: { Comparison: { ComparisonKind: 4, Left: yr, Right: { Literal: { Value: "2026L" } } } },
+          },
+        },
+      }],
+    },
+    howCreated: "User",
+  }],
+};
 write(reportPath, report);
 
 console.log(`Wrote ${pages.length} pages, ${pages.reduce((n, p) => n + p.visuals.length, 0)} visuals, theme ${themeName}`);

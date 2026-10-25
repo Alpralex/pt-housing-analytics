@@ -11,7 +11,7 @@
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "PTHousing-49b59d1d.json",
+      "name": "PTHousing-974afe75.json",
       "reportVersionAtImport": {
         "visual": "2.11.0",
         "report": "3.4.0",
@@ -37,8 +37,8 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "PTHousing-49b59d1d.json",
-          "path": "PTHousing-49b59d1d.json",
+          "name": "PTHousing-974afe75.json",
+          "path": "PTHousing-974afe75.json",
           "type": "CustomTheme"
         }
       ]
@@ -51,5 +51,82 @@
     "allowChangeFilterTypes": true,
     "useEnhancedTooltips": true,
     "useDefaultAggregateDisplayName": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter4ac116894e516e0427e3102f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_year"
+              }
+            },
+            "Property": "year"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "y",
+              "Entity": "dim_year",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "And": {
+                  "Left": {
+                    "Comparison": {
+                      "ComparisonKind": 2,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "y"
+                            }
+                          },
+                          "Property": "year"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "2015L"
+                        }
+                      }
+                    }
+                  },
+                  "Right": {
+                    "Comparison": {
+                      "ComparisonKind": 4,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "y"
+                            }
+                          },
+                          "Property": "year"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "2026L"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

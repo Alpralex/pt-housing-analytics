@@ -71,52 +71,6 @@
             }
           }
         }
-      ],
-      "general": [
-        {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "y",
-                    "Entity": "dim_year",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Between": {
-                        "Expression": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "y"
-                              }
-                            },
-                            "Property": "year"
-                          }
-                        },
-                        "LowerBound": {
-                          "Literal": {
-                            "Value": "2015L"
-                          }
-                        },
-                        "UpperBound": {
-                          "Literal": {
-                            "Value": "2026L"
-                          }
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -126,7 +80,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Year range slider, set to 2015 to 2026. Applies to every page.'"
+                  "Value": "'Year range slider. The report opens on 2015 to 2026; change it in the filter pane. Applies to every page.'"
                 }
               }
             }
