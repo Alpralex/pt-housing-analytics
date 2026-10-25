@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "7a347cf695c19bb3f6ed",
   "position": {
-    "x": 806,
-    "y": 344,
+    "x": 174,
+    "y": 224,
     "z": 11000,
     "height": 88,
     "width": 142,
@@ -63,7 +63,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Real prices'"
+                  "Value": "'Real vs EU'"
                 }
               }
             },

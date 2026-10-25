@@ -238,7 +238,7 @@ function overviewPage() {
       alt: "Change in Portugal's inflation-adjusted house prices since 2015.",
     }),
     ptCard(p, "card_pti", { x: 648, y: 112, w: 300, h: 128 }, "Price-to-Income Index (Latest)", "Price-to-income index (2015 = 100)", {
-      reference: { field: meas("Price-to-Income Year"), title: "year", units: "1", precision: 0 },
+      reference: { field: meas("Price-to-Income Year"), title: "year", units: "0", precision: 0 },
       alt: "Portugal's house price to income index in the latest year with income data.",
     }),
     ptCard(p, "card_overburden", { x: 964, y: 112, w: 300, h: 128 }, "Overburden Rate % (Latest)", "Housing cost overburden", {
@@ -295,11 +295,11 @@ function pricesPage() {
       "Line chart of Portugal's house price index for new dwellings and for existing dwellings by quarter.", "2015 = 100"),
   }, { filterConfig: { filters: [portugalOnly(p, "pt_type"), inFilter(p, "new_existing", F.dwelling, ["'New dwellings'", "'Existing dwellings'"])] } });
   const priceGrowth = ptCard(p, "card_price_growth", { x: 848, y: 424, w: 416, h: 132 }, "Price Growth Since 2015 % (Income Year)", "Portugal house prices since 2015", {
-    reference: { field: meas("Price-to-Income Year"), title: "to", units: "1", precision: 0 },
+    reference: { field: meas("Price-to-Income Year"), title: "to", units: "0", precision: 0 },
     alt: "Growth of Portugal's annual house price index from 2015 to the latest income year.",
   });
   const incomeGrowth = ptCard(p, "card_income_growth", { x: 848, y: 572, w: 416, h: 132 }, "Income Growth Since 2015 %", "Portugal median income since 2015", {
-    reference: { field: meas("Price-to-Income Year"), title: "to", units: "1", precision: 0 },
+    reference: { field: meas("Price-to-Income Year"), title: "to", units: "0", precision: 0 },
     alt: "Growth of Portugal's median disposable income from 2015 to the latest income year.",
   });
   return {
@@ -313,17 +313,17 @@ function supplyPage() {
   const p = PAGE_IDS.supply;
   z = 0;
   const permitCards = [
-    ptCard(p, "card_permits", { x: 16, y: 112, w: 194, h: 112 }, "Permitted Dwellings (Latest)", "Dwellings permitted", {
-      units: "1", reference: { field: meas("Permits Year"), title: "in", units: "1", precision: 0 }, alt: "Dwellings permitted in Portugal in the latest year.",
+    ptCard(p, "card_permits", { x: 16, y: 112, w: 194, h: 96 }, "Permitted Dwellings (Latest)", "Dwellings permitted", {
+      units: "1", reference: { field: meas("Permits Year"), title: "in", units: "0", precision: 0 }, alt: "Dwellings permitted in Portugal in the latest year.",
     }),
-    ptCard(p, "card_permits_2005", { x: 227, y: 112, w: 194, h: 112 }, "Permits vs 2005 %", "Against 2005", {
+    ptCard(p, "card_permits_2005", { x: 227, y: 112, w: 194, h: 96 }, "Permits vs 2005 %", "Against 2005", {
       alt: "Dwellings permitted in Portugal in the latest year against 2005.",
     }),
-    ptCard(p, "card_permits_low", { x: 438, y: 112, w: 194, h: 112 }, "Permits Multiple of Low", "Times the lowest year", {
+    ptCard(p, "card_permits_low", { x: 438, y: 112, w: 194, h: 96 }, "Permits Multiple of Low", "Times the lowest year", {
       alt: "Dwellings permitted in Portugal in the latest year as a multiple of the lowest year in the series.",
     }),
   ];
-  const permits = container(p, "column_permits", { x: 16, y: 240, w: 616, h: 224 }, {
+  const permits = container(p, "column_permits", { x: 16, y: 328, w: 616, h: 184 }, {
     visualType: "columnChart",
     query: {
       queryState: {
@@ -342,7 +342,7 @@ function supplyPage() {
     visualContainerObjects: chartVcos("Portugal: dwellings permitted per year",
       "Column chart of the number of dwellings permitted in Portugal each year.", "Thousands of dwellings"),
   }, { filterConfig: { filters: [portugalOnly(p, "pt_permits")] } });
-  const burden = container(p, "line_overburden_group", { x: 16, y: 480, w: 616, h: 224 }, {
+  const burden = container(p, "line_overburden_group", { x: 16, y: 528, w: 616, h: 176 }, {
     visualType: "lineChart",
     query: {
       queryState: {
@@ -366,20 +366,20 @@ function supplyPage() {
       "Line chart of the share of people in Portugal spending over 40% of disposable income on housing, by income group and year.",
       "Share spending over 40% of disposable income on housing"),
   }, { filterConfig: { filters: [portugalOnly(p, "pt_burden")] } });
-  const burdenBars = countryBars(p, "bar_overburden_country", { x: 648, y: 112, w: 616, h: 216 }, [
+  const burdenBars = countryBars(p, "bar_overburden_country", { x: 648, y: 112, w: 616, h: 336 }, [
     ["Overburden Rate % (Latest)", "All people", C.blue],
     ["Low-Income Overburden Rate %", "Below 60% of median income", C.orange],
   ], "Housing cost overburden by country, latest survey",
   "Clustered bar chart of the housing cost overburden rate for all people and for people below 60% of median income, by country.",
-  { subtitle: "Share spending over 40% of disposable income on housing", type: "clusteredColumnChart" });
-  const gapCard = (key, x, measure, label, alt) => card(p, key, { x, y: 344, w: 142, h: 88 }, meas(measure), label, { alt });
+  { subtitle: "Share spending over 40% of disposable income on housing" });
+  const gapCard = (key, x, measure, label, alt) => card(p, key, { x, y: 224, w: 142, h: 88 }, meas(measure), label, { alt });
   const gaps = [
-    gapCard("card_gap_hpi", 648, "Portugal vs EU House Price Gap", "Prices", "Portugal minus EU-27 house price index, index points."),
-    gapCard("card_gap_real", 806, "Portugal vs EU Real House Price Gap", "Real prices", "Portugal minus EU-27 real house price index, index points."),
-    gapCard("card_gap_pti", 964, "Portugal vs EU Price-to-Income Gap", "Price/income", "Portugal minus EU-27 price-to-income index, index points."),
-    gapCard("card_gap_overburden", 1122, "Portugal vs EU Overburden Gap (pp)", "Overburden pp", "Portugal minus EU-27 overburden rate, percentage points."),
+    gapCard("card_gap_hpi", 16, "Portugal vs EU House Price Gap", "Prices vs EU", "Portugal minus EU-27 house price index, index points."),
+    gapCard("card_gap_real", 174, "Portugal vs EU Real House Price Gap", "Real vs EU", "Portugal minus EU-27 real house price index, index points."),
+    gapCard("card_gap_pti", 332, "Portugal vs EU Price-to-Income Gap", "P/I vs EU", "Portugal minus EU-27 price-to-income index, index points."),
+    gapCard("card_gap_overburden", 490, "Portugal vs EU Overburden Gap (pp)", "Burden vs EU, pp", "Portugal minus EU-27 overburden rate, percentage points."),
   ];
-  const table = container(p, "table_countries", { x: 648, y: 448, w: 616, h: 256 }, {
+  const table = container(p, "table_countries", { x: 648, y: 464, w: 616, h: 240 }, {
     visualType: "tableEx",
     query: {
       queryState: {
@@ -399,9 +399,9 @@ function supplyPage() {
       columnHeaders: [{ properties: { columnAdjustment: str("growToFit"), autoSizeColumnWidth: bool(true) } }],
       total: [{ properties: { totals: bool(false) } }],
     },
-    visualContainerObjects: chartVcos("Country comparison, latest period",
+    visualContainerObjects: chartVcos("Country comparison, latest period (indices 2015 = 100)",
       "Table with one row per country: latest house price index, real house price index, price-to-income index and overburden rate.",
-      "Indices 2015 = 100. Cards above: Portugal minus EU-27, whatever the country filter"),
+      null),
   });
   return {
     name: p, displayName: "Supply and cost burden",

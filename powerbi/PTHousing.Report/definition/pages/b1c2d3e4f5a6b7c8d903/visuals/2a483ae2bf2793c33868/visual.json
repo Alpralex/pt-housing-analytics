@@ -3,9 +3,9 @@
   "name": "2a483ae2bf2793c33868",
   "position": {
     "x": 648,
-    "y": 448,
+    "y": 464,
     "z": 14000,
-    "height": 256,
+    "height": 240,
     "width": 616,
     "tabOrder": 14000
   },
@@ -161,7 +161,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Country comparison, latest period'"
+                  "Value": "'Country comparison, latest period (indices 2015 = 100)'"
                 }
               }
             }
@@ -221,14 +221,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Indices 2015 = 100. Cards above: Portugal minus EU-27, whatever the country filter'"
+                  "Value": "false"
                 }
               }
             }

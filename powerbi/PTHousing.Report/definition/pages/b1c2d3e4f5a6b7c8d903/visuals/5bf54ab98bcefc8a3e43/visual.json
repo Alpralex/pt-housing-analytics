@@ -5,7 +5,7 @@
     "x": 16,
     "y": 112,
     "z": 2000,
-    "height": 112,
+    "height": 96,
     "width": 194,
     "tabOrder": 2000
   },
@@ -311,7 +311,7 @@
             "valueDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "'1'"
+                  "Value": "'0'"
                 }
               }
             },
