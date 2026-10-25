@@ -237,8 +237,7 @@ function overviewPage() {
     ptCard(p, "card_real_since_2015", { x: 332, y: 112, w: 300, h: 128 }, "Real House Price Change Since 2015 %", "Real house prices since 2015", {
       alt: "Change in Portugal's inflation-adjusted house prices since 2015.",
     }),
-    ptCard(p, "card_pti", { x: 648, y: 112, w: 300, h: 128 }, "Price-to-Income Index (Latest)", "Price-to-income index (2015 = 100)", {
-      reference: { field: meas("Price-to-Income Year"), title: "year", units: "0", precision: 0 },
+    ptCard(p, "card_pti", { x: 648, y: 112, w: 300, h: 128 }, "Price-to-Income Index (Latest)", "Price-to-income index, latest income year (2015 = 100)", {
       alt: "Portugal's house price to income index in the latest year with income data.",
     }),
     ptCard(p, "card_overburden", { x: 964, y: 112, w: 300, h: 128 }, "Overburden Rate % (Latest)", "Housing cost overburden", {
@@ -256,7 +255,7 @@ function overviewPage() {
     { subtitle: "Nominal prices" });
   return {
     name: p, displayName: "Overview",
-    visuals: [...header(p, "How far has housing in Portugal outrun incomes?", "Eurostat house price, rent and income data, 2015 = 100"),
+    visuals: [...header(p, "How far has housing in Portugal outrun incomes?", "Eurostat house price, rent and income data, 2015 = 100. Income data run to 2024"),
       quarter, ...slicers(p), ...cards, lines, bars],
   };
 }
@@ -294,12 +293,10 @@ function pricesPage() {
     visualContainerObjects: chartVcos("Portugal: new against existing dwellings",
       "Line chart of Portugal's house price index for new dwellings and for existing dwellings by quarter.", "2015 = 100"),
   }, { filterConfig: { filters: [portugalOnly(p, "pt_type"), inFilter(p, "new_existing", F.dwelling, ["'New dwellings'", "'Existing dwellings'"])] } });
-  const priceGrowth = ptCard(p, "card_price_growth", { x: 848, y: 424, w: 416, h: 132 }, "Price Growth Since 2015 % (Income Year)", "Portugal house prices since 2015", {
-    reference: { field: meas("Price-to-Income Year"), title: "to", units: "0", precision: 0 },
+  const priceGrowth = ptCard(p, "card_price_growth", { x: 848, y: 424, w: 416, h: 132 }, "Price Growth Since 2015 % (Income Year)", "Portugal house prices, 2015 to the latest income year", {
     alt: "Growth of Portugal's annual house price index from 2015 to the latest income year.",
   });
-  const incomeGrowth = ptCard(p, "card_income_growth", { x: 848, y: 572, w: 416, h: 132 }, "Income Growth Since 2015 %", "Portugal median income since 2015", {
-    reference: { field: meas("Price-to-Income Year"), title: "to", units: "0", precision: 0 },
+  const incomeGrowth = ptCard(p, "card_income_growth", { x: 848, y: 572, w: 416, h: 132 }, "Income Growth Since 2015 %", "Portugal median income, 2015 to the latest income year", {
     alt: "Growth of Portugal's median disposable income from 2015 to the latest income year.",
   });
   return {
@@ -313,8 +310,8 @@ function supplyPage() {
   const p = PAGE_IDS.supply;
   z = 0;
   const permitCards = [
-    ptCard(p, "card_permits", { x: 16, y: 112, w: 194, h: 96 }, "Permitted Dwellings (Latest)", "Dwellings permitted", {
-      units: "1", reference: { field: meas("Permits Year"), title: "in", units: "0", precision: 0 }, alt: "Dwellings permitted in Portugal in the latest year.",
+    ptCard(p, "card_permits", { x: 16, y: 112, w: 194, h: 96 }, "Permitted Dwellings (Latest)", "Dwellings permitted, latest year", {
+      units: "1", alt: "Dwellings permitted in Portugal in the latest year.",
     }),
     ptCard(p, "card_permits_2005", { x: 227, y: 112, w: 194, h: 96 }, "Permits vs 2005 %", "Against 2005", {
       alt: "Dwellings permitted in Portugal in the latest year against 2005.",
@@ -377,7 +374,7 @@ function supplyPage() {
     gapCard("card_gap_hpi", 16, "Portugal vs EU House Price Gap", "Prices vs EU", "Portugal minus EU-27 house price index, index points."),
     gapCard("card_gap_real", 174, "Portugal vs EU Real House Price Gap", "Real vs EU", "Portugal minus EU-27 real house price index, index points."),
     gapCard("card_gap_pti", 332, "Portugal vs EU Price-to-Income Gap", "P/I vs EU", "Portugal minus EU-27 price-to-income index, index points."),
-    gapCard("card_gap_overburden", 490, "Portugal vs EU Overburden Gap (pp)", "Burden vs EU, pp", "Portugal minus EU-27 overburden rate, percentage points."),
+    gapCard("card_gap_overburden", 490, "Portugal vs EU Overburden Gap (pp)", "Burden pp", "Portugal minus EU-27 overburden rate, percentage points."),
   ];
   const table = container(p, "table_countries", { x: 648, y: 464, w: 616, h: 240 }, {
     visualType: "tableEx",
