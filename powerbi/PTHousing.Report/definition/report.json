@@ -11,7 +11,7 @@
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "PTHousing-184ea433.json",
+      "name": "PTHousing-520cc6d3.json",
       "reportVersionAtImport": {
         "visual": "2.11.0",
         "report": "3.4.0",
@@ -37,8 +37,8 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "PTHousing-184ea433.json",
-          "path": "PTHousing-184ea433.json",
+          "name": "PTHousing-520cc6d3.json",
+          "path": "PTHousing-520cc6d3.json",
           "type": "CustomTheme"
         }
       ]

@@ -63,7 +63,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Price-to-income index, latest income year (2015 = 100)'"
+                  "Value": "'Price-to-income index, latest year'"
                 }
               }
             },

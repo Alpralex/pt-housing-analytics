@@ -237,7 +237,7 @@ function overviewPage() {
     ptCard(p, "card_real_since_2015", { x: 332, y: 112, w: 300, h: 128 }, "Real House Price Change Since 2015 %", "Real house prices since 2015", {
       alt: "Change in Portugal's inflation-adjusted house prices since 2015.",
     }),
-    ptCard(p, "card_pti", { x: 648, y: 112, w: 300, h: 128 }, "Price-to-Income Index (Latest)", "Price-to-income index, latest income year (2015 = 100)", {
+    ptCard(p, "card_pti", { x: 648, y: 112, w: 300, h: 128 }, "Price-to-Income Index (Latest)", "Price-to-income index, latest year", {
       alt: "Portugal's house price to income index in the latest year with income data.",
     }),
     ptCard(p, "card_overburden", { x: 964, y: 112, w: 300, h: 128 }, "Overburden Rate % (Latest)", "Housing cost overburden", {
