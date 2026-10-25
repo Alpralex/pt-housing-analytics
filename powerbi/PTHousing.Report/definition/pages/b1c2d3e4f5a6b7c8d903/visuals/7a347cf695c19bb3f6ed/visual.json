@@ -3,9 +3,9 @@
   "name": "7a347cf695c19bb3f6ed",
   "position": {
     "x": 806,
-    "y": 360,
+    "y": 344,
     "z": 11000,
-    "height": 104,
+    "height": 88,
     "width": 142,
     "tabOrder": 11000
   },
@@ -63,7 +63,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Real prices vs EU'"
+                  "Value": "'Real prices'"
                 }
               }
             },

@@ -73,6 +73,131 @@
       }
     },
     "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2A78D6'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "fct_living_conditions"
+                          }
+                        },
+                        "Property": "income_group_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'All people'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EB6834'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "fct_living_conditions"
+                          }
+                        },
+                        "Property": "income_group_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Below 60% of median income'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#AEB6BF'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "fct_living_conditions"
+                          }
+                        },
+                        "Property": "income_group_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Above 60% of median income'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
       "lineStyles": [
         {
           "properties": {

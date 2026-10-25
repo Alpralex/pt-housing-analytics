@@ -1,4 +1,4 @@
-﻿// Generates the PBIR pages, visuals and "PT Housing" theme for powerbi/PTHousing.Report.
+// Generates the PBIR pages, visuals and "PT Housing" theme for powerbi/PTHousing.Report.
 // Run from the repo root: node scripts/build_powerbi_report.mjs
 // The script owns every page listed below and the PTHousing theme; it rewrites them on each run.
 import fs from "node:fs";
@@ -189,7 +189,7 @@ function countryLines(page, key, pos, measure, title, alt, subtitle) {
 function countryBars(page, key, pos, measures, title, alt, opts = {}) {
   const single = measures.length === 1;
   return container(page, key, pos, {
-    visualType: "clusteredBarChart",
+    visualType: opts.type || "clusteredBarChart",
     query: {
       queryState: {
         Category: { projections: [named(F.country, "Country")] },
@@ -226,7 +226,7 @@ const PAGE_IDS = { overview: "b1c2d3e4f5a6b7c8d901", prices: "b1c2d3e4f5a6b7c8d9
 function overviewPage() {
   const p = PAGE_IDS.overview;
   z = 0;
-  const quarter = card(p, "card_last_quarter", { x: 592, y: 16, w: 144, h: 80 }, meas("Last Price Quarter"), "Prices to", {
+  const quarter = card(p, "card_last_quarter", { x: 544, y: 16, w: 192, h: 80 }, meas("Last Price Quarter"), "Prices to", {
     alt: "Last quarter with house price data.",
   });
   const cards = [
@@ -238,10 +238,10 @@ function overviewPage() {
       alt: "Change in Portugal's inflation-adjusted house prices since 2015.",
     }),
     ptCard(p, "card_pti", { x: 648, y: 112, w: 300, h: 128 }, "Price-to-Income Index (Latest)", "Price-to-income index (2015 = 100)", {
-      reference: { field: meas("Price-to-Income Year"), title: "year" },
+      reference: { field: meas("Price-to-Income Year"), title: "year", units: "1", precision: 0 },
       alt: "Portugal's house price to income index in the latest year with income data.",
     }),
-    ptCard(p, "card_overburden", { x: 964, y: 112, w: 300, h: 128 }, "Overburden Rate % (Latest)", "People overburdened by housing costs", {
+    ptCard(p, "card_overburden", { x: 964, y: 112, w: 300, h: 128 }, "Overburden Rate % (Latest)", "Housing cost overburden", {
       reference: { field: meas("Portugal vs EU Overburden Gap (pp)"), title: "pp vs EU-27" },
       alt: "Share of people in Portugal spending over 40% of disposable income on housing, and the gap to the EU-27 in percentage points.",
     }),
@@ -295,11 +295,11 @@ function pricesPage() {
       "Line chart of Portugal's house price index for new dwellings and for existing dwellings by quarter.", "2015 = 100"),
   }, { filterConfig: { filters: [portugalOnly(p, "pt_type"), inFilter(p, "new_existing", F.dwelling, ["'New dwellings'", "'Existing dwellings'"])] } });
   const priceGrowth = ptCard(p, "card_price_growth", { x: 848, y: 424, w: 416, h: 132 }, "Price Growth Since 2015 % (Income Year)", "Portugal house prices since 2015", {
-    reference: { field: meas("Price-to-Income Year"), title: "to" },
+    reference: { field: meas("Price-to-Income Year"), title: "to", units: "1", precision: 0 },
     alt: "Growth of Portugal's annual house price index from 2015 to the latest income year.",
   });
   const incomeGrowth = ptCard(p, "card_income_growth", { x: 848, y: 572, w: 416, h: 132 }, "Income Growth Since 2015 %", "Portugal median income since 2015", {
-    reference: { field: meas("Price-to-Income Year"), title: "to" },
+    reference: { field: meas("Price-to-Income Year"), title: "to", units: "1", precision: 0 },
     alt: "Growth of Portugal's median disposable income from 2015 to the latest income year.",
   });
   return {
@@ -314,7 +314,7 @@ function supplyPage() {
   z = 0;
   const permitCards = [
     ptCard(p, "card_permits", { x: 16, y: 112, w: 194, h: 112 }, "Permitted Dwellings (Latest)", "Dwellings permitted", {
-      reference: { field: meas("Permits Year"), title: "in" }, alt: "Dwellings permitted in Portugal in the latest year.",
+      units: "1", reference: { field: meas("Permits Year"), title: "in", units: "1", precision: 0 }, alt: "Dwellings permitted in Portugal in the latest year.",
     }),
     ptCard(p, "card_permits_2005", { x: 227, y: 112, w: 194, h: 112 }, "Permits vs 2005 %", "Against 2005", {
       alt: "Dwellings permitted in Portugal in the latest year against 2005.",
@@ -352,6 +352,10 @@ function supplyPage() {
       },
     },
     objects: {
+      dataPoint: [["All people", C.blue], ["Below 60% of median income", C.orange], ["Above 60% of median income", "#AEB6BF"]].map(([g, c]) => ({
+        properties: { fill: fill(c) },
+        selector: { data: [{ scopeId: { Comparison: { ComparisonKind: 0, Left: F.incomeGroup, Right: { Literal: { Value: `'${g}'` } } } } }] },
+      })),
       lineStyles: [{ properties: { strokeWidth: num(2), lineChartType: str("linear"), areaShow: bool(false) } }],
       legend: legendTop,
       labels: [{ properties: { show: bool(false) } }],
@@ -362,20 +366,20 @@ function supplyPage() {
       "Line chart of the share of people in Portugal spending over 40% of disposable income on housing, by income group and year.",
       "Share spending over 40% of disposable income on housing"),
   }, { filterConfig: { filters: [portugalOnly(p, "pt_burden")] } });
-  const burdenBars = countryBars(p, "bar_overburden_country", { x: 648, y: 112, w: 616, h: 232 }, [
+  const burdenBars = countryBars(p, "bar_overburden_country", { x: 648, y: 112, w: 616, h: 216 }, [
     ["Overburden Rate % (Latest)", "All people", C.blue],
     ["Low-Income Overburden Rate %", "Below 60% of median income", C.orange],
   ], "Housing cost overburden by country, latest survey",
   "Clustered bar chart of the housing cost overburden rate for all people and for people below 60% of median income, by country.",
-  { subtitle: "Share spending over 40% of disposable income on housing" });
-  const gapCard = (key, x, measure, label, alt) => card(p, key, { x, y: 360, w: 142, h: 104 }, meas(measure), label, { alt });
+  { subtitle: "Share spending over 40% of disposable income on housing", type: "clusteredColumnChart" });
+  const gapCard = (key, x, measure, label, alt) => card(p, key, { x, y: 344, w: 142, h: 88 }, meas(measure), label, { alt });
   const gaps = [
-    gapCard("card_gap_hpi", 648, "Portugal vs EU House Price Gap", "House prices vs EU", "Portugal minus EU-27 house price index, index points."),
-    gapCard("card_gap_real", 806, "Portugal vs EU Real House Price Gap", "Real prices vs EU", "Portugal minus EU-27 real house price index, index points."),
-    gapCard("card_gap_pti", 964, "Portugal vs EU Price-to-Income Gap", "Price/income vs EU", "Portugal minus EU-27 price-to-income index, index points."),
-    gapCard("card_gap_overburden", 1122, "Portugal vs EU Overburden Gap (pp)", "Overburden vs EU (pp)", "Portugal minus EU-27 overburden rate, percentage points."),
+    gapCard("card_gap_hpi", 648, "Portugal vs EU House Price Gap", "Prices", "Portugal minus EU-27 house price index, index points."),
+    gapCard("card_gap_real", 806, "Portugal vs EU Real House Price Gap", "Real prices", "Portugal minus EU-27 real house price index, index points."),
+    gapCard("card_gap_pti", 964, "Portugal vs EU Price-to-Income Gap", "Price/income", "Portugal minus EU-27 price-to-income index, index points."),
+    gapCard("card_gap_overburden", 1122, "Portugal vs EU Overburden Gap (pp)", "Overburden pp", "Portugal minus EU-27 overburden rate, percentage points."),
   ];
-  const table = container(p, "table_countries", { x: 648, y: 480, w: 616, h: 224 }, {
+  const table = container(p, "table_countries", { x: 648, y: 448, w: 616, h: 256 }, {
     visualType: "tableEx",
     query: {
       queryState: {
@@ -397,7 +401,7 @@ function supplyPage() {
     },
     visualContainerObjects: chartVcos("Country comparison, latest period",
       "Table with one row per country: latest house price index, real house price index, price-to-income index and overburden rate.",
-      "Indices 2015 = 100. The gap cards above always compare Portugal with the EU-27"),
+      "Indices 2015 = 100. Cards above: Portugal minus EU-27, whatever the country filter"),
   });
   return {
     name: p, displayName: "Supply and cost burden",
@@ -452,9 +456,9 @@ function textbox(page, key, pos, text, style) {
 
 function header(page, title, subtitle) {
   return [
-    textbox(page, "title", { x: 16, y: 16, w: 720, h: 40 }, title,
+    textbox(page, "title", { x: 16, y: 16, w: 520, h: 40 }, title,
       { fontFamily: "Segoe UI Semibold", fontSize: "22px", color: C.text }),
-    textbox(page, "subtitle", { x: 16, y: 58, w: 720, h: 40 }, subtitle,
+    textbox(page, "subtitle", { x: 16, y: 58, w: 520, h: 40 }, subtitle,
       { fontFamily: "Segoe UI", fontSize: "13px", color: C.muted }),
   ];
 }

@@ -3,9 +3,9 @@
   "name": "2a483ae2bf2793c33868",
   "position": {
     "x": 648,
-    "y": 480,
+    "y": 448,
     "z": 14000,
-    "height": 224,
+    "height": 256,
     "width": 616,
     "tabOrder": 14000
   },
@@ -228,7 +228,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Indices 2015 = 100. The gap cards above always compare Portugal with the EU-27'"
+                  "Value": "'Indices 2015 = 100. Cards above: Portugal minus EU-27, whatever the country filter'"
                 }
               }
             }
