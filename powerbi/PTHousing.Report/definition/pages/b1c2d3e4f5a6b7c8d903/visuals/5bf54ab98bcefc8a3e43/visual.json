@@ -70,7 +70,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dwellings permitted, latest year'"
+                  "Value": "'Dwellings permitted'"
                 }
               }
             },

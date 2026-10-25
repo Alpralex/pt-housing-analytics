@@ -310,7 +310,7 @@ function supplyPage() {
   const p = PAGE_IDS.supply;
   z = 0;
   const permitCards = [
-    ptCard(p, "card_permits", { x: 16, y: 112, w: 194, h: 96 }, "Permitted Dwellings (Latest)", "Dwellings permitted, latest year", {
+    ptCard(p, "card_permits", { x: 16, y: 112, w: 194, h: 96 }, "Permitted Dwellings (Latest)", "Dwellings permitted", {
       units: "1", alt: "Dwellings permitted in Portugal in the latest year.",
     }),
     ptCard(p, "card_permits_2005", { x: 227, y: 112, w: 194, h: 96 }, "Permits vs 2005 %", "Against 2005", {
