@@ -88,45 +88,25 @@
                 "Where": [
                   {
                     "Condition": {
-                      "And": {
-                        "Left": {
-                          "Comparison": {
-                            "ComparisonKind": 2,
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "y"
-                                  }
-                                },
-                                "Property": "year"
+                      "Between": {
+                        "Expression": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "y"
                               }
                             },
-                            "Right": {
-                              "Literal": {
-                                "Value": "2015L"
-                              }
-                            }
+                            "Property": "year"
                           }
                         },
-                        "Right": {
-                          "Comparison": {
-                            "ComparisonKind": 4,
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "y"
-                                  }
-                                },
-                                "Property": "year"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "2026L"
-                              }
-                            }
+                        "LowerBound": {
+                          "Literal": {
+                            "Value": "2015L"
+                          }
+                        },
+                        "UpperBound": {
+                          "Literal": {
+                            "Value": "2026L"
                           }
                         }
                       }

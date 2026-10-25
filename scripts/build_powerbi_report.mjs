@@ -138,9 +138,10 @@ function slicers(page) {
               From: [{ Name: "y", Entity: "dim_year", Type: 0 }],
               Where: [{
                 Condition: {
-                  And: {
-                    Left: { Comparison: { ComparisonKind: 2, Left: yearCol("y"), Right: { Literal: { Value: "2015L" } } } },
-                    Right: { Comparison: { ComparisonKind: 4, Left: yearCol("y"), Right: { Literal: { Value: "2026L" } } } },
+                  Between: {
+                    Expression: yearCol("y"),
+                    LowerBound: { Literal: { Value: "2015L" } },
+                    UpperBound: { Literal: { Value: "2026L" } },
                   },
                 },
               }],
@@ -393,7 +394,9 @@ function supplyPage() {
       sortDefinition: { sort: [{ field: meas("House Price Index (Latest)"), direction: "Descending" }], isDefaultSort: true },
     },
     objects: {
-      columnHeaders: [{ properties: { columnAdjustment: str("growToFit"), autoSizeColumnWidth: bool(true) } }],
+      columnHeaders: [{ properties: { columnAdjustment: str("growToFit"), autoSizeColumnWidth: bool(true), fontSize: num(9) } }],
+      values: [{ properties: { fontSize: num(9) } }],
+      grid: [{ properties: { rowPadding: num(1) } }],
       total: [{ properties: { totals: bool(false) } }],
     },
     visualContainerObjects: chartVcos("Country comparison, latest period (indices 2015 = 100)",
