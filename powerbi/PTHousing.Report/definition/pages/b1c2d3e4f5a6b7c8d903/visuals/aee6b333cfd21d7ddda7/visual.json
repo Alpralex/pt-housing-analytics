@@ -274,7 +274,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Housing cost overburden by country, latest survey'"
+                  "Value": "'Housing cost overburden by country'"
                 }
               }
             }
@@ -287,7 +287,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Clustered bar chart of the housing cost overburden rate for all people and for people below 60% of median income, by country.'"
+                  "Value": "'Clustered bar chart by country of the share of people spending over 40% of disposable income on housing: all people in the latest survey, and people below 60% of median income on average over the selected years.'"
                 }
               }
             }
@@ -341,7 +341,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Share spending over 40% of disposable income on housing'"
+                  "Value": "'All people: latest survey. Below 60% of median income: average of the years selected'"
                 }
               }
             }

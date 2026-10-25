@@ -347,9 +347,9 @@ function supplyPage() {
   const burdenBars = countryBars(p, "bar_overburden_country", { x: 648, y: 112, w: 616, h: 336 }, [
     ["Overburden Rate % (Latest)", "All people", C.blue],
     ["Low-Income Overburden Rate %", "Below 60% of median income", C.orange],
-  ], "Housing cost overburden by country, latest survey",
-  "Clustered bar chart of the housing cost overburden rate for all people and for people below 60% of median income, by country.",
-  { subtitle: "Share spending over 40% of disposable income on housing" });
+  ], "Housing cost overburden by country",
+  "Clustered bar chart by country of the share of people spending over 40% of disposable income on housing: all people in the latest survey, and people below 60% of median income on average over the selected years.",
+  { subtitle: "All people: latest survey. Below 60% of median income: average of the years selected" });
   const gapCard = (key, x, measure, label, alt) => card(p, key, { x, y: 224, w: 142, h: 88 }, meas(measure), label, { alt });
   const gaps = [
     gapCard("card_gap_hpi", 16, "Portugal vs EU House Price Gap", "Prices vs EU", "Portugal minus EU-27 house price index, index points."),
