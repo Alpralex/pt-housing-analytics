@@ -27,7 +27,7 @@ table dim_quarter
 		dataType: int64
 		formatString: 0
 		lineageTag: 6a48c009-28ac-4c3a-9ac6-f4a8bfc01e1c
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: quarter
 
 		annotation SummarizationSetBy = Automatic

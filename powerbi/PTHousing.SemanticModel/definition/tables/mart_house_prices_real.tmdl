@@ -6,6 +6,7 @@ table mart_house_prices_real
 			VAR LastQuarter = MAX ( mart_house_prices_real[quarter_start] )
 			RETURN
 				IF ( NOT ISBLANK ( LastQuarter ), YEAR ( LastQuarter ) & "-Q" & ROUNDUP ( MONTH ( LastQuarter ) / 3, 0 ) )
+		formatString: General
 		displayFolder: Prices
 		lineageTag: ae8f853f-9e65-4f3f-8359-2c4c2d85c69e
 
