@@ -14,10 +14,6 @@ on:
 jobs:
   bpa:
     runs-on: windows-latest
-    defaults:
-      run:
-        shell: pwsh
-        working-directory: ${{ runner.temp }}
     strategy:
       fail-fast: false
       matrix:
@@ -25,6 +21,8 @@ jobs:
           - powerbi/PTHousing.SemanticModel/definition
     steps:
       - name: Clone the commit under test
+        shell: pwsh
+        working-directory: ${{ runner.temp }}
         env:
           TOKEN: ${{ github.token }}
         run: |
@@ -33,11 +31,15 @@ jobs:
           git -C src checkout FETCH_HEAD
 
       - name: Download Tabular Editor 2
+        shell: pwsh
+        working-directory: ${{ runner.temp }}
         run: |
           Invoke-WebRequest https://github.com/TabularEditor/TabularEditor/releases/latest/download/TabularEditor.Portable.zip -OutFile te.zip
           Expand-Archive te.zip -DestinationPath te
 
       - name: Best Practice Analyzer
+        shell: pwsh
+        working-directory: ${{ runner.temp }}
         run: |
           $p = Start-Process -FilePath te/TabularEditor.exe -ArgumentList "`"src/${{ matrix.model }}/database.tmdl`" -A src/bpa-rules.json -G" -NoNewWindow -Wait -PassThru
           exit $p.ExitCode
