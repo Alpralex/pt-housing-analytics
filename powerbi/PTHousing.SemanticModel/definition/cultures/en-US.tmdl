@@ -1,0 +1,398 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dim_country.country_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_country",
+			          "ConceptualProperty": "country_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Country": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mart_house_prices_real.house_price_index_latest": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mart_house_prices_real",
+			          "ConceptualProperty": "House Price Index (Latest)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "House price index": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "House prices": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mart_house_prices_real.real_house_price_index": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mart_house_prices_real",
+			          "ConceptualProperty": "Real House Price Index"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Real House Price Index": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mart_house_prices_real.house_price_index": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mart_house_prices_real",
+			          "ConceptualProperty": "House Price Index"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "House prices": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mart_house_prices_real.rent_index": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mart_house_prices_real",
+			          "ConceptualProperty": "Rent Index"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Rents": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mart_house_prices_real.consumer_price_index": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mart_house_prices_real",
+			          "ConceptualProperty": "Consumer Price Index"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Consumer prices": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mart_house_prices_real.real_house_price_index_latest": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mart_house_prices_real",
+			          "ConceptualProperty": "Real House Price Index (Latest)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Real prices": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_quarter.quarter_start": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_quarter",
+			          "ConceptualProperty": "quarter_start"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Quarter": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fct_house_prices.house_price_index_by_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fct_house_prices",
+			          "ConceptualProperty": "House Price Index by Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "House price index": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fct_house_prices.dwelling_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fct_house_prices",
+			          "ConceptualProperty": "dwelling_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Dwelling type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mart_affordability.pricetoincome_index_latest": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mart_affordability",
+			          "ConceptualProperty": "Price-to-Income Index (Latest)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Price-to-income": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Price/income": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mart_affordability.overburden_rate__latest": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mart_affordability",
+			          "ConceptualProperty": "Overburden Rate % (Latest)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Overburden": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "All people": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mart_affordability.lowincome_overburden_rate_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mart_affordability",
+			          "ConceptualProperty": "Low-Income Overburden Rate %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Below 60% of median income": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_year.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_year",
+			          "ConceptualProperty": "year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Year": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fct_building_permits.permitted_dwellings": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fct_building_permits",
+			          "ConceptualProperty": "Permitted Dwellings"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Dwellings permitted": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fct_living_conditions.overburden_rate_by_group_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fct_living_conditions",
+			          "ConceptualProperty": "Overburden Rate by Group %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Overburden rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fct_living_conditions.income_group_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fct_living_conditions",
+			          "ConceptualProperty": "income_group_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Income group": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

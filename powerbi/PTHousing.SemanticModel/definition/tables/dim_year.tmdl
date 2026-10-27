@@ -1,0 +1,24 @@
+table dim_year
+	lineageTag: 33c52c99-5a01-4685-a869-54d427ba8370
+
+	column year
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: a451660d-44c0-4229-b7eb-c9e54014f70d
+		summarizeBy: none
+		sourceColumn: year
+
+	partition dim_year = m
+		mode: import
+		source =
+				let
+					Quarters = Parquet.Document ( File.Contents ( DataFolder & "dim_quarter.parquet" ) ),
+					Annual = Parquet.Document ( File.Contents ( DataFolder & "mart_affordability.parquet" ) ),
+					AllYears = List.Combine ( { Quarters[year], Annual[year] } ),
+					FirstYear = List.Min ( AllYears ),
+					LastYear = List.Max ( AllYears ),
+					Source = Table.FromColumns ( { { FirstYear .. LastYear } }, type table [ year = Int64.Type ] )
+				in
+					Source
+

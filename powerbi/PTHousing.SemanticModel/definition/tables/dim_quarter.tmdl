@@ -1,0 +1,49 @@
+table dim_quarter
+	lineageTag: db4ee87e-85f1-4533-a820-cf0aa0525676
+
+	column quarter_start
+		dataType: dateTime
+		isKey
+		formatString: yyyy-mm-dd
+		lineageTag: 15f82339-a8d1-4d3a-b633-cec974beed03
+		summarizeBy: none
+		sourceColumn: quarter_start
+
+		variation Variação
+			isDefault
+			relationship: 90676ef4-bfb3-44b8-9511-d47ffc973d7d
+			defaultHierarchy: LocalDateTable_3d4d67ed-1280-4068-bdfd-db2fb89cb396.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b810a0f-dbb2-40aa-bbc8-62eb2457f0fe
+		summarizeBy: none
+		sourceColumn: year
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a48c009-28ac-4c3a-9ac6-f4a8bfc01e1c
+		summarizeBy: sum
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter_label
+		dataType: string
+		lineageTag: 6c085d46-4c95-493c-9756-3ed557a47fba
+		summarizeBy: none
+		sourceColumn: quarter_label
+		sortByColumn: quarter_start
+
+	partition dim_quarter = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document ( File.Contents ( DataFolder & "dim_quarter.parquet" ) )
+				in
+					Source
+

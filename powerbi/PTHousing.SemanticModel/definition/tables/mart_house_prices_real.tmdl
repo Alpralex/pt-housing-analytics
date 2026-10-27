@@ -1,0 +1,205 @@
+table mart_house_prices_real
+	lineageTag: 2006c891-824a-446e-b88f-199a8aa4efd6
+
+	/// Last quarter with house price data in the current filter context, as YYYY-Qn.
+	measure 'Last Price Quarter' =
+			VAR LastQuarter = MAX ( mart_house_prices_real[quarter_start] )
+			RETURN
+				IF ( NOT ISBLANK ( LastQuarter ), YEAR ( LastQuarter ) & "-Q" & ROUNDUP ( MONTH ( LastQuarter ) / 3, 0 ) )
+		displayFolder: Prices
+		lineageTag: ae8f853f-9e65-4f3f-8359-2c4c2d85c69e
+
+	/// Nominal house price index, 2015 = 100. Average of the quarters in context (one value per country and quarter).
+	measure 'House Price Index' = AVERAGE ( mart_house_prices_real[nominal_hpi] )
+		formatString: 0.0
+		displayFolder: Prices
+		lineageTag: 1754ac3a-efe9-4e42-beb8-4238b334a613
+
+	/// House price index deflated by the all-items HICP, 2015 = 100.
+	measure 'Real House Price Index' = AVERAGE ( mart_house_prices_real[real_hpi] )
+		formatString: 0.0
+		displayFolder: Prices
+		lineageTag: 470be931-4026-46f5-8f0d-554c0d24e41a
+
+	/// HICP actual rentals (CP041), 2015 = 100.
+	measure 'Rent Index' = AVERAGE ( mart_house_prices_real[rent_index] )
+		formatString: 0.0
+		displayFolder: Prices
+		lineageTag: f8b8f345-0c6d-431d-91a8-eaa646dc4f51
+
+	/// HICP all items (CP00), 2015 = 100.
+	measure 'Consumer Price Index' = AVERAGE ( mart_house_prices_real[cpi_index] )
+		formatString: 0.0
+		displayFolder: Prices
+		lineageTag: b465827a-b4e8-4f48-b989-ef991fd1a058
+
+	/// House price index divided by the rent index, 2015 = 100.
+	measure 'Price-to-Rent Index' = AVERAGE ( mart_house_prices_real[price_to_rent_index] )
+		formatString: 0.0
+		displayFolder: Prices
+		lineageTag: 551c7b74-d1d0-41f5-8e97-962ffc731991
+
+	/// Nominal index in the last quarter of the current context.
+	measure 'House Price Index (Latest)' =
+			VAR LastQuarter = MAX ( mart_house_prices_real[quarter_start] )
+			RETURN
+				CALCULATE ( AVERAGE ( mart_house_prices_real[nominal_hpi] ), mart_house_prices_real[quarter_start] = LastQuarter )
+		formatString: 0.0
+		displayFolder: Prices
+		lineageTag: f9e58948-9d36-417c-af93-2e295eaacc5f
+
+	/// Real index in the last quarter of the current context.
+	measure 'Real House Price Index (Latest)' =
+			VAR LastQuarter = MAX ( mart_house_prices_real[quarter_start] )
+			RETURN
+				CALCULATE ( AVERAGE ( mart_house_prices_real[real_hpi] ), mart_house_prices_real[quarter_start] = LastQuarter )
+		formatString: 0.0
+		displayFolder: Prices
+		lineageTag: ad3d00cd-4148-428e-99d0-fb7e8f3d43b0
+
+	/// Rent index in the last quarter of the current context.
+	measure 'Rent Index (Latest)' =
+			VAR LastQuarter = MAX ( mart_house_prices_real[quarter_start] )
+			RETURN
+				CALCULATE ( AVERAGE ( mart_house_prices_real[rent_index] ), mart_house_prices_real[quarter_start] = LastQuarter )
+		formatString: 0.0
+		displayFolder: Prices
+		lineageTag: 139a1342-ea09-404c-a4cc-48e3093215a2
+
+	/// Nominal change on the same quarter a year earlier, last quarter of the context (computed in dbt).
+	measure 'House Price YoY %' =
+			VAR LastQuarter = MAX ( mart_house_prices_real[quarter_start] )
+			RETURN
+				CALCULATE ( AVERAGE ( mart_house_prices_real[nominal_yoy] ), mart_house_prices_real[quarter_start] = LastQuarter )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Prices
+		lineageTag: 6e8f51fc-8ced-4977-b245-c9f151548aa5
+
+	/// Real change on the same quarter a year earlier, last quarter of the context (computed in dbt).
+	measure 'Real House Price YoY %' =
+			VAR LastQuarter = MAX ( mart_house_prices_real[quarter_start] )
+			RETURN
+				CALCULATE ( AVERAGE ( mart_house_prices_real[real_yoy] ), mart_house_prices_real[quarter_start] = LastQuarter )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Prices
+		lineageTag: f4e4bfaa-6fb1-4e0b-b1dd-118729bc2132
+
+	/// Nominal change against the 2015 average.
+	measure 'House Price Change Since 2015 %' =
+			VAR IndexValue = [House Price Index (Latest)]
+			RETURN
+				IF ( NOT ISBLANK ( IndexValue ), IndexValue / 100 - 1 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Prices
+		lineageTag: 5786498f-d5f9-4844-b880-1839a768823e
+
+	/// Real change against the 2015 average.
+	measure 'Real House Price Change Since 2015 %' =
+			VAR IndexValue = [Real House Price Index (Latest)]
+			RETURN
+				IF ( NOT ISBLANK ( IndexValue ), IndexValue / 100 - 1 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Prices
+		lineageTag: 0204680d-dafd-45aa-938b-51e675440936
+
+	/// Rent change against the 2015 average.
+	measure 'Rent Change Since 2015 %' =
+			VAR IndexValue = [Rent Index (Latest)]
+			RETURN
+				IF ( NOT ISBLANK ( IndexValue ), IndexValue / 100 - 1 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Prices
+		lineageTag: dc3bbbda-7843-43c4-a661-d0b41b4fa1b5
+
+	/// Portugal minus EU-27, nominal index points (2015 = 100), last quarter of the context.
+	measure 'Portugal vs EU House Price Gap' =
+			VAR Portugal = CALCULATE ( [House Price Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "PT" )
+			VAR EU = CALCULATE ( [House Price Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "EU27_2020" )
+			RETURN
+				IF ( NOT ISBLANK ( Portugal ) && NOT ISBLANK ( EU ), ( Portugal - EU ) )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Portugal vs EU
+		lineageTag: f608b43d-29e3-4ed7-b7ab-7cd758d4d528
+
+	/// Portugal minus EU-27, real index points (2015 = 100), last quarter of the context.
+	measure 'Portugal vs EU Real House Price Gap' =
+			VAR Portugal = CALCULATE ( [Real House Price Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "PT" )
+			VAR EU = CALCULATE ( [Real House Price Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "EU27_2020" )
+			RETURN
+				IF ( NOT ISBLANK ( Portugal ) && NOT ISBLANK ( EU ), ( Portugal - EU ) )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Portugal vs EU
+		lineageTag: 07f95d03-f1b4-4c99-ad9f-39cdf5c508df
+
+	column geo
+		dataType: string
+		lineageTag: 26a7c6cb-bde4-471d-a19e-1ba513850ec6
+		summarizeBy: none
+		sourceColumn: geo
+
+	column quarter_start
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 11f71b56-7e6e-423a-8d38-80578208c568
+		summarizeBy: none
+		sourceColumn: quarter_start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column nominal_hpi
+		dataType: double
+		formatString: 0.0
+		lineageTag: b1065648-21d6-4108-987a-8156b616481e
+		summarizeBy: none
+		sourceColumn: nominal_hpi
+
+	column real_hpi
+		dataType: double
+		formatString: 0.0
+		lineageTag: c1760449-b23c-4cd9-9f2e-13f696fcf1cc
+		summarizeBy: none
+		sourceColumn: real_hpi
+
+	column rent_index
+		dataType: double
+		formatString: 0.0
+		lineageTag: d5254861-b465-4e9a-beab-a65b650f41fb
+		summarizeBy: none
+		sourceColumn: rent_index
+
+	column cpi_index
+		dataType: double
+		formatString: 0.0
+		lineageTag: 6feb9560-82d8-4efc-9532-96f833c78ed2
+		summarizeBy: none
+		sourceColumn: cpi_index
+
+	column price_to_rent_index
+		dataType: double
+		formatString: 0.0
+		lineageTag: 30399bd4-2b22-4ec3-9f79-9318a8ba403d
+		summarizeBy: none
+		sourceColumn: price_to_rent_index
+
+	column nominal_yoy
+		dataType: double
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 779707e2-46c8-4845-ab70-20bbd4d48966
+		summarizeBy: none
+		sourceColumn: nominal_yoy
+
+	column real_yoy
+		dataType: double
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 88941a6a-2dc5-4c01-97c4-b723c675af83
+		summarizeBy: none
+		sourceColumn: real_yoy
+
+	partition mart_house_prices_real = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document ( File.Contents ( DataFolder & "mart_house_prices_real.parquet" ) )
+				in
+					Source
+
