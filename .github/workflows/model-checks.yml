@@ -18,7 +18,10 @@ jobs:
         model:
           - powerbi/PTHousing.SemanticModel/definition
     steps:
+      # The repository name ends with a dot, which Windows cannot use as a folder name.
       - uses: actions/checkout@v4
+        with:
+          path: src
 
       - name: Download Tabular Editor 2
         shell: pwsh
@@ -29,5 +32,5 @@ jobs:
       - name: Best Practice Analyzer
         shell: pwsh
         run: |
-          $p = Start-Process -FilePath te/TabularEditor.exe -ArgumentList "`"${{ matrix.model }}/database.tmdl`" -A bpa-rules.json -G" -NoNewWindow -Wait -PassThru
+          $p = Start-Process -FilePath te/TabularEditor.exe -ArgumentList "`"src/${{ matrix.model }}/database.tmdl`" -A src/bpa-rules.json -G" -NoNewWindow -Wait -PassThru
           exit $p.ExitCode
