@@ -9,6 +9,13 @@ on:
     paths: ["powerbi/**", "bpa-rules.json", ".github/workflows/model-checks.yml"]
   workflow_dispatch:
 
+# The repository name ends with a dot, which Windows drops from folder names, so the default
+# workspace folder cannot exist. Every step runs in the runner's temp folder and clones there.
+defaults:
+  run:
+    shell: pwsh
+    working-directory: ${{ runner.temp }}
+
 jobs:
   bpa:
     runs-on: windows-latest
@@ -18,19 +25,20 @@ jobs:
         model:
           - powerbi/PTHousing.SemanticModel/definition
     steps:
-      # The repository name ends with a dot, which Windows cannot use as a folder name.
-      - uses: actions/checkout@v4
-        with:
-          path: src
+      - name: Clone the commit under test
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          git init src
+          git -C src fetch --depth 1 "https://x-access-token:$env:TOKEN@github.com/${{ github.repository }}" ${{ github.event.pull_request.head.sha || github.sha }}
+          git -C src checkout FETCH_HEAD
 
       - name: Download Tabular Editor 2
-        shell: pwsh
         run: |
           Invoke-WebRequest https://github.com/TabularEditor/TabularEditor/releases/latest/download/TabularEditor.Portable.zip -OutFile te.zip
           Expand-Archive te.zip -DestinationPath te
 
       - name: Best Practice Analyzer
-        shell: pwsh
         run: |
           $p = Start-Process -FilePath te/TabularEditor.exe -ArgumentList "`"src/${{ matrix.model }}/database.tmdl`" -A src/bpa-rules.json -G" -NoNewWindow -Wait -PassThru
           exit $p.ExitCode
