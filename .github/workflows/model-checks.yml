@@ -11,14 +11,13 @@ on:
 
 # The repository name ends with a dot, which Windows drops from folder names, so the default
 # workspace folder cannot exist. Every step runs in the runner's temp folder and clones there.
-defaults:
-  run:
-    shell: pwsh
-    working-directory: ${{ runner.temp }}
-
 jobs:
   bpa:
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: ${{ runner.temp }}
     strategy:
       fail-fast: false
       matrix:
