@@ -1,5 +1,9 @@
 # How far has housing in Portugal outrun incomes?
 
+[![Dashboard screenshot](https://guilhermerigonato.com/img/housing.webp)](https://guilhermerigonato.com/pt-housing-analytics/)
+
+**Live:** [web dashboard](https://guilhermerigonato.com/pt-housing-analytics/) · [Power BI report (publish to web)](https://app.powerbi.com/view?r=eyJrIjoiN2Q5OTgwNDgtMTE0YS00MTIwLTkyZTAtZDE0MWZjYmIwYjAwIiwidCI6IjY2MDMwOWU1LWI1YWEtNDQzNS1iMDU2LTJhYmViOGZmNDZjNyJ9) · [all projects](https://guilhermerigonato.com)
+
 A housing affordability BI project on official statistics: Eurostat house prices, rents, consumer prices and household income for Portugal, six peer countries and the EU-27, modelled in SQL with dbt on DuckDB, tested, and published as a web dashboard, a Power BI project and a Qlik Sense app on the same Parquet exports.
 
 **Live dashboard:** https://guilhermerigonato.com/pt-housing-analytics/
