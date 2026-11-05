@@ -43,6 +43,14 @@ python scripts/export.py            # exports/*.parquet for Power BI and Qlik, w
 
 Open `web/index.html` through any static server (`python -m http.server` in `web/`).
 
+## Python notebook
+
+[`notebooks/how_it_was_built.ipynb`](notebooks/how_it_was_built.ipynb) walks through the project in the order it was
+built: download the Eurostat tables, check coverage and status flags in pandas, model real prices and price-to-income
+in dbt, chart the answer with interactive Altair charts (switch real and nominal, click a country to drive the
+linked chart, drag across years), and reconcile pandas, the dbt marts and the reference numbers below. The
+[interactive version](https://guilhermerigonato.com/pt-housing-analytics/notebook/) runs the charts.
+
 ## Power BI version
 
 `powerbi/PTHousing.pbip` is a Power BI project with the semantic model in TMDL: the eight Parquet files from `exports/`, a country dimension, a quarter dimension that rolls up to a year dimension, 13 single-direction relationships and 38 DAX measures (nominal and real house price index, YoY, change since 2015, rents, price-to-income, overburden, permits, and Portugal vs EU gaps).
