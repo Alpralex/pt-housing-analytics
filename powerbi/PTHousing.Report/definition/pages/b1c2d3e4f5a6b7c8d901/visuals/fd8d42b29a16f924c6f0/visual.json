@@ -3,9 +3,9 @@
   "name": "fd8d42b29a16f924c6f0",
   "position": {
     "x": 16,
-    "y": 256,
+    "y": 282,
     "z": 10000,
-    "height": 448,
+    "height": 422,
     "width": 816,
     "tabOrder": 10000
   },
@@ -56,18 +56,34 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "mart_house_prices_real"
+                      "Entity": "Housing Index"
                     }
                   },
-                  "Property": "Real House Price Index"
+                  "Property": "Index"
                 }
               },
-              "queryRef": "mart_house_prices_real.Real House Price Index",
-              "nativeQueryRef": "Real House Price Index",
-              "displayName": "Real House Price Index"
+              "queryRef": "Housing Index.Index",
+              "nativeQueryRef": "Index",
+              "displayName": "Index"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Housing Index"
+                    }
+                  },
+                  "Property": "Index"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         }
@@ -82,7 +98,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2A78D6'"
+                      "Value": "'#970D63'"
                     }
                   }
                 }
@@ -123,7 +139,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9AA4AF'"
+                      "Value": "'#A6ACB1'"
                     }
                   }
                 }
@@ -164,7 +180,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AEB6BF'"
+                      "Value": "'#A6ACB1'"
                     }
                   }
                 }
@@ -205,7 +221,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C2C8CF'"
+                      "Value": "'#A6ACB1'"
                     }
                   }
                 }
@@ -246,7 +262,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#B6BDC5'"
+                      "Value": "'#A6ACB1'"
                     }
                   }
                 }
@@ -287,7 +303,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#A3ACB6'"
+                      "Value": "'#A6ACB1'"
                     }
                   }
                 }
@@ -328,7 +344,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#8E99A4'"
+                      "Value": "'#A6ACB1'"
                     }
                   }
                 }
@@ -369,7 +385,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#4A5562'"
+                      "Value": "'#182027'"
                     }
                   }
                 }
@@ -497,7 +513,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5D6876'"
+                      "Value": "'#3B434B'"
                     }
                   }
                 }
@@ -541,7 +557,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5D6876'"
+                      "Value": "'#3B434B'"
                     }
                   }
                 }
@@ -579,7 +595,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5D6876'"
+                      "Value": "'#3B434B'"
                     }
                   }
                 }
@@ -604,7 +620,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#ECEFF2'"
+                      "Value": "'#D9DEE3'"
                     }
                   }
                 }
@@ -627,8 +643,13 @@
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Real house prices by country (2015 = 100)'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mart_house_prices_real"
+                    }
+                  },
+                  "Property": "Index Chart Title"
                 }
               }
             }
@@ -694,8 +715,13 @@
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Deflated by consumer prices. Portugal in blue'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mart_house_prices_real"
+                    }
+                  },
+                  "Property": "Index Chart Subtitle"
                 }
               }
             }

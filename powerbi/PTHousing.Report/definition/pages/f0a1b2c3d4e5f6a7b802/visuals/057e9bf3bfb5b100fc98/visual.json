@@ -1,0 +1,201 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "057e9bf3bfb5b100fc98",
+  "position": {
+    "x": 16,
+    "y": 228,
+    "z": 1200,
+    "height": 476,
+    "width": 800,
+    "tabOrder": 1200
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_quarter"
+                    }
+                  },
+                  "Property": "quarter_start"
+                }
+              },
+              "queryRef": "dim_quarter.quarter_start",
+              "nativeQueryRef": "quarter_start",
+              "active": true,
+              "displayName": "Quarter"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mart_house_prices_real"
+                    }
+                  },
+                  "Property": "House Price Index"
+                }
+              },
+              "queryRef": "mart_house_prices_real.House Price Index",
+              "nativeQueryRef": "House Price Index",
+              "displayName": "House prices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mart_house_prices_real"
+                    }
+                  },
+                  "Property": "Real House Price Index"
+                }
+              },
+              "queryRef": "mart_house_prices_real.Real House Price Index",
+              "nativeQueryRef": "Real House Price Index",
+              "displayName": "After inflation"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mart_house_prices_real"
+                    }
+                  },
+                  "Property": "Rent Index"
+                }
+              },
+              "queryRef": "mart_house_prices_real.Rent Index",
+              "nativeQueryRef": "Rent Index",
+              "displayName": "Rents"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#970D63'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "mart_house_prices_real.House Price Index"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#182027'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "mart_house_prices_real.Real House Price Index"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#A6ACB1'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "mart_house_prices_real.Rent Index"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'House prices, real prices and rents (2015 = 100)'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'House prices, real prices and rents (2015 = 100)'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Quarterly. Real = deflated by the consumer price index'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
