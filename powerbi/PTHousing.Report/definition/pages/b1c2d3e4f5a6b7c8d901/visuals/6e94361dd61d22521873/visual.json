@@ -3,9 +3,9 @@
   "name": "6e94361dd61d22521873",
   "position": {
     "x": 16,
-    "y": 94,
+    "y": 80,
     "z": 13000,
-    "height": 24,
+    "height": 18,
     "width": 520,
     "tabOrder": 13000
   },
@@ -22,7 +22,7 @@
                     "value": "Eurostat house price, rent and income data, 2015 = 100. Income data run to 2024",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "12px",
+                      "fontSize": "10px",
                       "color": "#3B434B"
                     }
                   }
