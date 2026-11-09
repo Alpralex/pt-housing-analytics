@@ -63,7 +63,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Real vs EU'"
+                  "Value": "'Real, PT vs EU'"
                 }
               }
             },
