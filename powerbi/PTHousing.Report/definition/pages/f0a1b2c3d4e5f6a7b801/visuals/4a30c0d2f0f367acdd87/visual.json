@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "5659136f9f483ce98229",
+  "name": "4a30c0d2f0f367acdd87",
   "position": {
     "x": 16,
-    "y": 16,
-    "z": 15000,
-    "height": 40,
-    "width": 520,
-    "tabOrder": 15000
+    "y": 10,
+    "z": 20000,
+    "height": 32,
+    "width": 320,
+    "tabOrder": 20000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,11 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Who carries the cost?",
+                    "value": "Housing in Portugal and the EU",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "22px",
-                      "color": "#1B2430"
+                      "fontSize": "15px",
+                      "color": "#182027"
                     }
                   }
                 ],

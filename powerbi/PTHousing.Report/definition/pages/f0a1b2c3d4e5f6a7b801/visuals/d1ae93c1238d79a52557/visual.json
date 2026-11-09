@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "e4c01d0cb9395ee7128d",
+  "name": "d1ae93c1238d79a52557",
   "position": {
     "x": 16,
-    "y": 16,
-    "z": 8000,
-    "height": 40,
-    "width": 520,
-    "tabOrder": 8000
+    "y": 412,
+    "z": 1100,
+    "height": 96,
+    "width": 220,
+    "tabOrder": 1100
   },
   "visual": {
     "visualType": "textbox",
@@ -19,11 +19,24 @@
               {
                 "textRuns": [
                   {
-                    "value": "Prices have outrun rents and incomes",
+                    "value": "Is enough being built, and who pays?",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "22px",
-                      "color": "#1B2430"
+                      "fontSize": "13px",
+                      "color": "#182027"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Open the page →",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10px",
+                      "color": "#970D63"
                     }
                   }
                 ],

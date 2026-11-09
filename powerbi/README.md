@@ -62,6 +62,25 @@ The gap measures remove the filters on `dim_country` and set Portugal and the EU
 
 The "Latest" and gap measures follow the filter context: on a quarter or year axis they return that period, in a card they return the last period selected. In a card with no country selected, the "Latest" measures average the eight countries, so the cards on page 1 filter on Portugal.
 
+## Report pages and what to try
+
+The report opens on **Start here**: the question each page answers, with the live answer next to it (a DAX measure
+that rewrites itself when you filter). Select an answer to open its page; the tabs at the top move between pages.
+The answers are about Portugal unless one country is picked in the Country filter.
+
+| Page | What to try | Headline with no filters |
+| --- | --- | --- |
+| Overview | Change **Index** on the country chart (a field parameter): real prices, prices, rents, price-to-rent. Pick Spain in the Country filter | Portugal: house prices at 301 in 2026-Q2 (2015 = 100), +16.5% on a year earlier and 232 after inflation. The EU-27 is at 169. |
+| Prices, rents and incomes | Pick the Netherlands | From 2015 to 2024, house prices in Portugal rose +124% and median income +65%: price-to-income 136, against 106 for the EU-27. |
+| Supply and cost burden | Pick Ireland | 40,900 dwellings permitted in Portugal in 2025: 5.8 times the low of the series, but -45% on 2005. 6.3% of people spend over 40% of their income on housing (EU-27 7.7%). |
+
+**Country detail** is a drill-through page (hidden from the tabs): right-click a country on any chart, then
+*Drill through > Country detail*. The headlines and chart titles are hidden measures in the display folder *Story*
+of `mart_house_prices_real`. Numbers checked with DuckDB against the Parquet files in `exports/`.
+
+Auto date/time is off: the hidden local date table that Desktop had added to `dim_quarter[quarter_start]` is gone,
+so the model holds only the tables in the diagram above.
+
 ## Reference numbers
 
 After the first refresh, these should match (Eurostat data of 24 Oct 2026):

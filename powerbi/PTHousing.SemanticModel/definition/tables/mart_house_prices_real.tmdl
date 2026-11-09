@@ -132,6 +132,114 @@ table mart_house_prices_real
 		displayFolder: Portugal vs EU
 		lineageTag: 07f95d03-f1b4-4c99-ad9f-39cdf5c508df
 
+	/// One-sentence answer for the Overview page: the focus country's house price index (Portugal unless one country is selected).
+	measure 'Headline Overview' =
+			VAR Geo = IF ( HASONEVALUE ( dim_country[geo] ), VALUES ( dim_country[geo] ), "PT" )
+			VAR CountryName = CALCULATE ( SELECTEDVALUE ( dim_country[country_name] ), REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Hpi = CALCULATE ( [House Price Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Yoy = CALCULATE ( [House Price YoY %], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Real = CALCULATE ( [Real House Price Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Eu = CALCULATE ( [House Price Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "EU27_2020" )
+			VAR Q = CALCULATE ( [Last Price Quarter], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			RETURN
+				IF (
+					ISBLANK ( Hpi ),
+					"No house price data in this selection.",
+					CountryName & ": house prices at " & FORMAT ( Hpi, "0" ) & " in " & Q & " (2015 = 100), " & FORMAT ( Yoy, "+0.0%;-0.0%" )
+						& " on a year earlier and " & FORMAT ( Real, "0" ) & " after inflation"
+						& IF ( Geo <> "EU27_2020", ". The EU-27 is at " & FORMAT ( Eu, "0" ) & ".", "." )
+				)
+		isHidden
+		displayFolder: Story
+		lineageTag: 596e42d2-0795-54ad-a8ab-dc9876365f0b
+
+	/// One-sentence answer for the prices, rents and incomes page: prices against incomes since 2015.
+	measure 'Headline Prices' =
+			VAR Geo = IF ( HASONEVALUE ( dim_country[geo] ), VALUES ( dim_country[geo] ), "PT" )
+			VAR CountryName = CALCULATE ( SELECTEDVALUE ( dim_country[country_name] ), REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR P = CALCULATE ( [Price Growth Since 2015 % (Income Year)], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR I = CALCULATE ( [Income Growth Since 2015 %], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Pti = CALCULATE ( [Price-to-Income Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Eu = CALCULATE ( [Price-to-Income Index (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "EU27_2020" )
+			VAR Y = CALCULATE ( [Price-to-Income Year], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			RETURN
+				IF (
+					ISBLANK ( Pti ),
+					"No income data in this selection.",
+					"From 2015 to " & Y & ", house prices in " & CountryName & " rose " & FORMAT ( P, "+0%;-0%" ) & " and median income "
+						& FORMAT ( I, "+0%;-0%" ) & ": price-to-income " & FORMAT ( Pti, "0" )
+						& IF ( Geo <> "EU27_2020", ", against " & FORMAT ( Eu, "0" ) & " for the EU-27.", "." )
+				)
+		isHidden
+		displayFolder: Story
+		lineageTag: 2c471c75-bb49-5fa4-9f2c-3eb965bbed52
+
+	/// One-sentence answer for the supply and cost burden page: permits against their low and 2005, and the overburden rate.
+	measure 'Headline Supply' =
+			VAR Geo = IF ( HASONEVALUE ( dim_country[geo] ), VALUES ( dim_country[geo] ), "PT" )
+			VAR CountryName = CALCULATE ( SELECTEDVALUE ( dim_country[country_name] ), REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Permits = CALCULATE ( [Permitted Dwellings (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR PY = CALCULATE ( [Permits Year], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Mult = CALCULATE ( [Permits Multiple of Low], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Vs2005 = CALCULATE ( [Permits vs 2005 %], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR Ob = CALCULATE ( [Overburden Rate % (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = Geo )
+			VAR ObEu = CALCULATE ( [Overburden Rate % (Latest)], REMOVEFILTERS ( dim_country ), dim_country[geo] = "EU27_2020" )
+			RETURN
+				IF ( ISBLANK ( Permits ), CountryName & " has no building permit series here (only Portugal, Spain, Ireland and the EU-27). ",
+					FORMAT ( Permits, "#,0" ) & " dwellings permitted in " & CountryName & " in " & PY & ": " & FORMAT ( Mult, "0.0" )
+						& " times the low of the series, but " & FORMAT ( Vs2005, "+0%;-0%" ) & " on 2005. " )
+					& IF (
+						NOT ISBLANK ( Ob ),
+						FORMAT ( Ob, "0.0%" ) & " of people spend over 40% of their income on housing"
+							& IF ( Geo <> "EU27_2020", " (EU-27 " & FORMAT ( ObEu, "0.0%" ) & ").", "." ),
+						""
+					)
+		isHidden
+		displayFolder: Story
+		lineageTag: 572551ce-d779-5ea8-b350-362459bb246f
+
+	/// Sentence at the top of the Country detail drill-through page.
+	measure 'Country Headline' =
+			VAR CountryName = SELECTEDVALUE ( dim_country[country_name] )
+			VAR Hpi = [House Price Index (Latest)]
+			VAR CountryRank = IF ( NOT ISBLANK ( Hpi ), RANKX ( ALL ( dim_country[geo] ), [House Price Index (Latest)] ) )
+			VAR N = COUNTROWS ( FILTER ( ALL ( dim_country[geo] ), NOT ISBLANK ( [House Price Index (Latest)] ) ) )
+			RETURN
+				IF (
+					ISBLANK ( CountryName ),
+					"Right-click a country on any chart and choose Drill through > Country detail.",
+					CountryName & ": house prices " & FORMAT ( Hpi, "0" ) & " (2015 = 100), number " & CountryRank & " of the " & N
+						& " shown, " & FORMAT ( [House Price YoY %], "+0.0%;-0.0%" ) & " on a year earlier. Price-to-income "
+						& FORMAT ( [Price-to-Income Index (Latest)], "0" ) & ", overburden rate " & FORMAT ( [Overburden Rate % (Latest)], "0.0%" ) & "."
+				)
+		isHidden
+		displayFolder: Story
+		lineageTag: 1d4bff06-0592-5d0f-b868-2dbe79017efc
+
+	/// Title of the Overview country chart; follows the Index field parameter.
+	measure 'Index Chart Title' =
+			VAR Pick = SELECTEDVALUE ( 'Housing Index'[Index Order], 0 )
+			RETURN
+				SWITCH ( Pick, 1, "House prices", 2, "Rents", 3, "House prices against rents", "Real house prices" ) & " by country (2015 = 100)"
+		isHidden
+		displayFolder: Story
+		lineageTag: 172a4c7e-36b6-5d1f-a3aa-74b2c6cbaf76
+
+	/// Subtitle of the Overview country chart.
+	measure 'Index Chart Subtitle' =
+			VAR Pick = SELECTEDVALUE ( 'Housing Index'[Index Order], 0 )
+			RETURN
+				SWITCH (
+					Pick,
+					1, "Nominal house price index",
+					2, "Actual rentals for housing in the consumer price index",
+					3, "House price index divided by the rent index",
+					"House price index divided by the consumer price index"
+				) & ". Portugal in magenta. Change the measure with the Index filter"
+		isHidden
+		displayFolder: Story
+		lineageTag: 75409186-1cbe-5b15-9c2e-7998caa3b632
+
 	column geo
 		dataType: string
 		lineageTag: 26a7c6cb-bde4-471d-a19e-1ba513850ec6

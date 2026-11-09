@@ -22,6 +22,7 @@ table dim_country
 		sourceColumn: country_group
 
 	column sort_order
+		isHidden
 		dataType: int64
 		formatString: 0
 		lineageTag: 613ec1c0-1299-46a0-99ed-051cbff66c8b

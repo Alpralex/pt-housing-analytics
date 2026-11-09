@@ -1,0 +1,53 @@
+table 'Housing Index'
+	lineageTag: 15be1748-c5a9-5741-8cb9-5cd771bd139f
+
+	/// Field parameter: the index shown on the Overview country chart.
+	column 'Index'
+		dataType: string
+		lineageTag: a1218dac-ff38-5075-9074-77d303a4aca5
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Index Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Index Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index Fields'
+		dataType: string
+		isHidden
+		lineageTag: 84fce44f-80b9-59ca-a600-33779accfc16
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Index Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 537c2b8c-5951-5f0a-9c9e-6b7cab9c1605
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Housing Index' = calculated
+		mode: import
+		source =
+				{
+					("Real house prices", NAMEOF ( [Real House Price Index] ), 0),
+					("House prices", NAMEOF ( [House Price Index] ), 1),
+					("Rents", NAMEOF ( [Rent Index] ), 2),
+					("Price-to-rent", NAMEOF ( [Price-to-Rent Index] ), 3)
+				}
+
+	annotation PBI_Id = 9ba4ec885e505f5bb2fbe2157d8cf6d3

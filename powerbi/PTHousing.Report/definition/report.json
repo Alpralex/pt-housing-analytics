@@ -128,5 +128,20 @@
         "howCreated": "User"
       }
     ]
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
   }
 }

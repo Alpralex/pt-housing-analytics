@@ -1,0 +1,132 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "4e78c4ef9e9943fa6158",
+  "position": {
+    "x": 832,
+    "y": 472,
+    "z": 1400,
+    "height": 232,
+    "width": 432,
+    "tabOrder": 1400
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_year"
+                    }
+                  },
+                  "Property": "year"
+                }
+              },
+              "queryRef": "dim_year.year",
+              "nativeQueryRef": "year",
+              "active": true,
+              "displayName": "Year"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mart_affordability"
+                    }
+                  },
+                  "Property": "Overburden Rate %"
+                }
+              },
+              "queryRef": "mart_affordability.Overburden Rate %",
+              "nativeQueryRef": "Overburden Rate %",
+              "displayName": "Overburden rate"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#6E767D'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Housing cost overburden by survey year'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Housing cost overburden by survey year'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'People spending over 40% of disposable income on housing'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

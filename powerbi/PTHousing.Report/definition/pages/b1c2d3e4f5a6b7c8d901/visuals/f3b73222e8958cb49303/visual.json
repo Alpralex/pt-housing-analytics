@@ -3,9 +3,9 @@
   "name": "f3b73222e8958cb49303",
   "position": {
     "x": 848,
-    "y": 256,
+    "y": 282,
     "z": 11000,
-    "height": 448,
+    "height": 422,
     "width": 416,
     "tabOrder": 11000
   },
@@ -81,7 +81,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2A78D6'"
+                      "Value": "'#970D63'"
                     }
                   }
                 }
@@ -425,7 +425,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1B2430'"
+                      "Value": "'#182027'"
                     }
                   }
                 }
@@ -456,7 +456,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5D6876'"
+                      "Value": "'#3B434B'"
                     }
                   }
                 }
@@ -594,7 +594,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Nominal prices'"
+                  "Value": "'Right-click a country, then Drill through > Country detail'"
                 }
               }
             }
