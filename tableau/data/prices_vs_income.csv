@@ -1,0 +1,161 @@
+geo,year,series,series_pt,index_2015,country_name,country_group,sort_order,country_pt,highlight
+PT,2015,House prices,Preços das casas,100.0,Portugal,focus,1,Portugal,Portugal
+PT,2016,House prices,Preços das casas,107.1,Portugal,focus,1,Portugal,Portugal
+PT,2017,House prices,Preços das casas,117.0,Portugal,focus,1,Portugal,Portugal
+PT,2018,House prices,Preços das casas,129.0,Portugal,focus,1,Portugal,Portugal
+PT,2019,House prices,Preços das casas,141.9,Portugal,focus,1,Portugal,Portugal
+PT,2020,House prices,Preços das casas,154.3,Portugal,focus,1,Portugal,Portugal
+PT,2021,House prices,Preços das casas,168.8,Portugal,focus,1,Portugal,Portugal
+PT,2022,House prices,Preços das casas,190.2,Portugal,focus,1,Portugal,Portugal
+PT,2023,House prices,Preços das casas,205.8,Portugal,focus,1,Portugal,Portugal
+PT,2024,House prices,Preços das casas,224.4,Portugal,focus,1,Portugal,Portugal
+PT,2015,Household income,Rendimento das famílias,100.0,Portugal,focus,1,Portugal,Portugal
+PT,2016,Household income,Rendimento das famílias,103.3,Portugal,focus,1,Portugal,Portugal
+PT,2017,Household income,Rendimento das famílias,106.4,Portugal,focus,1,Portugal,Portugal
+PT,2018,Household income,Rendimento das famílias,114.1,Portugal,focus,1,Portugal,Portugal
+PT,2019,Household income,Rendimento das famílias,123.0,Portugal,focus,1,Portugal,Portugal
+PT,2020,Household income,Rendimento das famílias,126.3,Portugal,focus,1,Portugal,Portugal
+PT,2021,Household income,Rendimento das famílias,125.4,Portugal,focus,1,Portugal,Portugal
+PT,2022,Household income,Rendimento das famílias,134.6,Portugal,focus,1,Portugal,Portugal
+PT,2023,Household income,Rendimento das famílias,144.0,Portugal,focus,1,Portugal,Portugal
+PT,2024,Household income,Rendimento das famílias,164.7,Portugal,focus,1,Portugal,Portugal
+ES,2015,House prices,Preços das casas,100.0,Spain,peer,2,Espanha,Other
+ES,2016,House prices,Preços das casas,104.6,Spain,peer,2,Espanha,Other
+ES,2017,House prices,Preços das casas,111.1,Spain,peer,2,Espanha,Other
+ES,2018,House prices,Preços das casas,118.6,Spain,peer,2,Espanha,Other
+ES,2019,House prices,Preços das casas,124.7,Spain,peer,2,Espanha,Other
+ES,2020,House prices,Preços das casas,127.5,Spain,peer,2,Espanha,Other
+ES,2021,House prices,Preços das casas,132.2,Spain,peer,2,Espanha,Other
+ES,2022,House prices,Preços das casas,142.0,Spain,peer,2,Espanha,Other
+ES,2023,House prices,Preços das casas,147.7,Spain,peer,2,Espanha,Other
+ES,2024,House prices,Preços das casas,160.2,Spain,peer,2,Espanha,Other
+ES,2015,Household income,Rendimento das famílias,100.0,Spain,peer,2,Espanha,Other
+ES,2016,Household income,Rendimento das famílias,103.8,Spain,peer,2,Espanha,Other
+ES,2017,Household income,Rendimento das famílias,108.1,Spain,peer,2,Espanha,Other
+ES,2018,Household income,Rendimento das famílias,109.8,Spain,peer,2,Espanha,Other
+ES,2019,Household income,Rendimento das famílias,117.3,Spain,peer,2,Espanha,Other
+ES,2020,Household income,Rendimento das famílias,116.2,Spain,peer,2,Espanha,Other
+ES,2021,Household income,Rendimento das famílias,122.9,Spain,peer,2,Espanha,Other
+ES,2022,Household income,Rendimento das famílias,133.9,Spain,peer,2,Espanha,Other
+ES,2023,Household income,Rendimento das famílias,141.1,Spain,peer,2,Espanha,Other
+ES,2024,Household income,Rendimento das famílias,148.9,Spain,peer,2,Espanha,Other
+IE,2015,House prices,Preços das casas,100.0,Ireland,peer,3,Irlanda,Other
+IE,2016,House prices,Preços das casas,107.5,Ireland,peer,3,Irlanda,Other
+IE,2017,House prices,Preços das casas,119.1,Ireland,peer,3,Irlanda,Other
+IE,2018,House prices,Preços das casas,131.3,Ireland,peer,3,Irlanda,Other
+IE,2019,House prices,Preços das casas,134.4,Ireland,peer,3,Irlanda,Other
+IE,2020,House prices,Preços das casas,134.8,Ireland,peer,3,Irlanda,Other
+IE,2021,House prices,Preços das casas,146.0,Ireland,peer,3,Irlanda,Other
+IE,2022,House prices,Preços das casas,164.0,Ireland,peer,3,Irlanda,Other
+IE,2023,House prices,Preços das casas,169.0,Ireland,peer,3,Irlanda,Other
+IE,2024,House prices,Preços das casas,183.4,Ireland,peer,3,Irlanda,Other
+IE,2015,Household income,Rendimento das famílias,100.0,Ireland,peer,3,Irlanda,Other
+IE,2016,Household income,Rendimento das famílias,101.5,Ireland,peer,3,Irlanda,Other
+IE,2017,Household income,Rendimento das famílias,110.5,Ireland,peer,3,Irlanda,Other
+IE,2018,Household income,Rendimento das famílias,112.8,Ireland,peer,3,Irlanda,Other
+IE,2019,Household income,Rendimento das famílias,118.7,Ireland,peer,3,Irlanda,Other
+IE,2020,Household income,Rendimento das famílias,127.6,Ireland,peer,3,Irlanda,Other
+IE,2021,Household income,Rendimento das famílias,133.4,Ireland,peer,3,Irlanda,Other
+IE,2022,Household income,Rendimento das famílias,136.1,Ireland,peer,3,Irlanda,Other
+IE,2023,Household income,Rendimento das famílias,146.4,Ireland,peer,3,Irlanda,Other
+IE,2024,Household income,Rendimento das famílias,155.9,Ireland,peer,3,Irlanda,Other
+IT,2015,House prices,Preços das casas,100.0,Italy,peer,4,Itália,Other
+IT,2016,House prices,Preços das casas,100.2,Italy,peer,4,Itália,Other
+IT,2017,House prices,Preços das casas,99.2,Italy,peer,4,Itália,Other
+IT,2018,House prices,Preços das casas,98.6,Italy,peer,4,Itália,Other
+IT,2019,House prices,Preços das casas,98.5,Italy,peer,4,Itália,Other
+IT,2020,House prices,Preços das casas,100.4,Italy,peer,4,Itália,Other
+IT,2021,House prices,Preços das casas,103.0,Italy,peer,4,Itália,Other
+IT,2022,House prices,Preços das casas,106.9,Italy,peer,4,Itália,Other
+IT,2023,House prices,Preços das casas,108.2,Italy,peer,4,Itália,Other
+IT,2024,House prices,Preços das casas,111.7,Italy,peer,4,Itália,Other
+IT,2015,Household income,Rendimento das famílias,100.0,Italy,peer,4,Itália,Other
+IT,2016,Household income,Rendimento das famílias,101.8,Italy,peer,4,Itália,Other
+IT,2017,Household income,Rendimento das famílias,103.7,Italy,peer,4,Itália,Other
+IT,2018,Household income,Rendimento das famílias,105.7,Italy,peer,4,Itália,Other
+IT,2019,Household income,Rendimento das famílias,111.2,Italy,peer,4,Itália,Other
+IT,2020,Household income,Rendimento das famílias,107.9,Italy,peer,4,Itália,Other
+IT,2021,Household income,Rendimento das famílias,114.4,Italy,peer,4,Itália,Other
+IT,2022,Household income,Rendimento das famílias,122.0,Italy,peer,4,Itália,Other
+IT,2023,Household income,Rendimento das famílias,126.8,Italy,peer,4,Itália,Other
+IT,2024,Household income,Rendimento das famílias,135.8,Italy,peer,4,Itália,Other
+FR,2015,House prices,Preços das casas,100.0,France,peer,5,França,Other
+FR,2016,House prices,Preços das casas,101.0,France,peer,5,França,Other
+FR,2017,House prices,Preços das casas,104.2,France,peer,5,França,Other
+FR,2018,House prices,Preços das casas,107.3,France,peer,5,França,Other
+FR,2019,House prices,Preços das casas,110.9,France,peer,5,França,Other
+FR,2020,House prices,Preços das casas,116.6,France,peer,5,França,Other
+FR,2021,House prices,Preços das casas,124.1,France,peer,5,França,Other
+FR,2022,House prices,Preços das casas,131.8,France,peer,5,França,Other
+FR,2023,House prices,Preços das casas,131.3,France,peer,5,França,Other
+FR,2024,House prices,Preços das casas,126.4,France,peer,5,França,Other
+FR,2015,Household income,Rendimento das famílias,100.0,France,peer,5,França,Other
+FR,2016,Household income,Rendimento das famílias,101.1,France,peer,5,França,Other
+FR,2017,Household income,Rendimento das famílias,102.3,France,peer,5,França,Other
+FR,2018,Household income,Rendimento das famílias,103.9,France,peer,5,França,Other
+FR,2019,Household income,Rendimento das famílias,102.0,France,peer,5,França,Other
+FR,2020,Household income,Rendimento das famílias,104.7,France,peer,5,França,Other
+FR,2021,Household income,Rendimento das famílias,106.2,France,peer,5,França,Other
+FR,2022,Household income,Rendimento das famílias,111.4,France,peer,5,França,Other
+FR,2023,Household income,Rendimento das famílias,117.7,France,peer,5,França,Other
+FR,2024,Household income,Rendimento das famílias,121.9,France,peer,5,França,Other
+DE,2015,House prices,Preços das casas,100.0,Germany,peer,6,Alemanha,Other
+DE,2016,House prices,Preços das casas,107.5,Germany,peer,6,Alemanha,Other
+DE,2017,House prices,Preços das casas,114.1,Germany,peer,6,Alemanha,Other
+DE,2018,House prices,Preços das casas,121.6,Germany,peer,6,Alemanha,Other
+DE,2019,House prices,Preços das casas,128.7,Germany,peer,6,Alemanha,Other
+DE,2020,House prices,Preços das casas,138.6,Germany,peer,6,Alemanha,Other
+DE,2021,House prices,Preços das casas,154.7,Germany,peer,6,Alemanha,Other
+DE,2022,House prices,Preços das casas,164.1,Germany,peer,6,Alemanha,Other
+DE,2023,House prices,Preços das casas,150.2,Germany,peer,6,Alemanha,Other
+DE,2024,House prices,Preços das casas,148.0,Germany,peer,6,Alemanha,Other
+DE,2015,Household income,Rendimento das famílias,100.0,Germany,peer,6,Alemanha,Other
+DE,2016,Household income,Rendimento das famílias,103.0,Germany,peer,6,Alemanha,Other
+DE,2017,Household income,Rendimento das famílias,106.8,Germany,peer,6,Alemanha,Other
+DE,2018,Household income,Rendimento das famílias,110.5,Germany,peer,6,Alemanha,Other
+DE,2019,Household income,Rendimento das famílias,122.2,Germany,peer,6,Alemanha,Other
+DE,2020,Household income,Rendimento das famílias,117.3,Germany,peer,6,Alemanha,Other
+DE,2021,Household income,Rendimento das famílias,117.2,Germany,peer,6,Alemanha,Other
+DE,2022,Household income,Rendimento das famílias,123.5,Germany,peer,6,Alemanha,Other
+DE,2023,Household income,Rendimento das famílias,129.8,Germany,peer,6,Alemanha,Other
+DE,2024,Household income,Rendimento das famílias,135.8,Germany,peer,6,Alemanha,Other
+NL,2015,House prices,Preços das casas,100.0,Netherlands,peer,7,Países Baixos,Other
+NL,2016,House prices,Preços das casas,105.3,Netherlands,peer,7,Países Baixos,Other
+NL,2017,House prices,Preços das casas,113.8,Netherlands,peer,7,Países Baixos,Other
+NL,2018,House prices,Preços das casas,124.4,Netherlands,peer,7,Países Baixos,Other
+NL,2019,House prices,Preços das casas,133.4,Netherlands,peer,7,Países Baixos,Other
+NL,2020,House prices,Preços das casas,144.1,Netherlands,peer,7,Países Baixos,Other
+NL,2021,House prices,Preços das casas,164.9,Netherlands,peer,7,Países Baixos,Other
+NL,2022,House prices,Preços das casas,186.8,Netherlands,peer,7,Países Baixos,Other
+NL,2023,House prices,Preços das casas,183.3,Netherlands,peer,7,Países Baixos,Other
+NL,2024,House prices,Preços das casas,198.2,Netherlands,peer,7,Países Baixos,Other
+NL,2015,Household income,Rendimento das famílias,100.0,Netherlands,peer,7,Países Baixos,Other
+NL,2016,Household income,Rendimento das famílias,103.6,Netherlands,peer,7,Países Baixos,Other
+NL,2017,Household income,Rendimento das famílias,105.6,Netherlands,peer,7,Países Baixos,Other
+NL,2018,Household income,Rendimento das famílias,108.3,Netherlands,peer,7,Países Baixos,Other
+NL,2019,Household income,Rendimento das famílias,113.5,Netherlands,peer,7,Países Baixos,Other
+NL,2020,Household income,Rendimento das famílias,125.1,Netherlands,peer,7,Países Baixos,Other
+NL,2021,Household income,Rendimento das famílias,129.9,Netherlands,peer,7,Países Baixos,Other
+NL,2022,Household income,Rendimento das famílias,128.7,Netherlands,peer,7,Países Baixos,Other
+NL,2023,Household income,Rendimento das famílias,140.7,Netherlands,peer,7,Países Baixos,Other
+NL,2024,Household income,Rendimento das famílias,151.6,Netherlands,peer,7,Países Baixos,Other
+EU27_2020,2015,House prices,Preços das casas,100.0,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2016,House prices,Preços das casas,104.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2017,House prices,Preços das casas,109.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2018,House prices,Preços das casas,114.8,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2019,House prices,Preços das casas,120.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2020,House prices,Preços das casas,127.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2021,House prices,Preços das casas,137.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2022,House prices,Preços das casas,148.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2023,House prices,Preços das casas,148.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2024,House prices,Preços das casas,153.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2015,Household income,Rendimento das famílias,100.0,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2016,Household income,Rendimento das famílias,102.7,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2017,Household income,Rendimento das famílias,106.2,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2018,Household income,Rendimento das famílias,109.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2019,Household income,Rendimento das famílias,115.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2020,Household income,Rendimento das famílias,116.0,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2021,Household income,Rendimento das famílias,120.5,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2022,Household income,Rendimento das famílias,128.0,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2023,Household income,Rendimento das famílias,136.2,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2024,Household income,Rendimento das famílias,144.8,EU-27,benchmark,8,UE-27,Other

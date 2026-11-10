@@ -1,0 +1,529 @@
+geo,quarter_start,nominal_hpi,real_hpi,rent_index,country_name,country_group,sort_order,country_pt,highlight
+PT,2010-01-01,107.7,117.2,90.4,Portugal,focus,1,Portugal,Portugal
+PT,2010-04-01,108.2,116.0,91.0,Portugal,focus,1,Portugal,Portugal
+PT,2010-07-01,107.3,114.6,91.0,Portugal,focus,1,Portugal,Portugal
+PT,2010-10-01,106.2,112.9,91.0,Portugal,focus,1,Portugal,Portugal
+PT,2011-01-01,105.4,110.7,91.3,Portugal,focus,1,Portugal,Portugal
+PT,2011-04-01,103.2,106.7,91.8,Portugal,focus,1,Portugal,Portugal
+PT,2011-07-01,101.5,105.1,91.8,Portugal,focus,1,Portugal,Portugal
+PT,2011-10-01,98.2,100.6,91.9,Portugal,focus,1,Portugal,Portugal
+PT,2012-01-01,96.8,98.4,92.7,Portugal,focus,1,Portugal,Portugal
+PT,2012-04-01,94.6,95.2,93.6,Portugal,focus,1,Portugal,Portugal
+PT,2012-07-01,93.7,94.2,93.9,Portugal,focus,1,Portugal,Portugal
+PT,2012-10-01,94.3,94.7,94.1,Portugal,focus,1,Portugal,Portugal
+PT,2013-01-01,92.4,93.5,94.6,Portugal,focus,1,Portugal,Portugal
+PT,2013-04-01,92.2,92.1,94.8,Portugal,focus,1,Portugal,Portugal
+PT,2013-07-01,92.8,92.9,94.7,Portugal,focus,1,Portugal,Portugal
+PT,2013-10-01,94.9,95.2,94.7,Portugal,focus,1,Portugal,Portugal
+PT,2014-01-01,96.2,97.4,98.7,Portugal,focus,1,Portugal,Portugal
+PT,2014-04-01,97.7,97.7,98.8,Portugal,focus,1,Portugal,Portugal
+PT,2014-07-01,97.3,97.7,98.9,Portugal,focus,1,Portugal,Portugal
+PT,2014-10-01,97.0,97.3,99.2,Portugal,focus,1,Portugal,Portugal
+PT,2015-01-01,96.9,98.2,99.9,Portugal,focus,1,Portugal,Portugal
+PT,2015-04-01,100.6,99.9,99.8,Portugal,focus,1,Portugal,Portugal
+PT,2015-07-01,100.6,100.3,100.0,Portugal,focus,1,Portugal,Portugal
+PT,2015-10-01,101.8,101.6,100.2,Portugal,focus,1,Portugal,Portugal
+PT,2016-01-01,103.7,104.5,101.2,Portugal,focus,1,Portugal,Portugal
+PT,2016-04-01,106.9,105.6,101.5,Portugal,focus,1,Portugal,Portugal
+PT,2016-07-01,108.3,107.2,101.7,Portugal,focus,1,Portugal,Portugal
+PT,2016-10-01,109.6,108.4,102.4,Portugal,focus,1,Portugal,Portugal
+PT,2017-01-01,111.9,111.2,102.6,Portugal,focus,1,Portugal,Portugal
+PT,2017-04-01,115.5,112.2,102.5,Portugal,focus,1,Portugal,Portugal
+PT,2017-07-01,119.6,116.8,102.7,Portugal,focus,1,Portugal,Portugal
+PT,2017-10-01,121.1,117.7,103.0,Portugal,focus,1,Portugal,Portugal
+PT,2018-01-01,125.6,123.8,103.6,Portugal,focus,1,Portugal,Portugal
+PT,2018-04-01,128.5,123.2,104.3,Portugal,focus,1,Portugal,Portugal
+PT,2018-07-01,129.7,124.5,105.0,Portugal,focus,1,Portugal,Portugal
+PT,2018-10-01,132.3,127.7,105.8,Portugal,focus,1,Portugal,Portugal
+PT,2019-01-01,137.1,134.1,106.6,Portugal,focus,1,Portugal,Portugal
+PT,2019-04-01,140.6,134.1,107.5,Portugal,focus,1,Portugal,Portugal
+PT,2019-07-01,143.7,138.3,108.4,Portugal,focus,1,Portugal,Portugal
+PT,2019-10-01,146.1,140.7,109.3,Portugal,focus,1,Portugal,Portugal
+PT,2020-01-01,151.7,147.6,110.2,Portugal,focus,1,Portugal,Portugal
+PT,2020-04-01,154.3,147.4,110.4,Portugal,focus,1,Portugal,Portugal
+PT,2020-07-01,153.6,148.5,110.9,Portugal,focus,1,Portugal,Portugal
+PT,2020-10-01,157.7,152.5,111.5,Portugal,focus,1,Portugal,Portugal
+PT,2021-01-01,161.7,157.1,112.0,Portugal,focus,1,Portugal,Portugal
+PT,2021-04-01,166.4,159.0,112.4,Portugal,focus,1,Portugal,Portugal
+PT,2021-07-01,171.3,163.5,113.0,Portugal,focus,1,Portugal,Portugal
+PT,2021-10-01,176.0,166.2,113.7,Portugal,focus,1,Portugal,Portugal
+PT,2022-01-01,182.6,169.9,114.4,Portugal,focus,1,Portugal,Portugal
+PT,2022-04-01,188.3,166.3,115.3,Portugal,focus,1,Portugal,Portugal
+PT,2022-07-01,193.8,168.9,116.2,Portugal,focus,1,Portugal,Portugal
+PT,2022-10-01,195.9,167.9,117.3,Portugal,focus,1,Portugal,Portugal
+PT,2023-01-01,198.6,170.4,118.8,Portugal,focus,1,Portugal,Portugal
+PT,2023-04-01,204.7,171.2,120.4,Portugal,focus,1,Portugal,Portugal
+PT,2023-07-01,208.5,173.4,121.8,Portugal,focus,1,Portugal,Portugal
+PT,2023-10-01,211.3,176.7,123.2,Portugal,focus,1,Portugal,Portugal
+PT,2024-01-01,212.4,178.0,126.5,Portugal,focus,1,Portugal,Portugal
+PT,2024-04-01,220.7,179.1,129.0,Portugal,focus,1,Portugal,Portugal
+PT,2024-07-01,228.9,186.0,130.5,Portugal,focus,1,Portugal,Portugal
+PT,2024-10-01,235.7,191.8,132.0,Portugal,focus,1,Portugal,Portugal
+PT,2025-01-01,247.0,202.2,134.0,Portugal,focus,1,Portugal,Portugal
+PT,2025-04-01,258.8,205.9,135.8,Portugal,focus,1,Portugal,Portugal
+PT,2025-07-01,269.4,213.9,137.1,Portugal,focus,1,Portugal,Portugal
+PT,2025-10-01,280.2,223.2,138.6,Portugal,focus,1,Portugal,Portugal
+PT,2026-01-01,291.0,232.9,140.9,Portugal,focus,1,Portugal,Portugal
+PT,2026-04-01,301.4,232.4,142.8,Portugal,focus,1,Portugal,Portugal
+ES,2010-01-01,134.1,145.1,98.5,Spain,peer,2,Espanha,Other
+ES,2010-04-01,136.3,144.2,99.7,Spain,peer,2,Espanha,Other
+ES,2010-07-01,134.0,142.6,103.8,Spain,peer,2,Espanha,Other
+ES,2010-10-01,133.9,140.3,99.8,Spain,peer,2,Espanha,Other
+ES,2011-01-01,129.3,135.5,99.8,Spain,peer,2,Espanha,Other
+ES,2011-04-01,127.8,130.8,101.1,Spain,peer,2,Espanha,Other
+ES,2011-07-01,123.2,127.4,104.5,Spain,peer,2,Espanha,Other
+ES,2011-10-01,116.8,119.2,100.7,Spain,peer,2,Espanha,Other
+ES,2012-01-01,111.0,114.2,100.6,Spain,peer,2,Espanha,Other
+ES,2012-04-01,107.4,107.9,101.7,Spain,peer,2,Espanha,Other
+ES,2012-07-01,103.4,104.0,104.5,Spain,peer,2,Espanha,Other
+ES,2012-10-01,101.9,100.8,101.2,Spain,peer,2,Espanha,Other
+ES,2013-01-01,96.8,96.9,100.7,Spain,peer,2,Espanha,Other
+ES,2013-04-01,96.0,94.7,101.7,Spain,peer,2,Espanha,Other
+ES,2013-07-01,96.7,96.0,104.6,Spain,peer,2,Espanha,Other
+ES,2013-10-01,95.5,94.2,100.7,Spain,peer,2,Espanha,Other
+ES,2014-01-01,95.2,95.3,99.9,Spain,peer,2,Espanha,Other
+ES,2014-04-01,96.8,95.3,101.2,Spain,peer,2,Espanha,Other
+ES,2014-07-01,97.0,96.7,103.9,Spain,peer,2,Espanha,Other
+ES,2014-10-01,97.2,96.5,100.2,Spain,peer,2,Espanha,Other
+ES,2015-01-01,96.7,97.9,100.2,Spain,peer,2,Espanha,Other
+ES,2015-04-01,100.7,99.5,100.0,Spain,peer,2,Espanha,Other
+ES,2015-07-01,101.3,101.6,99.9,Spain,peer,2,Espanha,Other
+ES,2015-10-01,101.3,101.1,99.9,Spain,peer,2,Espanha,Other
+ES,2016-01-01,102.7,104.8,99.9,Spain,peer,2,Espanha,Other
+ES,2016-04-01,104.6,104.4,99.9,Spain,peer,2,Espanha,Other
+ES,2016-07-01,105.4,106.0,99.9,Spain,peer,2,Espanha,Other
+ES,2016-10-01,105.8,104.7,99.9,Spain,peer,2,Espanha,Other
+ES,2017-01-01,108.2,107.5,100.0,Spain,peer,2,Espanha,Other
+ES,2017-04-01,110.4,108.0,100.2,Spain,peer,2,Espanha,Other
+ES,2017-07-01,112.4,111.0,100.4,Spain,peer,2,Espanha,Other
+ES,2017-10-01,113.4,110.5,100.7,Spain,peer,2,Espanha,Other
+ES,2018-01-01,115.0,113.0,101.0,Spain,peer,2,Espanha,Other
+ES,2018-04-01,117.9,113.3,101.4,Spain,peer,2,Espanha,Other
+ES,2018-07-01,120.5,116.3,101.7,Spain,peer,2,Espanha,Other
+ES,2018-10-01,121.0,115.8,102.2,Spain,peer,2,Espanha,Other
+ES,2019-01-01,122.9,119.4,102.6,Spain,peer,2,Espanha,Other
+ES,2019-04-01,124.3,118.1,103.0,Spain,peer,2,Espanha,Other
+ES,2019-07-01,126.3,121.4,103.3,Spain,peer,2,Espanha,Other
+ES,2019-10-01,125.4,119.5,103.7,Spain,peer,2,Espanha,Other
+ES,2020-01-01,126.9,122.5,104.0,Spain,peer,2,Espanha,Other
+ES,2020-04-01,127.0,121.5,104.2,Spain,peer,2,Espanha,Other
+ES,2020-07-01,128.6,124.4,104.5,Spain,peer,2,Espanha,Other
+ES,2020-10-01,127.6,122.5,104.6,Spain,peer,2,Espanha,Other
+ES,2021-01-01,128.1,123.1,104.8,Spain,peer,2,Espanha,Other
+ES,2021-04-01,131.2,122.6,104.9,Spain,peer,2,Espanha,Other
+ES,2021-07-01,133.9,125.3,105.0,Spain,peer,2,Espanha,Other
+ES,2021-10-01,135.6,123.0,105.2,Spain,peer,2,Espanha,Other
+ES,2022-01-01,139.0,123.8,105.6,Spain,peer,2,Espanha,Other
+ES,2022-04-01,141.7,121.7,106.2,Spain,peer,2,Espanha,Other
+ES,2022-07-01,144.2,122.5,106.6,Spain,peer,2,Espanha,Other
+ES,2022-10-01,143.0,121.8,107.1,Spain,peer,2,Espanha,Other
+ES,2023-01-01,144.0,122.2,107.7,Spain,peer,2,Espanha,Other
+ES,2023-04-01,147.0,122.8,108.4,Spain,peer,2,Espanha,Other
+ES,2023-07-01,150.7,124.8,108.8,Spain,peer,2,Espanha,Other
+ES,2023-10-01,149.1,123.0,109.3,Spain,peer,2,Espanha,Other
+ES,2024-01-01,153.2,125.9,109.9,Spain,peer,2,Espanha,Other
+ES,2024-04-01,158.6,127.9,110.7,Spain,peer,2,Espanha,Other
+ES,2024-07-01,163.1,132.1,111.2,Spain,peer,2,Espanha,Other
+ES,2024-10-01,166.1,133.8,111.9,Spain,peer,2,Espanha,Other
+ES,2025-01-01,172.0,137.7,112.5,Spain,peer,2,Espanha,Other
+ES,2025-04-01,178.9,141.2,113.4,Spain,peer,2,Espanha,Other
+ES,2025-07-01,184.1,145.0,113.9,Spain,peer,2,Espanha,Other
+ES,2025-10-01,187.4,146.4,114.6,Spain,peer,2,Espanha,Other
+ES,2026-01-01,194.1,151.1,115.3,Spain,peer,2,Espanha,Other
+ES,2026-04-01,200.6,152.8,116.2,Spain,peer,2,Espanha,Other
+IE,2010-01-01,111.5,116.2,79.9,Ireland,peer,3,Irlanda,Other
+IE,2010-04-01,107.7,111.9,80.2,Ireland,peer,3,Irlanda,Other
+IE,2010-07-01,104.6,108.6,79.9,Ireland,peer,3,Irlanda,Other
+IE,2010-10-01,100.0,103.9,79.1,Ireland,peer,3,Irlanda,Other
+IE,2011-01-01,95.4,98.7,79.3,Ireland,peer,3,Irlanda,Other
+IE,2011-04-01,90.5,92.8,79.6,Ireland,peer,3,Irlanda,Other
+IE,2011-07-01,85.1,87.4,79.7,Ireland,peer,3,Irlanda,Other
+IE,2011-10-01,80.4,82.2,80.6,Ireland,peer,3,Irlanda,Other
+IE,2012-01-01,76.8,78.0,80.9,Ireland,peer,3,Irlanda,Other
+IE,2012-04-01,75.0,75.5,80.6,Ireland,peer,3,Irlanda,Other
+IE,2012-07-01,75.9,76.2,80.8,Ireland,peer,3,Irlanda,Other
+IE,2012-10-01,76.5,76.9,82.0,Ireland,peer,3,Irlanda,Other
+IE,2013-01-01,74.3,74.7,82.8,Ireland,peer,3,Irlanda,Other
+IE,2013-04-01,74.3,74.4,84.7,Ireland,peer,3,Irlanda,Other
+IE,2013-07-01,78.5,78.6,86.3,Ireland,peer,3,Irlanda,Other
+IE,2013-10-01,80.8,81.0,88.2,Ireland,peer,3,Irlanda,Other
+IE,2014-01-01,82.0,82.3,90.4,Ireland,peer,3,Irlanda,Other
+IE,2014-04-01,86.6,86.4,91.7,Ireland,peer,3,Irlanda,Other
+IE,2014-07-01,93.6,93.2,92.9,Ireland,peer,3,Irlanda,Other
+IE,2014-10-01,96.6,96.8,94.8,Ireland,peer,3,Irlanda,Other
+IE,2015-01-01,96.4,97.1,97.2,Ireland,peer,3,Irlanda,Other
+IE,2015-04-01,98.6,98.2,98.7,Ireland,peer,3,Irlanda,Other
+IE,2015-07-01,101.7,101.2,101.1,Ireland,peer,3,Irlanda,Other
+IE,2015-10-01,103.2,103.5,103.0,Ireland,peer,3,Irlanda,Other
+IE,2016-01-01,103.7,104.6,105.2,Ireland,peer,3,Irlanda,Other
+IE,2016-04-01,104.8,104.5,107.4,Ireland,peer,3,Irlanda,Other
+IE,2016-07-01,109.3,109.0,109.9,Ireland,peer,3,Irlanda,Other
+IE,2016-10-01,112.1,112.6,112.3,Ireland,peer,3,Irlanda,Other
+IE,2017-01-01,113.4,114.0,113.3,Ireland,peer,3,Irlanda,Other
+IE,2017-04-01,115.9,115.5,114.7,Ireland,peer,3,Irlanda,Other
+IE,2017-07-01,122.2,121.6,117.0,Ireland,peer,3,Irlanda,Other
+IE,2017-10-01,125.2,125.2,118.8,Ireland,peer,3,Irlanda,Other
+IE,2018-01-01,127.3,127.4,120.6,Ireland,peer,3,Irlanda,Other
+IE,2018-04-01,130.4,129.4,122.5,Ireland,peer,3,Irlanda,Other
+IE,2018-07-01,133.3,131.3,124.1,Ireland,peer,3,Irlanda,Other
+IE,2018-10-01,134.2,133.0,126.3,Ireland,peer,3,Irlanda,Other
+IE,2019-01-01,133.0,131.9,127.5,Ireland,peer,3,Irlanda,Other
+IE,2019-04-01,133.7,131.1,129.0,Ireland,peer,3,Irlanda,Other
+IE,2019-07-01,135.6,132.9,130.9,Ireland,peer,3,Irlanda,Other
+IE,2019-10-01,135.3,133.0,132.3,Ireland,peer,3,Irlanda,Other
+IE,2020-01-01,134.3,132.1,132.5,Ireland,peer,3,Irlanda,Other
+IE,2020-04-01,134.2,132.3,129.5,Ireland,peer,3,Irlanda,Other
+IE,2020-07-01,134.6,133.1,129.4,Ireland,peer,3,Irlanda,Other
+IE,2020-10-01,136.3,135.5,129.2,Ireland,peer,3,Irlanda,Other
+IE,2021-01-01,138.3,136.3,130.3,Ireland,peer,3,Irlanda,Other
+IE,2021-04-01,141.6,137.6,132.1,Ireland,peer,3,Irlanda,Other
+IE,2021-07-01,148.8,143.0,134.1,Ireland,peer,3,Irlanda,Other
+IE,2021-10-01,155.1,146.3,138.6,Ireland,peer,3,Irlanda,Other
+IE,2022-01-01,159.1,147.9,141.0,Ireland,peer,3,Irlanda,Other
+IE,2022-04-01,161.9,145.1,145.3,Ireland,peer,3,Irlanda,Other
+IE,2022-07-01,166.5,146.6,149.4,Ireland,peer,3,Irlanda,Other
+IE,2022-10-01,168.4,146.0,151.8,Ireland,peer,3,Irlanda,Other
+IE,2023-01-01,167.2,144.6,154.0,Ireland,peer,3,Irlanda,Other
+IE,2023-04-01,166.3,141.3,156.1,Ireland,peer,3,Irlanda,Other
+IE,2023-07-01,168.8,141.8,159.4,Ireland,peer,3,Irlanda,Other
+IE,2023-10-01,173.7,146.1,161.5,Ireland,peer,3,Irlanda,Other
+IE,2024-01-01,177.7,150.3,162.9,Ireland,peer,3,Irlanda,Other
+IE,2024-04-01,180.3,150.7,164.4,Ireland,peer,3,Irlanda,Other
+IE,2024-07-01,185.5,154.5,167.1,Ireland,peer,3,Irlanda,Other
+IE,2024-10-01,190.0,158.9,169.9,Ireland,peer,3,Irlanda,Other
+IE,2025-01-01,191.8,159.7,171.5,Ireland,peer,3,Irlanda,Other
+IE,2025-04-01,194.3,159.7,172.8,Ireland,peer,3,Irlanda,Other
+IE,2025-07-01,199.4,162.7,174.3,Ireland,peer,3,Irlanda,Other
+IE,2025-10-01,203.2,165.2,175.8,Ireland,peer,3,Irlanda,Other
+IE,2026-01-01,204.9,165.9,177.3,Ireland,peer,3,Irlanda,Other
+IE,2026-04-01,205.9,163.6,181.2,Ireland,peer,3,Irlanda,Other
+IT,2010-01-01,116.8,128.2,94.7,Italy,peer,4,Itália,Other
+IT,2010-04-01,117.9,126.9,95.0,Italy,peer,4,Itália,Other
+IT,2010-07-01,118.8,128.5,95.3,Italy,peer,4,Itália,Other
+IT,2010-10-01,118.9,126.9,95.7,Italy,peer,4,Itália,Other
+IT,2011-01-01,118.3,126.9,96.2,Italy,peer,4,Itália,Other
+IT,2011-04-01,120.7,126.1,96.6,Italy,peer,4,Itália,Other
+IT,2011-07-01,120.3,126.7,96.8,Italy,peer,4,Itália,Other
+IT,2011-10-01,119.5,122.9,97.4,Italy,peer,4,Itália,Other
+IT,2012-01-01,119.0,123.3,98.2,Italy,peer,4,Itália,Other
+IT,2012-04-01,118.1,119.1,98.8,Italy,peer,4,Itália,Other
+IT,2012-07-01,115.9,118.0,99.1,Italy,peer,4,Itália,Other
+IT,2012-10-01,113.6,113.9,99.5,Italy,peer,4,Itália,Other
+IT,2013-01-01,110.5,112.1,99.9,Italy,peer,4,Itália,Other
+IT,2013-04-01,110.2,109.8,100.3,Italy,peer,4,Itália,Other
+IT,2013-07-01,108.6,109.4,100.5,Italy,peer,4,Itália,Other
+IT,2013-10-01,107.1,106.7,100.0,Italy,peer,4,Itália,Other
+IT,2014-01-01,105.7,106.8,99.8,Italy,peer,4,Itália,Other
+IT,2014-04-01,104.7,103.9,99.8,Italy,peer,4,Itália,Other
+IT,2014-07-01,103.5,104.3,99.9,Italy,peer,4,Itália,Other
+IT,2014-10-01,101.9,101.3,99.9,Italy,peer,4,Itália,Other
+IT,2015-01-01,99.7,100.9,99.9,Italy,peer,4,Itália,Other
+IT,2015-04-01,99.8,98.9,100.0,Italy,peer,4,Itália,Other
+IT,2015-07-01,100.7,101.2,100.0,Italy,peer,4,Itália,Other
+IT,2015-10-01,99.8,99.1,100.1,Italy,peer,4,Itália,Other
+IT,2016-01-01,99.8,101.0,100.2,Italy,peer,4,Itália,Other
+IT,2016-04-01,100.5,99.9,100.3,Italy,peer,4,Itália,Other
+IT,2016-07-01,100.7,101.2,100.3,Italy,peer,4,Itália,Other
+IT,2016-10-01,100.0,99.1,100.2,Italy,peer,4,Itália,Other
+IT,2017-01-01,99.1,98.9,100.3,Italy,peer,4,Itália,Other
+IT,2017-04-01,99.6,97.5,100.5,Italy,peer,4,Itália,Other
+IT,2017-07-01,99.2,98.4,100.5,Italy,peer,4,Itália,Other
+IT,2017-10-01,98.8,96.9,100.6,Italy,peer,4,Itália,Other
+IT,2018-01-01,98.6,97.6,100.7,Italy,peer,4,Itália,Other
+IT,2018-04-01,99.2,96.2,100.8,Italy,peer,4,Itália,Other
+IT,2018-07-01,98.4,96.1,100.9,Italy,peer,4,Itália,Other
+IT,2018-10-01,98.3,95.0,101.1,Italy,peer,4,Itália,Other
+IT,2019-01-01,97.7,95.7,101.0,Italy,peer,4,Itália,Other
+IT,2019-04-01,99.1,95.2,101.0,Italy,peer,4,Itália,Other
+IT,2019-07-01,98.8,96.1,101.2,Italy,peer,4,Itália,Other
+IT,2019-10-01,98.5,94.9,101.3,Italy,peer,4,Itália,Other
+IT,2020-01-01,99.4,97.2,101.4,Italy,peer,4,Itália,Other
+IT,2020-04-01,102.4,98.6,101.4,Italy,peer,4,Itália,Other
+IT,2020-07-01,99.8,97.3,101.4,Italy,peer,4,Itália,Other
+IT,2020-10-01,100.0,96.7,101.4,Italy,peer,4,Itália,Other
+IT,2021-01-01,101.1,98.1,101.3,Italy,peer,4,Itália,Other
+IT,2021-04-01,102.8,97.8,101.3,Italy,peer,4,Itália,Other
+IT,2021-07-01,103.9,99.2,101.4,Italy,peer,4,Itália,Other
+IT,2021-10-01,104.0,97.0,101.6,Italy,peer,4,Itália,Other
+IT,2022-01-01,105.7,96.7,101.9,Italy,peer,4,Itália,Other
+IT,2022-04-01,108.1,95.8,102.3,Italy,peer,4,Itália,Other
+IT,2022-07-01,106.9,93.7,102.6,Italy,peer,4,Itália,Other
+IT,2022-10-01,106.8,88.5,103.4,Italy,peer,4,Itália,Other
+IT,2023-01-01,106.8,89.2,103.9,Italy,peer,4,Itália,Other
+IT,2023-04-01,108.8,89.5,104.7,Italy,peer,4,Itália,Other
+IT,2023-07-01,108.7,90.1,105.5,Italy,peer,4,Itália,Other
+IT,2023-10-01,108.7,89.2,106.2,Italy,peer,4,Itália,Other
+IT,2024-01-01,108.5,89.8,107.2,Italy,peer,4,Itália,Other
+IT,2024-04-01,112.0,91.3,107.9,Italy,peer,4,Itália,Other
+IT,2024-07-01,112.8,92.4,108.8,Italy,peer,4,Itália,Other
+IT,2024-10-01,113.5,92.0,109.8,Italy,peer,4,Itália,Other
+IT,2025-01-01,113.3,92.0,111.0,Italy,peer,4,Itália,Other
+IT,2025-04-01,116.4,93.2,112.1,Italy,peer,4,Itália,Other
+IT,2025-07-01,117.0,94.2,113.0,Italy,peer,4,Itália,Other
+IT,2025-10-01,118.0,94.5,114.2,Italy,peer,4,Itália,Other
+IT,2026-01-01,119.1,95.5,115.2,Italy,peer,4,Itália,Other
+IT,2026-04-01,121.0,94.0,116.1,Italy,peer,4,Itália,Other
+FR,2010-01-01,96.7,103.6,93.7,France,peer,5,França,Other
+FR,2010-04-01,98.6,104.6,94.1,France,peer,5,França,Other
+FR,2010-07-01,101.3,107.6,94.3,France,peer,5,França,Other
+FR,2010-10-01,102.4,108.4,94.5,France,peer,5,França,Other
+FR,2011-01-01,103.1,108.3,94.9,France,peer,5,França,Other
+FR,2011-04-01,105.1,109.2,95.2,France,peer,5,França,Other
+FR,2011-07-01,107.3,111.4,95.4,France,peer,5,França,Other
+FR,2011-10-01,106.3,109.5,95.7,France,peer,5,França,Other
+FR,2012-01-01,104.9,107.4,96.1,France,peer,5,França,Other
+FR,2012-04-01,104.9,106.5,96.7,France,peer,5,França,Other
+FR,2012-07-01,105.6,107.3,97.0,France,peer,5,França,Other
+FR,2012-10-01,104.1,105.5,97.3,France,peer,5,França,Other
+FR,2013-01-01,102.8,104.1,97.9,France,peer,5,França,Other
+FR,2013-04-01,102.7,103.3,98.2,France,peer,5,França,Other
+FR,2013-07-01,103.6,104.2,98.5,France,peer,5,França,Other
+FR,2013-10-01,102.5,103.0,98.7,France,peer,5,França,Other
+FR,2014-01-01,101.3,101.7,99.1,France,peer,5,França,Other
+FR,2014-04-01,101.5,101.3,99.3,France,peer,5,França,Other
+FR,2014-07-01,102.3,102.3,99.4,France,peer,5,França,Other
+FR,2014-10-01,100.3,100.5,99.6,France,peer,5,França,Other
+FR,2015-01-01,99.4,99.9,99.8,France,peer,5,França,Other
+FR,2015-04-01,99.6,99.1,100.0,France,peer,5,França,Other
+FR,2015-07-01,100.9,100.8,100.1,France,peer,5,França,Other
+FR,2015-10-01,100.2,100.1,100.2,France,peer,5,França,Other
+FR,2016-01-01,99.7,100.3,100.2,France,peer,5,França,Other
+FR,2016-04-01,100.2,99.7,100.3,France,peer,5,França,Other
+FR,2016-07-01,102.4,101.8,100.4,France,peer,5,França,Other
+FR,2016-10-01,101.8,101.2,100.4,France,peer,5,França,Other
+FR,2017-01-01,102.5,101.6,100.4,France,peer,5,França,Other
+FR,2017-04-01,103.5,101.9,100.5,France,peer,5,França,Other
+FR,2017-07-01,105.6,104.1,100.5,France,peer,5,França,Other
+FR,2017-10-01,105.2,103.3,100.6,France,peer,5,França,Other
+FR,2018-01-01,105.5,103.0,100.8,France,peer,5,França,Other
+FR,2018-04-01,106.4,102.6,100.6,France,peer,5,França,Other
+FR,2018-07-01,108.6,104.4,99.7,France,peer,5,França,Other
+FR,2018-10-01,108.6,104.3,99.9,France,peer,5,França,Other
+FR,2019-01-01,108.6,104.5,100.3,France,peer,5,França,Other
+FR,2019-04-01,109.8,104.5,100.6,France,peer,5,França,Other
+FR,2019-07-01,112.3,106.6,100.8,France,peer,5,França,Other
+FR,2019-10-01,112.7,106.9,100.9,France,peer,5,França,Other
+FR,2020-01-01,113.9,108.2,101.0,France,peer,5,França,Other
+FR,2020-04-01,115.5,109.5,101.0,France,peer,5,França,Other
+FR,2020-07-01,117.8,111.4,101.0,France,peer,5,França,Other
+FR,2020-10-01,119.3,113.0,101.2,France,peer,5,França,Other
+FR,2021-01-01,120.2,113.1,101.7,France,peer,5,França,Other
+FR,2021-04-01,122.5,114.2,101.9,France,peer,5,França,Other
+FR,2021-07-01,126.2,116.8,102.1,France,peer,5,França,Other
+FR,2021-10-01,127.5,117.0,102.0,France,peer,5,França,Other
+FR,2022-01-01,128.6,116.1,102.2,France,peer,5,França,Other
+FR,2022-04-01,130.8,115.1,102.5,France,peer,5,França,Other
+FR,2022-07-01,134.3,116.7,102.7,France,peer,5,França,Other
+FR,2022-10-01,133.5,114.5,103.0,France,peer,5,França,Other
+FR,2023-01-01,132.3,111.7,104.1,France,peer,5,França,Other
+FR,2023-04-01,131.7,109.2,104.7,France,peer,5,França,Other
+FR,2023-07-01,132.2,108.9,105.0,France,peer,5,França,Other
+FR,2023-10-01,128.7,106.0,105.3,France,peer,5,França,Other
+FR,2024-01-01,126.0,103.2,106.4,France,peer,5,França,Other
+FR,2024-04-01,125.7,101.7,107.2,France,peer,5,França,Other
+FR,2024-07-01,127.6,102.9,107.5,France,peer,5,França,Other
+FR,2024-10-01,126.3,102.2,107.8,France,peer,5,França,Other
+FR,2025-01-01,126.5,102.4,109.0,France,peer,5,França,Other
+FR,2025-04-01,126.5,101.6,109.6,France,peer,5,França,Other
+FR,2025-07-01,128.5,102.7,109.8,France,peer,5,França,Other
+FR,2025-10-01,127.5,102.4,110.4,France,peer,5,França,Other
+FR,2026-01-01,126.6,101.3,111.0,France,peer,5,França,Other
+FR,2026-04-01,125.5,98.4,111.4,France,peer,5,França,Other
+DE,2010-01-01,83.0,90.1,93.6,Germany,peer,6,Alemanha,Other
+DE,2010-04-01,84.3,91.1,93.9,Germany,peer,6,Alemanha,Other
+DE,2010-07-01,84.4,90.9,94.1,Germany,peer,6,Alemanha,Other
+DE,2010-10-01,83.7,89.8,94.4,Germany,peer,6,Alemanha,Other
+DE,2011-01-01,86.1,91.5,94.8,Germany,peer,6,Alemanha,Other
+DE,2011-04-01,87.1,91.8,95.1,Germany,peer,6,Alemanha,Other
+DE,2011-07-01,86.7,91.0,95.3,Germany,peer,6,Alemanha,Other
+DE,2011-10-01,87.3,91.3,95.6,Germany,peer,6,Alemanha,Other
+DE,2012-01-01,88.0,91.4,95.9,Germany,peer,6,Alemanha,Other
+DE,2012-04-01,89.1,92.0,96.2,Germany,peer,6,Alemanha,Other
+DE,2012-07-01,90.4,93.0,96.4,Germany,peer,6,Alemanha,Other
+DE,2012-10-01,91.6,93.9,96.7,Germany,peer,6,Alemanha,Other
+DE,2013-01-01,91.3,93.1,97.0,Germany,peer,6,Alemanha,Other
+DE,2013-04-01,93.1,94.7,97.3,Germany,peer,6,Alemanha,Other
+DE,2013-07-01,92.9,94.0,97.7,Germany,peer,6,Alemanha,Other
+DE,2013-10-01,93.0,94.0,98.0,Germany,peer,6,Alemanha,Other
+DE,2014-01-01,93.8,94.7,98.4,Germany,peer,6,Alemanha,Other
+DE,2014-04-01,95.7,96.5,98.8,Germany,peer,6,Alemanha,Other
+DE,2014-07-01,96.2,96.5,99.1,Germany,peer,6,Alemanha,Other
+DE,2014-10-01,96.2,96.8,99.5,Germany,peer,6,Alemanha,Other
+DE,2015-01-01,97.8,98.8,99.8,Germany,peer,6,Alemanha,Other
+DE,2015-04-01,99.9,99.5,100.1,Germany,peer,6,Alemanha,Other
+DE,2015-07-01,100.4,99.7,100.3,Germany,peer,6,Alemanha,Other
+DE,2015-10-01,101.8,101.9,100.5,Germany,peer,6,Alemanha,Other
+DE,2016-01-01,103.9,104.9,100.9,Germany,peer,6,Alemanha,Other
+DE,2016-04-01,106.9,106.5,101.1,Germany,peer,6,Alemanha,Other
+DE,2016-07-01,108.8,107.6,101.5,Germany,peer,6,Alemanha,Other
+DE,2016-10-01,110.4,109.4,102.0,Germany,peer,6,Alemanha,Other
+DE,2017-01-01,110.9,110.0,102.5,Germany,peer,6,Alemanha,Other
+DE,2017-04-01,113.1,110.9,102.9,Germany,peer,6,Alemanha,Other
+DE,2017-07-01,115.0,111.7,103.3,Germany,peer,6,Alemanha,Other
+DE,2017-10-01,117.3,114.5,103.7,Germany,peer,6,Alemanha,Other
+DE,2018-01-01,118.3,115.7,104.2,Germany,peer,6,Alemanha,Other
+DE,2018-04-01,120.6,116.0,104.6,Germany,peer,6,Alemanha,Other
+DE,2018-07-01,123.1,117.0,104.9,Germany,peer,6,Alemanha,Other
+DE,2018-10-01,124.6,119.1,105.3,Germany,peer,6,Alemanha,Other
+DE,2019-01-01,124.6,119.9,105.7,Germany,peer,6,Alemanha,Other
+DE,2019-04-01,127.8,120.9,106.1,Germany,peer,6,Alemanha,Other
+DE,2019-07-01,129.6,121.9,106.5,Germany,peer,6,Alemanha,Other
+DE,2019-10-01,132.7,125.3,106.9,Germany,peer,6,Alemanha,Other
+DE,2020-01-01,133.8,126.8,107.3,Germany,peer,6,Alemanha,Other
+DE,2020-04-01,136.2,128.0,107.6,Germany,peer,6,Alemanha,Other
+DE,2020-07-01,140.3,132.2,107.9,Germany,peer,6,Alemanha,Other
+DE,2020-10-01,144.3,137.0,108.3,Germany,peer,6,Alemanha,Other
+DE,2021-01-01,146.3,136.3,108.7,Germany,peer,6,Alemanha,Other
+DE,2021-04-01,151.8,139.6,109.0,Germany,peer,6,Alemanha,Other
+DE,2021-07-01,158.2,144.0,109.3,Germany,peer,6,Alemanha,Other
+DE,2021-10-01,162.5,146.4,109.7,Germany,peer,6,Alemanha,Other
+DE,2022-01-01,164.1,144.1,110.2,Germany,peer,6,Alemanha,Other
+DE,2022-04-01,167.4,142.2,110.7,Germany,peer,6,Alemanha,Other
+DE,2022-07-01,166.3,138.3,111.3,Germany,peer,6,Alemanha,Other
+DE,2022-10-01,158.5,128.8,111.8,Germany,peer,6,Alemanha,Other
+DE,2023-01-01,153.7,124.1,112.4,Germany,peer,6,Alemanha,Other
+DE,2023-04-01,151.6,120.5,113.0,Germany,peer,6,Alemanha,Other
+DE,2023-07-01,149.3,117.5,113.6,Germany,peer,6,Alemanha,Other
+DE,2023-10-01,146.4,115.6,114.0,Germany,peer,6,Alemanha,Other
+DE,2024-01-01,145.8,114.6,114.8,Germany,peer,6,Alemanha,Other
+DE,2024-04-01,147.8,114.5,115.4,Germany,peer,6,Alemanha,Other
+DE,2024-07-01,149.0,114.8,116.0,Germany,peer,6,Alemanha,Other
+DE,2024-10-01,149.2,114.9,116.5,Germany,peer,6,Alemanha,Other
+DE,2025-01-01,151.3,116.0,117.1,Germany,peer,6,Alemanha,Other
+DE,2025-04-01,152.6,115.8,117.9,Germany,peer,6,Alemanha,Other
+DE,2025-07-01,153.7,116.0,118.4,Germany,peer,6,Alemanha,Other
+DE,2025-10-01,153.0,115.1,119.0,Germany,peer,6,Alemanha,Other
+DE,2026-01-01,153.1,114.7,119.7,Germany,peer,6,Alemanha,Other
+DE,2026-04-01,153.5,113.5,120.3,Germany,peer,6,Alemanha,Other
+NL,2010-01-01,111.7,122.3,85.1,Netherlands,peer,7,Países Baixos,Other
+NL,2010-04-01,111.5,120.5,85.1,Netherlands,peer,7,Países Baixos,Other
+NL,2010-07-01,111.7,121.5,86.5,Netherlands,peer,7,Países Baixos,Other
+NL,2010-10-01,111.0,120.1,86.5,Netherlands,peer,7,Países Baixos,Other
+NL,2011-01-01,111.2,119.5,86.5,Netherlands,peer,7,Países Baixos,Other
+NL,2011-04-01,109.6,115.8,86.5,Netherlands,peer,7,Países Baixos,Other
+NL,2011-07-01,109.2,115.2,88.0,Netherlands,peer,7,Países Baixos,Other
+NL,2011-10-01,107.2,112.9,88.0,Netherlands,peer,7,Países Baixos,Other
+NL,2012-01-01,105.2,109.9,88.0,Netherlands,peer,7,Países Baixos,Other
+NL,2012-04-01,103.4,106.6,88.0,Netherlands,peer,7,Países Baixos,Other
+NL,2012-07-01,99.4,102.2,90.6,Netherlands,peer,7,Países Baixos,Other
+NL,2012-10-01,99.8,101.9,90.6,Netherlands,peer,7,Países Baixos,Other
+NL,2013-01-01,97.1,98.2,90.6,Netherlands,peer,7,Países Baixos,Other
+NL,2013-04-01,95.0,95.1,90.6,Netherlands,peer,7,Países Baixos,Other
+NL,2013-07-01,95.7,95.8,94.8,Netherlands,peer,7,Países Baixos,Other
+NL,2013-10-01,95.4,96.1,94.8,Netherlands,peer,7,Países Baixos,Other
+NL,2014-01-01,95.8,96.6,94.8,Netherlands,peer,7,Países Baixos,Other
+NL,2014-04-01,96.4,96.1,94.8,Netherlands,peer,7,Países Baixos,Other
+NL,2014-07-01,96.9,96.8,98.9,Netherlands,peer,7,Países Baixos,Other
+NL,2014-10-01,97.3,97.9,98.9,Netherlands,peer,7,Países Baixos,Other
+NL,2015-01-01,98.3,99.5,98.9,Netherlands,peer,7,Países Baixos,Other
+NL,2015-04-01,99.2,98.5,98.9,Netherlands,peer,7,Países Baixos,Other
+NL,2015-07-01,101.0,100.3,101.2,Netherlands,peer,7,Países Baixos,Other
+NL,2015-10-01,101.5,101.6,101.1,Netherlands,peer,7,Países Baixos,Other
+NL,2016-01-01,102.5,103.4,101.1,Netherlands,peer,7,Países Baixos,Other
+NL,2016-04-01,104.0,103.5,101.1,Netherlands,peer,7,Países Baixos,Other
+NL,2016-07-01,106.6,106.1,103.1,Netherlands,peer,7,Países Baixos,Other
+NL,2016-10-01,108.0,107.7,103.1,Netherlands,peer,7,Países Baixos,Other
+NL,2017-01-01,110.2,109.7,103.1,Netherlands,peer,7,Países Baixos,Other
+NL,2017-04-01,112.1,110.4,103.1,Netherlands,peer,7,Países Baixos,Other
+NL,2017-07-01,115.2,113.0,104.7,Netherlands,peer,7,Países Baixos,Other
+NL,2017-10-01,117.7,115.8,104.7,Netherlands,peer,7,Países Baixos,Other
+NL,2018-01-01,120.3,118.3,104.7,Netherlands,peer,7,Países Baixos,Other
+NL,2018-04-01,122.6,119.0,104.7,Netherlands,peer,7,Países Baixos,Other
+NL,2018-07-01,126.4,121.8,107.2,Netherlands,peer,7,Países Baixos,Other
+NL,2018-10-01,128.2,123.8,107.2,Netherlands,peer,7,Países Baixos,Other
+NL,2019-01-01,130.3,125.1,107.2,Netherlands,peer,7,Países Baixos,Other
+NL,2019-04-01,132.2,124.8,107.2,Netherlands,peer,7,Países Baixos,Other
+NL,2019-07-01,134.5,126.0,109.9,Netherlands,peer,7,Países Baixos,Other
+NL,2019-10-01,136.5,128.4,109.9,Netherlands,peer,7,Países Baixos,Other
+NL,2020-01-01,139.3,132.0,109.9,Netherlands,peer,7,Países Baixos,Other
+NL,2020-04-01,142.6,133.1,109.9,Netherlands,peer,7,Países Baixos,Other
+NL,2020-07-01,146.0,135.5,113.1,Netherlands,peer,7,Países Baixos,Other
+NL,2020-10-01,148.4,138.2,113.1,Netherlands,peer,7,Países Baixos,Other
+NL,2021-01-01,153.7,143.1,113.1,Netherlands,peer,7,Países Baixos,Other
+NL,2021-04-01,160.6,147.1,113.1,Netherlands,peer,7,Países Baixos,Other
+NL,2021-07-01,169.6,153.8,114.0,Netherlands,peer,7,Países Baixos,Other
+NL,2021-10-01,175.9,155.6,114.0,Netherlands,peer,7,Países Baixos,Other
+NL,2022-01-01,182.9,156.4,114.0,Netherlands,peer,7,Países Baixos,Other
+NL,2022-04-01,188.6,156.5,114.0,Netherlands,peer,7,Países Baixos,Other
+NL,2022-07-01,190.0,150.9,117.4,Netherlands,peer,7,Países Baixos,Other
+NL,2022-10-01,185.9,145.5,117.4,Netherlands,peer,7,Países Baixos,Other
+NL,2023-01-01,183.1,146.0,117.4,Netherlands,peer,7,Países Baixos,Other
+NL,2023-04-01,180.9,141.2,117.4,Netherlands,peer,7,Países Baixos,Other
+NL,2023-07-01,182.9,141.4,119.7,Netherlands,peer,7,Países Baixos,Other
+NL,2023-10-01,186.1,145.0,119.7,Netherlands,peer,7,Países Baixos,Other
+NL,2024-01-01,189.9,147.0,119.7,Netherlands,peer,7,Países Baixos,Other
+NL,2024-04-01,194.8,147.8,119.7,Netherlands,peer,7,Países Baixos,Other
+NL,2024-07-01,202.0,151.1,126.2,Netherlands,peer,7,Países Baixos,Other
+NL,2024-10-01,206.3,155.0,126.2,Netherlands,peer,7,Países Baixos,Other
+NL,2025-01-01,210.3,157.6,126.2,Netherlands,peer,7,Países Baixos,Other
+NL,2025-04-01,213.4,156.8,126.2,Netherlands,peer,7,Países Baixos,Other
+NL,2025-07-01,218.0,158.9,132.4,Netherlands,peer,7,Países Baixos,Other
+NL,2025-10-01,219.0,160.1,132.4,Netherlands,peer,7,Países Baixos,Other
+NL,2026-01-01,221.4,162.2,132.4,Netherlands,peer,7,Países Baixos,Other
+NL,2026-04-01,222.6,159.2,132.4,Netherlands,peer,7,Países Baixos,Other
+EU27_2020,2010-01-01,99.3,107.9,92.7,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2010-04-01,100.4,107.8,93.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2010-07-01,100.8,108.2,93.6,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2010-10-01,100.6,107.2,93.6,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2011-01-01,100.9,106.8,94.0,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2011-04-01,101.6,105.9,94.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2011-07-01,101.1,105.6,95.0,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2011-10-01,100.0,103.4,95.0,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2012-01-01,99.3,102.3,95.5,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2012-04-01,99.0,100.6,95.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2012-07-01,98.6,100.3,96.5,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2012-10-01,98.1,99.1,96.6,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2013-01-01,96.8,97.9,96.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2013-04-01,97.2,97.5,97.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2013-07-01,97.3,97.7,97.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2013-10-01,96.9,97.1,97.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2014-01-01,96.9,97.4,98.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2014-04-01,97.8,97.6,98.6,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2014-07-01,98.3,98.4,99.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2014-10-01,98.0,98.1,99.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2015-01-01,98.3,99.1,99.6,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2015-04-01,99.8,99.2,99.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2015-07-01,100.8,100.7,100.2,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2015-10-01,101.1,101.0,100.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2016-01-01,102.0,102.9,100.6,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2016-04-01,103.8,103.3,100.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2016-07-01,105.4,105.0,101.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2016-10-01,106.1,105.3,101.5,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2017-01-01,106.9,106.0,101.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2017-04-01,108.8,106.7,102.2,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2017-07-01,110.4,108.4,102.5,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2017-10-01,111.2,108.7,102.8,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2018-01-01,112.3,109.9,103.2,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2018-04-01,114.2,110.1,103.5,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2018-07-01,115.9,111.4,103.8,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2018-10-01,116.8,112.0,104.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2019-01-01,117.6,113.3,104.5,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2019-04-01,119.8,113.6,104.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2019-07-01,121.5,115.4,105.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2019-10-01,122.7,116.2,105.7,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2020-01-01,124.4,118.2,106.2,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2020-04-01,126.3,119.1,106.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2020-07-01,128.0,121.0,106.8,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2020-10-01,129.8,122.6,107.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2021-01-01,132.1,123.8,107.5,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2021-04-01,136.0,125.5,107.8,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2021-07-01,140.2,128.5,108.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2021-10-01,143.2,128.9,108.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2022-01-01,146.2,128.5,108.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2022-04-01,149.6,126.8,109.6,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2022-07-01,150.9,125.4,110.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2022-10-01,148.7,120.6,111.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2023-01-01,147.6,118.6,112.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2023-04-01,148.2,117.2,112.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2023-07-01,149.1,117.3,113.7,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2023-10-01,148.8,116.8,114.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2024-01-01,149.8,117.0,115.5,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2024-04-01,152.6,117.6,116.3,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2024-07-01,155.0,119.0,117.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2024-10-01,156.2,119.5,118.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2025-01-01,158.4,120.6,119.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2025-04-01,161.0,121.2,120.0,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2025-07-01,163.5,122.6,121.0,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2025-10-01,164.6,123.0,121.8,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2026-01-01,166.5,123.9,122.7,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2026-04-01,168.6,123.0,123.6,EU-27,benchmark,8,UE-27,Other

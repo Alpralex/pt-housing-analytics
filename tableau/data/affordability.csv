@@ -1,0 +1,81 @@
+geo,year,hpi_2015,income_2015,price_to_income_index,median_income_eur,overburden_total,country_name,country_group,sort_order,country_pt,highlight
+PT,2015,100.0,100.0,100.0,8782.0,9.1,Portugal,focus,1,Portugal,Portugal
+PT,2016,107.1,103.3,103.7,9071.0,7.5,Portugal,focus,1,Portugal,Portugal
+PT,2017,117.0,106.4,110.0,9346.0,6.7,Portugal,focus,1,Portugal,Portugal
+PT,2018,129.0,114.1,113.1,10023.0,5.7,Portugal,focus,1,Portugal,Portugal
+PT,2019,141.9,123.0,115.4,10800.0,5.7,Portugal,focus,1,Portugal,Portugal
+PT,2020,154.3,126.3,122.2,11089.0,4.1,Portugal,focus,1,Portugal,Portugal
+PT,2021,168.8,125.4,134.6,11014.0,5.9,Portugal,focus,1,Portugal,Portugal
+PT,2022,190.2,134.6,141.2,11824.0,5.0,Portugal,focus,1,Portugal,Portugal
+PT,2023,205.8,144.0,142.9,12646.0,4.9,Portugal,focus,1,Portugal,Portugal
+PT,2024,224.4,164.7,136.3,14465.0,6.9,Portugal,focus,1,Portugal,Portugal
+ES,2015,100.0,100.0,100.0,13681.0,10.3,Spain,peer,2,Espanha,Other
+ES,2016,104.6,103.8,100.8,14203.0,10.2,Spain,peer,2,Espanha,Other
+ES,2017,111.1,108.1,102.8,14785.0,9.8,Spain,peer,2,Espanha,Other
+ES,2018,118.6,109.8,108.0,15015.0,8.9,Spain,peer,2,Espanha,Other
+ES,2019,124.7,117.3,106.4,16043.0,8.5,Spain,peer,2,Espanha,Other
+ES,2020,127.5,116.2,109.8,15892.0,8.2,Spain,peer,2,Espanha,Other
+ES,2021,132.2,122.9,107.6,16814.0,9.9,Spain,peer,2,Espanha,Other
+ES,2022,142.0,133.9,106.0,18316.0,9.2,Spain,peer,2,Espanha,Other
+ES,2023,147.7,141.1,104.7,19307.0,8.2,Spain,peer,2,Espanha,Other
+ES,2024,160.2,148.9,107.6,20367.0,7.8,Spain,peer,2,Espanha,Other
+IE,2015,100.0,100.0,100.0,22544.0,4.7,Ireland,peer,3,Irlanda,Other
+IE,2016,107.5,101.5,105.9,22879.0,4.6,Ireland,peer,3,Irlanda,Other
+IE,2017,119.1,110.5,107.8,24920.0,4.5,Ireland,peer,3,Irlanda,Other
+IE,2018,131.3,112.8,116.5,25422.0,3.4,Ireland,peer,3,Irlanda,Other
+IE,2019,134.4,118.7,113.2,26766.0,5.2,Ireland,peer,3,Irlanda,Other
+IE,2020,134.8,127.6,105.7,28762.0,4.2,Ireland,peer,3,Irlanda,Other
+IE,2021,146.0,133.4,109.5,30063.0,2.6,Ireland,peer,3,Irlanda,Other
+IE,2022,164.0,136.1,120.4,30689.0,3.7,Ireland,peer,3,Irlanda,Other
+IE,2023,169.0,146.4,115.4,33013.0,4.7,Ireland,peer,3,Irlanda,Other
+IE,2024,183.4,155.9,117.7,35138.0,4.5,Ireland,peer,3,Irlanda,Other
+IT,2015,100.0,100.0,100.0,16247.0,8.6,Italy,peer,4,Itália,Other
+IT,2016,100.2,101.8,98.5,16542.0,9.6,Italy,peer,4,Itália,Other
+IT,2017,99.2,103.7,95.7,16844.0,8.2,Italy,peer,4,Itália,Other
+IT,2018,98.6,105.7,93.4,17165.0,8.2,Italy,peer,4,Itália,Other
+IT,2019,98.5,111.2,88.6,18067.0,8.7,Italy,peer,4,Itália,Other
+IT,2020,100.4,107.9,93.0,17532.0,7.2,Italy,peer,4,Itália,Other
+IT,2021,103.0,114.4,90.0,18592.0,7.2,Italy,peer,4,Itália,Other
+IT,2022,106.9,122.0,87.6,19819.0,6.6,Italy,peer,4,Itália,Other
+IT,2023,108.2,126.8,85.4,20605.0,5.7,Italy,peer,4,Itália,Other
+IT,2024,111.7,135.8,82.3,22062.0,5.1,Italy,peer,4,Itália,Other
+FR,2015,100.0,100.0,100.0,21713.0,5.7,France,peer,5,França,Other
+FR,2016,101.0,101.1,99.9,21960.0,5.2,France,peer,5,França,Other
+FR,2017,104.2,102.3,101.9,22220.0,5.0,France,peer,5,França,Other
+FR,2018,107.3,103.9,103.3,22562.0,4.7,France,peer,5,França,Other
+FR,2019,110.9,102.0,108.7,22143.0,5.5,France,peer,5,França,Other
+FR,2020,116.6,104.7,111.4,22732.0,5.6,France,peer,5,França,Other
+FR,2021,124.1,106.2,116.9,23053.0,,France,peer,5,França,Other
+FR,2022,131.8,111.4,118.4,24179.0,6.5,France,peer,5,França,Other
+FR,2023,131.3,117.7,111.5,25557.0,6.5,France,peer,5,França,Other
+FR,2024,126.4,121.9,103.7,26459.0,7.0,France,peer,5,França,Other
+DE,2015,100.0,100.0,100.0,21275.0,15.6,Germany,peer,6,Alemanha,Other
+DE,2016,107.5,103.0,104.3,21920.0,15.8,Germany,peer,6,Alemanha,Other
+DE,2017,114.1,106.8,106.9,22713.0,14.5,Germany,peer,6,Alemanha,Other
+DE,2018,121.6,110.5,110.1,23515.0,14.2,Germany,peer,6,Alemanha,Other
+DE,2019,128.7,122.2,105.3,26008.0,13.9,Germany,peer,6,Alemanha,Other
+DE,2020,138.6,117.3,118.2,24946.0,9.0,Germany,peer,6,Alemanha,Other
+DE,2021,154.7,117.2,132.0,24925.0,11.0,Germany,peer,6,Alemanha,Other
+DE,2022,164.1,123.5,132.9,26274.0,11.9,Germany,peer,6,Alemanha,Other
+DE,2023,150.2,129.8,115.7,27619.0,13.0,Germany,peer,6,Alemanha,Other
+DE,2024,148.0,135.8,108.9,28891.0,12.0,Germany,peer,6,Alemanha,Other
+NL,2015,100.0,100.0,100.0,22733.0,14.9,Netherlands,peer,7,Países Baixos,Other
+NL,2016,105.3,103.6,101.6,23561.0,10.7,Netherlands,peer,7,Países Baixos,Other
+NL,2017,113.8,105.6,107.7,24016.0,9.4,Netherlands,peer,7,Países Baixos,Other
+NL,2018,124.4,108.3,114.9,24612.0,9.4,Netherlands,peer,7,Países Baixos,Other
+NL,2019,133.4,113.5,117.5,25801.0,9.9,Netherlands,peer,7,Países Baixos,Other
+NL,2020,144.1,125.1,115.2,28441.0,8.3,Netherlands,peer,7,Países Baixos,Other
+NL,2021,164.9,129.9,126.9,29537.0,8.3,Netherlands,peer,7,Países Baixos,Other
+NL,2022,186.8,128.7,145.2,29249.0,10.0,Netherlands,peer,7,Países Baixos,Other
+NL,2023,183.3,140.7,130.3,31981.0,9.3,Netherlands,peer,7,Países Baixos,Other
+NL,2024,198.2,151.6,130.8,34466.0,6.9,Netherlands,peer,7,Países Baixos,Other
+EU27_2020,2015,100.0,100.0,100.0,15847.0,11.2,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2016,104.3,102.7,101.5,16281.0,10.9,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2017,109.3,106.2,102.9,16832.0,10.1,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2018,114.8,109.3,105.0,17325.0,9.6,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2019,120.4,115.4,104.3,18291.0,9.4,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2020,127.1,116.0,109.6,18381.0,7.8,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2021,137.9,120.5,114.4,19092.0,8.7,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2022,148.9,128.0,116.3,20290.0,8.7,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2023,148.4,136.2,109.0,21582.0,8.8,EU-27,benchmark,8,UE-27,Other
+EU27_2020,2024,153.4,144.8,106.0,22939.0,8.2,EU-27,benchmark,8,UE-27,Other
